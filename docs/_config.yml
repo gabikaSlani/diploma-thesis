@@ -16,22 +16,11 @@ author:
   name: Bc. Gabriela Slaninková
   title: DIPLOMOVÁ PRÁCA
   subtitle: Mobilná aplikácia na nájdenie optimálnej trasy v MHD z reálnych dát
-  email: gabika.slani@gmail.co
+  email: gabika.slani@gmail.com
   github: gabikaSlani
   gavatar: /resumecard/assets/img/avatar.PNG
   stackoverflow:
 #  stackoverflow: 4582127
-
-  languages:
-    - language1:
-      name: Chinese
-      proficiency: Native
-    - language2:
-      name: English
-      proficiency: Professional
-    - language3:
-      name: Japanese
-      proficiency: Limit
   programmingSkills:
     - skill1:
       name: Webová stránka

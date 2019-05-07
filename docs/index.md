@@ -12,7 +12,7 @@ layout: default
                         <div class="timeline-badge info"></div>
                         <div class="timeline-panel grid-block">
                             <div class="timeline-heading">
-                                <h4 class="timeline-title">Anotácia</h4>
+                                <h4 class="timeline-title"><strong>Anotácia</strong></h4>
                             </div>
                             <div class="timeline-body">
                                 <p>Existuje aplikácia imhd ba, ktorá slúži na plánovanie cesty v MHD v Bratislave na základe statických cestovných poriadkov. Cieľom tejto práce je nájsť spôsob určovania optimálnej cesty a naprogramovať aplikáciu, ktorá to dokáže urobiť s reálnych dát o pohybe vozidiel MHD.</p>
@@ -23,7 +23,7 @@ layout: default
                         <div class="timeline-badge info"></div>
                         <div class="timeline-panel grid-block">
                             <div class="timeline-heading">
-                                <h4 class="timeline-title">Ciele</h4>
+                                <h4 class="timeline-title"><strong>Ciele</strong></h4>
                             </div>
                             <div class="timeline-body">
                                 <p></p>
@@ -37,7 +37,7 @@ layout: default
                         <div class="timeline-badge info"></div>
                         <div class="timeline-panel grid-block">
                             <div class="timeline-heading">
-                                <h4 class="timeline-title">Odborné články</h4>
+                                <h4 class="timeline-title"><strong>Odborné články</strong></h4>
                             </div>
                             <div class="timeline-body">
                                 <p>zoznam a linky</p>
@@ -51,7 +51,7 @@ layout: default
                         <div class="timeline-badge info"></div>
                         <div class="timeline-panel grid-block">
                             <div class="timeline-heading">
-                                <h4 class="timeline-title">Adroid aplikácia A* algoritmus</h4>
+                                <h4 class="timeline-title"><strong>Adroid aplikácia A* algoritmus</strong></h4>
                             </div>
                             <div class="timeline-body">
                                 <p>Aplikácia zobrazí statický ohodnotený graf a ponúkne používateľovi navoliť si začiatočný a koncový vrchol. Po zadaní vrcholov nájde pomocou A* algoritmu najkratšiu cestu.</p>
@@ -66,11 +66,11 @@ layout: default
                         <div class="timeline-badge info"></div>
                         <div class="timeline-panel grid-block">
                             <div class="timeline-heading">
-                                <h4 class="timeline-title">Latex</h4>
+                                <h4 class="timeline-title"><strong>Latex</strong></h4>
                             </div>
                             <div class="timeline-body">
-                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/main.pdf">PDF Dokument</a></p>
-                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/literatura.bib">.bib súbor</a></p>
+                                <p>PDF Dokument: <a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/main.pdf">https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/main.pdf</a></p>
+                                <p>BibTex súbor: <a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/literatura.bib">https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/literatura.bib</a></p>
                             </div>
                         </div>
                     </li>
