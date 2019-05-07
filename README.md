@@ -1,0 +1,3 @@
+# diploma-thesis
+
+DIPLOMOVÁ PRÁCA
