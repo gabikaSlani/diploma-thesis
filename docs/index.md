@@ -30,6 +30,78 @@ layout: default
                     {% endfor %}
                 </ul>
             {% endif %}
+            {% if site.author.zdroje %}
+                <h3 class="title with-icon"><span class="fa fa-book cat-title"></span>Zdroje</h3>
+                <ul class="timeline">
+                    {% for work in site.author.zdroje %}
+                        <li class="timeline-inverted">
+                            {% if work.started %}
+                                <div class="timeline-badge info"></div>
+                            {% endif %}
+                            <div class="timeline-panel grid-block">
+                                <div class="timeline-heading">
+                                    {% if work.title %}
+                                        <h4 class="timeline-title">{{ work.title }} </h4>
+                                    {% endif %}
+                                </div>
+                                <div class="timeline-body">
+                                    {% if work.description %}
+                                        <p>{{ work.description }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% if site.author.prototyp %}
+                <h3 class="title with-icon"><span class="fa fa-book cat-title"></span>Prototyp</h3>
+                <ul class="timeline">
+                    {% for work in site.author.prototyp %}
+                        <li class="timeline-inverted">
+                            {% if work.started %}
+                                <div class="timeline-badge info"></div>
+                            {% endif %}
+                            <div class="timeline-panel grid-block">
+                                <div class="timeline-heading">
+                                    {% if work.title %}
+                                        <h4 class="timeline-title">{{ work.title }} </h4>
+                                    {% endif %}
+                                </div>
+                                <div class="timeline-body">
+                                    {% if work.description %}
+                                        <p>{{ work.description }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% if site.author.dokument %}
+                <h3 class="title with-icon"><span class="fa fa-book cat-title"></span>Dokument</h3>
+                <ul class="timeline">
+                    {% for work in site.author.dokument %}
+                        <li class="timeline-inverted">
+                            {% if work.started %}
+                                <div class="timeline-badge info"></div>
+                            {% endif %}
+                            <div class="timeline-panel grid-block">
+                                <div class="timeline-heading">
+                                    {% if work.title %}
+                                        <h4 class="timeline-title">{{ work.title }} </h4>
+                                    {% endif %}
+                                </div>
+                                <div class="timeline-body">
+                                    {% if work.description %}
+                                        <p>{{ work.description }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         </div>
         <div class="col-md-4">
             {% if site.author.stackoverflow or site.author.programmingSkills %}
