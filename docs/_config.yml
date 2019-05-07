@@ -21,34 +21,6 @@ author:
   gavatar: /resumecard/assets/img/avatar.JPG
   stackoverflow:
 #  stackoverflow: 4582127
-  zadanie:
-    - work1:
-      title: Anotácia
-      description: Existuje aplikácia imhd ba, ktorá slúži na plánovanie cesty v MHD v Bratislave na základe statických cestovných poriadkov. Cieľom tejto práce je nájsť spôsob určovania optimálnej cesty a naprogramovať aplikáciu, ktorá to dokáže urobiť s reálnych dát o pohybe vozidiel MHD.
-      started: 0
-    - work2:
-      title: Ciele
-      description: ...
-      started: 1
-  zdroje:
-    -work1:
-      title: Odborné články
-      description: nejake zdroje
-      started: 2
-  prototyp:
-    -work1:
-      title: Adroid aplikácia A* algoritmus
-      description: link
-      started: 1
-  dokument:
-    -work1:
-      title: Dokument PDF
-      description: link
-      started: 1
-    -work2:
-      title: Bibliografia
-      description: link
-      started: 2
 
   languages:
     - language1:

@@ -6,103 +6,74 @@ layout: default
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="col-md-8">
-            {% if site.author.zadanie %}
-                <h3 class="title with-icon"><span class="fa fa-book cat-title"></span>Zadanie</h3>
+            <h3 class="title with-icon"><span class="fa fa-book cat-title"></span>Zadanie</h3>
                 <ul class="timeline">
-                    {% for work in site.author.zadanie %}
-                        <li class="timeline-inverted">
-                            {% if work.started %}
-                                <div class="timeline-badge info"></div>
-                            {% endif %}
-                            <div class="timeline-panel grid-block">
-                                <div class="timeline-heading">
-                                    {% if work.title %}
-                                        <h4 class="timeline-title">{{ work.title }} </h4>
-                                    {% endif %}
-                                </div>
-                                <div class="timeline-body">
-                                    {% if work.description %}
-                                        <p>{{ work.description }}</p>
-                                    {% endif %}
-                                </div>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge info"></div>
+                        <div class="timeline-panel grid-block">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Anotácia</h4>
                             </div>
-                        </li>
-                    {% endfor %}
+                            <div class="timeline-body">
+                                <p>Existuje aplikácia imhd ba, ktorá slúži na plánovanie cesty v MHD v Bratislave na základe statických cestovných poriadkov. Cieľom tejto práce je nájsť spôsob určovania optimálnej cesty a naprogramovať aplikáciu, ktorá to dokáže urobiť s reálnych dát o pohybe vozidiel MHD.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge info"></div>
+                        <div class="timeline-panel grid-block">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Ciele</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p></p>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
-            {% endif %}
-            {% if site.author.zdroje %}
                 <h3 class="title with-icon"><span class="fa fa-book cat-title"></span>Zdroje</h3>
                 <ul class="timeline">
-                    {% for work in site.author.zdroje %}
-                        <li class="timeline-inverted">
-                            {% if work.started %}
-                                <div class="timeline-badge info"></div>
-                            {% endif %}
-                            <div class="timeline-panel grid-block">
-                                <div class="timeline-heading">
-                                    {% if work.title %}
-                                        <h4 class="timeline-title">{{ work.title }} </h4>
-                                    {% endif %}
-                                </div>
-                                <div class="timeline-body">
-                                    {% if work.description %}
-                                        <p>{{ work.description }}</p>
-                                    {% endif %}
-                                </div>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge info"></div>
+                        <div class="timeline-panel grid-block">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Odborné články</h4>
                             </div>
-                        </li>
-                    {% endfor %}
+                            <div class="timeline-body">
+                                <p>zoznam a linky</p>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
-            {% endif %}
-            {% if site.author.prototyp %}
                 <h3 class="title with-icon"><span class="fa fa-book cat-title"></span>Prototyp</h3>
                 <ul class="timeline">
-                    {% for work in site.author.prototyp %}
-                        <li class="timeline-inverted">
-                            {% if work.started %}
-                                <div class="timeline-badge info"></div>
-                            {% endif %}
-                            <div class="timeline-panel grid-block">
-                                <div class="timeline-heading">
-                                    {% if work.title %}
-                                        <h4 class="timeline-title">{{ work.title }} </h4>
-                                    {% endif %}
-                                </div>
-                                <div class="timeline-body">
-                                    {% if work.description %}
-                                        <p>{{ work.description }}</p>
-                                    {% endif %}
-                                </div>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge info"></div>
+                        <div class="timeline-panel grid-block">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Adroid aplikácia A* algoritmus</h4>
                             </div>
-                        </li>
-                    {% endfor %}
+                            <div class="timeline-body">
+                                <p>popis a linka na github</p>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
-            {% endif %}
-            {% if site.author.dokument %}
                 <h3 class="title with-icon"><span class="fa fa-book cat-title"></span>Dokument</h3>
                 <ul class="timeline">
-                    {% for work in site.author.dokument %}
-                        <li class="timeline-inverted">
-                            {% if work.started %}
-                                <div class="timeline-badge info"></div>
-                            {% endif %}
-                            <div class="timeline-panel grid-block">
-                                <div class="timeline-heading">
-                                    {% if work.title %}
-                                        <h4 class="timeline-title">{{ work.title }} </h4>
-                                    {% endif %}
-                                </div>
-                                <div class="timeline-body">
-                                    {% if work.description %}
-                                        <p>{{ work.description }}</p>
-                                    {% endif %}
-                                </div>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge info"></div>
+                        <div class="timeline-panel grid-block">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Latex</h4>
                             </div>
-                        </li>
-                    {% endfor %}
+                            <div class="timeline-body">
+                                <p>linka na pdf a linka na bibliografiu</p>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
-            {% endif %}
-        </div>
+            </div>
         <div class="col-md-4">
             {% if site.author.stackoverflow or site.author.programmingSkills %}
                 <h3 class="title with-icon"><span class="fa fa-code cat-title"></span>Progres</h3>
