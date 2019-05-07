@@ -54,7 +54,8 @@ layout: default
                                 <h4 class="timeline-title">Adroid aplikácia A* algoritmus</h4>
                             </div>
                             <div class="timeline-body">
-                                <p>popis a linka na github</p>
+                                <p>Aplikácia zobrazí statický ohodnotený graf a ponúkne používateľovi navoliť si začiatočný a koncový vrchol. Po zadaní vrcholov nájde pomocou A* algoritmu najkratšiu cestu.</p>
+                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/tree/master/code/shortestPathApp" target="_blank">https://github.com/gabikaSlani/diploma-thesis/tree/master/code/shortestPathApp</a></p>
                             </div>
                         </div>
                     </li>
@@ -68,7 +69,8 @@ layout: default
                                 <h4 class="timeline-title">Latex</h4>
                             </div>
                             <div class="timeline-body">
-                                <p>linka na pdf a linka na bibliografiu</p>
+                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/main.pdf">PDF Dokument</a></p>
+                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/literatura.bib">.bib súbor</a></p>
                             </div>
                         </div>
                     </li>
