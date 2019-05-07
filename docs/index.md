@@ -11,59 +11,18 @@ layout: default
                 <ul class="timeline">
                     {% for work in site.author.zadanie %}
                         <li class="timeline-inverted">
+                            {% if work.started %}
+                                <div class="timeline-badge info"></div>
+                            {% endif %}
                             <div class="timeline-panel grid-block">
                                 <div class="timeline-heading">
-                                    {% if work.company %}
-                                        <h4 class="timeline-title">{{ work.company }} </h4>
+                                    {% if work.title %}
+                                        <h4 class="timeline-title">{{ work.title }} </h4>
                                     {% endif %}
                                 </div>
                                 <div class="timeline-body">
                                     {% if work.description %}
                                         <p>{{ work.description }}</p>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-            {% if site.author.zdroje %}
-                <h3 class="title with-icon"><span class="fa fa-book cat-title"></span>Zdroje</h3>
-                <ul class="timeline">
-                    {% for education in site.author.zdroje %}
-                        <li class="timeline-inverted">
-                            {% if education.started %}
-                                <div class="timeline-badge info">{{ education.started }}</div>
-                            {% endif %}
-                            <div class="timeline-panel grid-block">
-                                <div class="timeline-heading">
-                                    {% if education.organization %}
-                                        <h4 class="timeline-title">{{ education.organization }}</h4>
-                                    {% endif %}
-                                    <p>
-                                        <small class="text-muted">
-                                            {% if education.degree %}
-                                                {{ education.degree }}
-                                            {% endif %}
-                                            {% if education.major %}
-                                                , {{ education.major }}
-                                            {% endif %}
-                                        </small>
-                                    </p>
-                                    <p>
-                                        <small class="text-muted">
-                                            {% if education.duration %}
-                                                <i class="fa fa-calendar"></i> {{ education.duration }} |
-                                            {% endif %}
-                                            {% if education.location %}
-                                                <i class="fa fa-map-marker"></i>  {{ education.location }}
-                                            {% endif %}
-                                        </small>
-                                    </p>
-                                </div>
-                                <div class="timeline-body">
-                                    {% if education.description %}
-                                        <p>{{ education.description }}</p>
                                     {% endif %}
                                 </div>
                             </div>

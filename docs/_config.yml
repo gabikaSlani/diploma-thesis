@@ -23,12 +23,14 @@ author:
 #  stackoverflow: 4582127
   zadanie:
     - work1:
-      company: Anotácia
-      description: Existuje aplikácia imhd ba, ktorá slúži na plánovanie cesty v MHD v Bratislave na základe statických cestovných poriadkov. Cieľom tejto práce je nájsť spôsob určovania optimálnej cesty a naprogramovať aplikáciu, ktorá to dokáže urobiť z reálnych dát o pohybe vozidiel MHD.
-  zdroje:
-    - education1:
-      organization: XXXXXX University
-      description: I am not a description. I am not description.I am not description. I am not a description. I am not description.I am not description. I am not a description. I am not description.I am not description. I am not a description. I am not description.I am not description. I am not a description. I am not description.I am not description. I am not a description. I am not description.I am not description. I am not a description. I am not description.I am not description. I am not a description. I am not description.I am not description.
+      title: Anotácia
+      description: Existuje aplikácia imhd ba, ktorá slúži na plánovanie cesty v MHD v Bratislave na základe statických cestovných poriadkov. Cieľom tejto práce je nájsť spôsob určovania optimálnej cesty a naprogramovať aplikáciu, ktorá to dokáže urobiť s reálnych dát o pohybe vozidiel MHD.
+      started: 0
+    - work1:
+      title: Ciele
+      description: ...
+      started: 0
+
   languages:
     - language1:
       name: Chinese
