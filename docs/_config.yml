@@ -13,15 +13,11 @@ exclude: [vendor]
 
 # Author settings
 author:
-  name: Dong Liang
-  title: Java Developer
-  address: Auckland, New Zealand
-  email: dongg.liang#gmail.com
-  link: http://ddbullfrog.com
-  weibo:
-  github: ddbullfrog
-  linkedin: ddbullfrog
-  twitter: ddbullfrog
+  name: Gabriela Slaninková
+  title: DIPLOMOVÁ PRÁCA
+  subtitle: Mobilná aplikácia na nájdenie optimálnej trasy v MHD z reálnych dát
+  email: gabika.slani@gmail.co
+  github: gabikaSlani
   gavatar: /resumecard/assets/img/avatar.JPG
   stackoverflow:
 #  stackoverflow: 4582127
@@ -68,17 +64,17 @@ author:
       proficiency: Limit
   programmingSkills:
     - skill1:
-      name: HTML
+      name: Webová stránka
       percentage: 100%
     - skill2:
-      name: Bootstrap
+      name: Prototyp
       percentage: 90%
     - skill3:
-      name: JavaScript
+      name: Latex šablóna
       percentage: 70%
     - skill4:
-      name: AngularJS
+      name: Prezentácia
       percentage: 70%
     - skill5:
-      name: Java/Java EE
+      name: Štúdium článkov
       percentage: 90%

@@ -94,7 +94,7 @@ layout: default
         </div>
         <div class="col-md-4">
             {% if site.author.stackoverflow or site.author.programmingSkills %}
-                <h3 class="title with-icon"><span class="fa fa-code cat-title"></span> Programming Skills</h3>
+                <h3 class="title with-icon"><span class="fa fa-code cat-title"></span>Progres</h3>
                 {% if site.author.stackoverflow %}
                 <div class="grid-block">
                   <p><a href="//stackoverflow.com/users/{{ site.author.stackoverflow }}"><img src="//stackoverflow.com/users/flair/{{ site.author.stackoverflow }}.png"></a></p>
@@ -226,7 +226,7 @@ layout: default
                 </div>
                 {% endif %}
             {% endif %}
-            {% if site.author.languages %}
+            <!-- {% if site.author.languages %}
                 <div class="deviter"></div>
                 <h3 class="title with-icon"><span class="fa fa-globe cat-title"></span> Language Skills</h3>
                 <div class="grid-block">
@@ -242,12 +242,12 @@ layout: default
                         {% endfor %}
                     </ul>
                 </div>
-            {% endif %}
-            <div class="deviter"></div>
+            {% endif %} -->
+            <!-- <div class="deviter"></div>
             <h3 class="title with-icon"><span class="fa fa-location-arrow cat-title"></span> Location</h3>
             <div class="grid-block">
                 <iframe src="https://www.google.com/maps/embed/v1/place?q={{ site.author.address }}&key=AIzaSyClEWLh20lxrQBFR7omuuVESviszPxONyk" width="100%" height="100%" frameborder="0" style="border:0"></iframe>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
