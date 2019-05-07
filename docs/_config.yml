@@ -1,6 +1,6 @@
 title: Dong Liang's CV
 description: ddbullfrog's CV
-favicon: /assets/img/avatar.png
+favicon: /assets/img/avatar.PNG
 baseurl: https://ddbullfrog.github.io/resumecard
 url: https://ddbullfrog.github.io/resumecard
 rss_url: /pages/atom.xml
@@ -18,7 +18,7 @@ author:
   subtitle: Mobilná aplikácia na nájdenie optimálnej trasy v MHD z reálnych dát
   email: gabika.slani@gmail.co
   github: gabikaSlani
-  gavatar: /resumecard/assets/img/avatar.png
+  gavatar: /resumecard/assets/img/avatar.PNG
   stackoverflow:
 #  stackoverflow: 4582127
 
