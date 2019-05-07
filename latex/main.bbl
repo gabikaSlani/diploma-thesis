@@ -1,0 +1,69 @@
+\newcommand{\noopsort}[1]{} \newcommand{\printfirst}[2]{#1}
+  \newcommand{\singleletter}[1]{#1} \newcommand{\switchargs}[2]{#2#1}
+\begin{thebibliography}{10}
+
+\bibitem{BERCZI201893}
+Kristóf Bérczi, Alpár Jüttner, Marco Laumanns, and Jácint Szabó.
+\newblock Arrival time dependent routing policies in public transport.
+\newblock {\em Discrete Applied Mathematics}, 251:93 -- 102, 2018.
+
+\bibitem{Fu2018}
+Lunce Fu and Maged Dessouky.
+\newblock Algorithms for a special class of state-dependent shortest path
+  problems with an application to the train routing problem.
+\newblock {\em Journal of Scheduling}, 21(3):367--386, Jun 2018.
+
+\bibitem{IDRI2017692}
+Abdelfattah Idri, Mariyem Oukarfi, Azedine Boulmakoul, Karine Zeitouni, and Ali
+  Masri.
+\newblock A new time-dependent shortest path algorithm for multimodal
+  transportation network.
+\newblock {\em Procedia Computer Science}, 109:692 -- 697, 2017.
+\newblock 8th International Conference on Ambient Systems, Networks and
+  Technologies, ANT-2017 and the 7th International Conference on Sustainable
+  Energy Information Technology, SEIT 2017, 16-19 May 2017, Madeira, Portugal.
+
+\bibitem{Jeong2010}
+Yeon-Jeong Jeong, Tschangho~John Kim, Chang-Ho Park, and Dong-Kyu Kim.
+\newblock A dissimilar alternative paths-search algorithm for navigation
+  services: A heuristic approach.
+\newblock {\em KSCE Journal of Civil Engineering}, 14(1):41--49, Jan 2010.
+
+\bibitem{8299426}
+Y.~{Li}, H.~{Zhang}, H.~{Zhu}, J.~{Li}, W.~{Yan}, and Y.~{Wu}.
+\newblock Ibas: Index based a-star.
+\newblock {\em IEEE Access}, 6:11707--11715, 2018.
+
+\bibitem{clanok_scirp1}
+R.~Parmar and B.~Trivedi.
+\newblock Shortest alternate path discovery through recursive bounding box
+  pruning.
+\newblock {\em Journal of Transportation Technologies}, 7:167 -- 180, 2017.
+
+\bibitem{PUNCHENG201671}
+Lilian~S.C. Pun-Cheng and Albert~W.F. Chan.
+\newblock Optimal route computation for circular public transport routes with
+  differential fare structure.
+\newblock {\em Travel Behaviour and Society}, 3:71 -- 77, 2016.
+
+\bibitem{QUDDUS2015328}
+Mohammed Quddus and Simon Washington.
+\newblock Shortest path and vehicle trajectory aided map-matching for low
+  frequency gps data.
+\newblock {\em Transportation Research Part C: Emerging Technologies}, 55:328
+  -- 339, 2015.
+\newblock Engineering and Applied Sciences Optimization (OPT-i) - Professor
+  Matthew G. Karlaftis Memorial Issue.
+
+\bibitem{6678359}
+L.~H. {U}, H.~J. {Zhao}, M.~L. {Yiu}, Y.~{Li}, and Z.~{Gong}.
+\newblock Towards online shortest path computation.
+\newblock {\em IEEE Transactions on Knowledge and Data Engineering},
+  26(4):1012--1025, April 2014.
+
+\bibitem{clanok_scirp2}
+Y.~Zhao Z.~Sun, W.~Gu and C.~Wang.
+\newblock Optimal path finding method study based on stochastic travel time.
+\newblock {\em Journal of Transportation Technologies}, 3(4):260 -- 265, 2013.
+
+\end{thebibliography}

@@ -1,0 +1,255 @@
+\documentclass[12pt, oneside]{book}
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=3.5cm,right=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{subcaption}
+\usepackage[hidelinks,breaklinks]{hyperref}
+\usepackage[slovak]{babel} % vypnite pre prace v anglictine
+\usepackage{float}
+\usepackage{listings}
+\usepackage{csquotes}
+\linespread{1.25} % hodnota 1.25 by mala zodpovedat 1.5 riadkovaniu
+
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+
+% -------------------
+% --- Definicia zakladnych pojmov
+% --- Vyplnte podla vasho zadania
+% -------------------
+\def\mfrok{2018}
+\def\mfnazov{Mobilná aplikácia na nájdenie optimálnej trasy v mhd z reálnych dát}
+\def\mftyp{Diplomová práca}
+\def\mfautor{Bc. Gabriela Slaninková}
+\def\mfskolitel{doc. RNDr. Milan Ftáčnik, CSc.}
+
+%ak mate konzultanta, odkomentujte aj jeho meno na titulnom liste
+\def\mfkonzultant{Mgr. Ľubor Illek }  
+
+\def\mfmiesto{Bratislava, \mfrok}
+
+%aj cislo odboru je povinne a je podla studijneho odboru autora prace
+\def\mfodbor{2511 Aplikovaná informatika} 
+\def\program{ Aplikovaná informatika }
+\def\mfpracovisko{ Katedra aplikovanej informatiky }
+
+\begin{document}     
+\frontmatter
+
+
+% -------------------
+% --- Obalka ------
+% -------------------
+\thispagestyle{empty}
+
+\begin{center}
+\sc\large
+Univerzita Komenského v Bratislave\\
+Fakulta matematiky, fyziky a informatiky
+
+\vfill
+
+{\LARGE\mfnazov}\\
+\mftyp
+\end{center}
+
+\vfill
+
+{\sc\large 
+\noindent \mfrok\\
+\mfautor
+}
+
+\eject % EOP i
+% --- koniec obalky ----
+
+% -------------------
+% --- Titulný list
+% -------------------
+
+\thispagestyle{empty}
+\noindent
+
+\begin{center}
+\sc  
+\large
+Univerzita Komenského v Bratislave\\
+Fakulta matematiky, fyziky a informatiky
+
+\vfill
+
+{\LARGE\mfnazov}\\
+\mftyp
+\end{center}
+
+\vfill
+
+\noindent
+\begin{tabular}{ll}
+Študijný program: & \program \\
+Študijný odbor: & \mfodbor \\
+Školiace pracovisko: & \mfpracovisko \\
+Školiteľ: & \mfskolitel \\
+Konzultant: & \mfkonzultant \\
+\end{tabular}
+
+\vfill
+
+
+\noindent \mfmiesto\\
+\mfautor
+
+\eject % EOP i
+
+
+% --- Koniec titulnej strany
+
+
+% -------------------
+% --- Zadanie z AIS
+% -------------------
+% v tlačenej verzii s podpismi zainteresovaných osôb.
+% v elektronickej verzii sa zverejňuje zadanie bez podpisov
+
+\newpage 
+\thispagestyle{empty}
+\hspace{-0.7cm}\includegraphics[width=1.1\textwidth]{images/zadanieDP}
+
+% --- Koniec zadania
+
+\frontmatter
+
+% -------------------
+%   Poďakovanie - nepovinné
+% -------------------
+\setcounter{page}{3}
+\newpage 
+~
+
+\vfill
+{\bf Poďakovanie:}
+\\ \\
+
+
+% --- Koniec poďakovania
+
+% -------------------
+%   Abstrakt - Slovensky
+% -------------------
+\newpage 
+\section*{Abstrakt}
+
+
+\paragraph*{Kľúčové slová:} 
+% --- Koniec Abstrakt - Slovensky
+
+
+% -------------------
+% --- Abstrakt - Anglicky 
+% -------------------
+\newpage 
+\section*{Abstract}
+
+\paragraph*{Key words:}
+
+% --- Koniec Abstrakt - Anglicky
+
+% -------------------
+% --- Obsah
+% -------------------
+
+\newpage 
+
+\tableofcontents
+
+% ---  Koniec Obsahu
+
+% -------------------
+% --- Zoznamy tabuliek, obrázkov - nepovinne
+% -------------------
+
+\newpage 
+
+\listoffigures
+%\listoftables
+
+% ---  Koniec Zoznamov
+
+\mainmatter
+
+
+\input uvod.tex 
+
+\input vychodiska.tex
+
+\input specifikacia.tex
+
+\input navrh.tex
+
+\input implementacia.tex
+
+\input test.tex
+
+\input zaver.tex
+
+% -------------------
+% --- Bibliografia
+% -------------------
+
+
+\newpage	
+
+\backmatter
+
+\thispagestyle{empty}
+\nocite{*}
+\clearpage
+
+\bibliographystyle{plain}
+\bibliography{literatura} 
+
+%---koniec Referencii
+
+% -------------------
+%--- Prilohy---
+% -------------------
+
+%Nepovinná časť prílohy obsahuje materiály, ktoré neboli zaradené priamo  do textu. Každá príloha sa začína na novej strane.
+%Zoznam príloh je súčasťou obsahu.
+%
+%\addcontentsline{toc}{chapter}{Appendix A}
+%\input AppendixA.tex
+%
+%\addcontentsline{toc}{chapter}{Appendix B}
+%\input AppendixB.tex
+
+\end{document}
+
+
+
+
+
+
