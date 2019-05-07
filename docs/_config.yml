@@ -13,7 +13,7 @@ exclude: [vendor]
 
 # Author settings
 author:
-  name: Gabriela Slaninková
+  name: Bc. Gabriela Slaninková
   title: DIPLOMOVÁ PRÁCA
   subtitle: Mobilná aplikácia na nájdenie optimálnej trasy v MHD z reálnych dát
   email: gabika.slani@gmail.co

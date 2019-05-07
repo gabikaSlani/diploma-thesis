@@ -6,36 +6,16 @@ layout: default
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="col-md-8">
-            {% if site.author.workHistory %}
-                <h3 class="title with-icon"><span class="glyphicon glyphicon-plane cat-title"></span>Work History</h3>
+            {% if site.author.zadanie %}
+                <h3 class="title with-icon"><span class="fa fa-book cat-title"></span>Zadanie</h3>
                 <ul class="timeline">
-                    {% for work in site.author.workHistory %}
+                    {% for work in site.author.zadanie %}
                         <li class="timeline-inverted">
-                            {% if work.started %}
-                                <div class="timeline-badge info">{{ work.started }}</div>
-                            {% endif %}
                             <div class="timeline-panel grid-block">
                                 <div class="timeline-heading">
                                     {% if work.company %}
                                         <h4 class="timeline-title">{{ work.company }} </h4>
                                     {% endif %}
-                                    <p>
-                                        <small class="text-muted">
-                                            {% if work.title %}
-                                                {{ work.title }}
-                                            {% endif %}
-                                        </small>
-                                    </p>
-                                    <p>
-                                        <small class="text-muted">
-                                            {% if work.duration %}
-                                                <i class="fa fa-calendar"></i> {{ work.duration }} |
-                                            {% endif %}
-                                            {% if work.location %}
-                                                <i class="fa fa-map-marker"></i>  {{ work.location }}
-                                            {% endif %}
-                                        </small>
-                                    </p>
                                 </div>
                                 <div class="timeline-body">
                                     {% if work.description %}
@@ -47,10 +27,10 @@ layout: default
                     {% endfor %}
                 </ul>
             {% endif %}
-            {% if site.author.educationHistory %}
-                <h3 class="title with-icon"><span class="fa fa-book cat-title"></span>Education History</h3>
+            {% if site.author.zdroje %}
+                <h3 class="title with-icon"><span class="fa fa-book cat-title"></span>Zdroje</h3>
                 <ul class="timeline">
-                    {% for education in site.author.educationHistory %}
+                    {% for education in site.author.zdroje %}
                         <li class="timeline-inverted">
                             {% if education.started %}
                                 <div class="timeline-badge info">{{ education.started }}</div>
