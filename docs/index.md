@@ -20,7 +20,7 @@ layout: default
                         </div>
                     </li>
                 </ul>
-                <h3 class="title with-icon"><span class="far fa-newspaper cat-title"></span>Zdroje</h3>
+                <h3 class="title with-icon"><span class="fa fa-link cat-title"></span>Zdroje</h3>
                 <ul class="timeline">
                     <li class="timeline-inverted">
                         <div class="timeline-badge info"></div>
@@ -45,7 +45,7 @@ layout: default
                         </div>
                     </li>
                 </ul>
-                <h3 class="title with-icon"><span class="fas fa-mobile cat-title"></span>Prototyp</h3>
+                <h3 class="title with-icon"><span class="fa fa-mobile cat-title"></span>Prototyp</h3>
                 <ul class="timeline">
                     <li class="timeline-inverted">
                         <div class="timeline-badge info"></div>
@@ -62,7 +62,7 @@ layout: default
                         </div>
                     </li>
                 </ul>
-                <h3 class="title with-icon"><span class="fas fa-file cat-title"></span>Dokument</h3>
+                <h3 class="title with-icon"><span class="fa fa-file cat-title"></span>Dokument</h3>
                 <ul class="timeline">
                     <li class="timeline-inverted">
                         <div class="timeline-badge info"></div>
@@ -84,7 +84,7 @@ layout: default
             </div>
         <div class="col-md-4">
             {% if site.author.stackoverflow or site.author.programmingSkills %}
-                <h3 class="title with-icon"><span class="fas fa-percentage cat-title"></span>Progres</h3>
+                <h3 class="title with-icon"><span class="fa fa-percent cat-title"></span>Progres</h3>
                 {% if site.author.stackoverflow %}
                 <div class="grid-block">
                   <p><a href="//stackoverflow.com/users/{{ site.author.stackoverflow }}"><img src="//stackoverflow.com/users/flair/{{ site.author.stackoverflow }}.png"></a></p>
