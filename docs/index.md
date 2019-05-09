@@ -45,7 +45,7 @@ layout: default
                         </div>
                     </li>
                 </ul>
-                <h3 class="title with-icon"><span class="fa fa-mobile cat-title"></span>Prototyp</h3>
+                <h3 class="title with-icon"><span class="fa fa-mobile fa-lg cat-title"></span>Prototyp</h3>
                 <ul class="timeline">
                     <li class="timeline-inverted">
                         <div class="timeline-badge info"></div>
@@ -62,7 +62,7 @@ layout: default
                         </div>
                     </li>
                 </ul>
-                <h3 class="title with-icon"><span class="fa fa-file cat-title"></span>Dokument</h3>
+                <h3 class="title with-icon"><span class="fa fa-file cat-title"></span>Dokumenty</h3>
                 <ul class="timeline">
                     <li class="timeline-inverted">
                         <div class="timeline-badge info"></div>
@@ -77,8 +77,13 @@ layout: default
                                 <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/literatura.bib" class="link">
                                   BibTex súbor
                                 </a></p>
+                            </div>
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title"><strong>Prezentácia</strong></h4>
+                            </div>
+                            <div class="timeline-body">
                                 <p><a href="" class="link">
-                                  Presentation
+                                  PDF dokument
                                 </a></p>
                             </div>
                         </div>
