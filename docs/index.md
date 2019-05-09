@@ -15,7 +15,7 @@ layout: default
                                 <h4 class="timeline-title"><strong>Anotácia</strong></h4>
                             </div>
                             <div class="timeline-body">
-                                <p>Existuje aplikácia imhd ba, ktorá slúži na plánovanie cesty v MHD v Bratislave na základe statických cestovných poriadkov. Cieľom tejto práce je nájsť spôsob určovania optimálnej cesty a naprogramovať aplikáciu, ktorá to dokáže urobiť s reálnych dát o pohybe vozidiel MHD.</p>
+                                <p>Existuje aplikácia imhd ba, ktorá slúži na plánovanie cesty v MHD v Bratislave na základe statických cestovných poriadkov. Cieľom tejto práce je nájsť spôsob určovania optimálnej cesty a naprogramovať aplikáciu, ktorá to dokáže urobiť z reálnych dát o pohybe vozidiel MHD.</p>
                             </div>
                         </div>
                     </li>
