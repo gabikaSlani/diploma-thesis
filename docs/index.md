@@ -20,7 +20,7 @@ layout: default
                         </div>
                     </li>
                 </ul>
-                <h3 class="title with-icon"><span class="fa fa-book cat-title"></span>Zdroje</h3>
+                <h3 class="title with-icon"><span class="far fa-newspaper cat-title"></span>Zdroje</h3>
                 <ul class="timeline">
                     <li class="timeline-inverted">
                         <div class="timeline-badge info"></div>
@@ -29,23 +29,23 @@ layout: default
                                 <h4 class="timeline-title"><strong>Vedecké články</strong></h4>
                             </div>
                             <div class="timeline-body">
-                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/articles/A_new_time-dependent_shortest_path_algorithm_for_multimodal_transportation_network.pdf" class="link">
+                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/articles/A_new_time-dependent_shortest_path_algorithm_for_multimodal_transportation_network.pdf" class="border">
                                   Abdelfattah Idri, Mariyem Oukarfi, Azedine Boulmakoul, Karine Zeitouni, and Ali Masri. <strong>A new time-dependent shortest path algorithm for multimodal transportation network.</strong> Procedia Computer Science, 109:692 - 697, 2017. 8th International Conference on Ambient Systems, Networks and Technologies, ANT-2017 and the 7th International Conference on Sustainable Energy Information Technology, SEIT 2017, 16-19 May 2017, Madeira, Portugal.
                                 </a></p>
-                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/articles/Shortest_alternate_path_discovery_through_recursive_bounding_box_pruning.pdf" class="link">
+                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/articles/Shortest_alternate_path_discovery_through_recursive_bounding_box_pruning.pdf" class="border">
                                   R. Parmar and B. Trivedi. <strong>Shortest alternate path discovery through recursive bounding box pruning.</strong> Journal of Transportation Technologies, 7:167 - 180, 2017.
                                 </a></p>
-                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/articles/Optimal_route_computation_for_circilar_public_transport_routes_with_differential_fare_structure.pdf" class="link">
+                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/articles/Optimal_route_computation_for_circilar_public_transport_routes_with_differential_fare_structure.pdf" class="border">
                                   Lilian S.C. Pun-Cheng and Albert W.F. Chan. <strong>Optimal route computation for circular public transport routes with differential fare structure.</strong> Travel Behaviour and Society, 3:71 - 77, 2016.
                                 </a></p>
-                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/articles/Towards_Online_Shortest_Paths_Computation.pdf" class="link">
+                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/articles/Towards_Online_Shortest_Paths_Computation.pdf">
                                   L. H. U, H. J. Zhao, M. L. Yiu, Y. Li, and Z. Gong. <strong>Towards online shortest path computation.</strong> IEEE Transactions on Knowledge and Data Engineering, 26(4):1012 - 1025, April 2014.
                                 </a></p>
                             </div>
                         </div>
                     </li>
                 </ul>
-                <h3 class="title with-icon"><span class="fa fa-book cat-title"></span>Prototyp</h3>
+                <h3 class="title with-icon"><span class="fas fa-mobile cat-title"></span>Prototyp</h3>
                 <ul class="timeline">
                     <li class="timeline-inverted">
                         <div class="timeline-badge info"></div>
@@ -62,7 +62,7 @@ layout: default
                         </div>
                     </li>
                 </ul>
-                <h3 class="title with-icon"><span class="fa fa-book cat-title"></span>Dokument</h3>
+                <h3 class="title with-icon"><span class="fas fa-file cat-title"></span>Dokument</h3>
                 <ul class="timeline">
                     <li class="timeline-inverted">
                         <div class="timeline-badge info"></div>
@@ -84,7 +84,7 @@ layout: default
             </div>
         <div class="col-md-4">
             {% if site.author.stackoverflow or site.author.programmingSkills %}
-                <h3 class="title with-icon"><span class="fa fa-code cat-title"></span>Progres</h3>
+                <h3 class="title with-icon"><span class="fas fa-percentage cat-title"></span>Progres</h3>
                 {% if site.author.stackoverflow %}
                 <div class="grid-block">
                   <p><a href="//stackoverflow.com/users/{{ site.author.stackoverflow }}"><img src="//stackoverflow.com/users/flair/{{ site.author.stackoverflow }}.png"></a></p>
