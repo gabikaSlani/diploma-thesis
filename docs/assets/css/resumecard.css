@@ -526,3 +526,7 @@ a.link{
 a.link:hover{
   color: #63a4b5 !important;
 }
+
+.border{
+  border-bottom: solid 1px #4b6f78;
+}
