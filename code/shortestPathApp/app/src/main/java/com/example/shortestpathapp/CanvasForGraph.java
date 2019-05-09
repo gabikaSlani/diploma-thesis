@@ -78,7 +78,7 @@ public class CanvasForGraph extends View {
 
     private void paintNodes(Canvas canvas, int lineGap) {
         for (Node node : graph.getNodes()) {
-            int r = 40;
+            int r = 25;
             int x = (int) (node.getPos_x() * lineGap) + START_X;
             int y = (int) (node.getPos_y() * lineGap) + START_Y;
             RectF rectF = new RectF(x-r, y-r, x+r, y+r);
@@ -120,7 +120,7 @@ public class CanvasForGraph extends View {
     private void initializePaints() {
         blackNoFillLightStroke = new Paint();
         blackNoFillLightStroke.setColor(Color.BLACK);
-        blackNoFillLightStroke.setTextSize(40);
+        blackNoFillLightStroke.setTextSize(20);
         blackNoFillLightStroke.setStyle(Paint.Style.STROKE);
 
         blackNoFillHeavyStroke = new Paint();
