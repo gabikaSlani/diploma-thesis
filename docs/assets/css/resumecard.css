@@ -270,6 +270,10 @@ hr {
     margin-top: 5px;
 }
 
+.timeline-body > p > a {
+		margin-bottom: 20px;
+}
+
 /* Tech Stack*/
 .tech-stack {
     color: #fff;
@@ -513,12 +517,12 @@ hr {
   border: 2px dotted rgba(100,100,100,0.2);
 }
 
-.link{
-  color:#249ebd;
-  text-decoration: underline;
-  font-weight: bold;
+a.link{
+  color:#249ebd !important;
+  text-decoration: underline !important;
+  font-weight: bold !important;
 }
 
-.link:hover{
-  color: #63a4b5;
+a.link:hover{
+  color: #63a4b5 !important;
 }
