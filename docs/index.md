@@ -78,12 +78,17 @@ layout: default
                                   BibTex súbor
                                 </a></p>
                             </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge info"></div>
+                        <div class="timeline-panel grid-block">
                             <div class="timeline-heading">
                                 <h4 class="timeline-title"><strong>Prezentácia</strong></h4>
                             </div>
                             <div class="timeline-body">
                                 <p><a href="" class="link">
-                                  PDF dokument
+                                  PDF Dokument
                                 </a></p>
                             </div>
                         </div>
