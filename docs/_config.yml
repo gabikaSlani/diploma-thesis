@@ -27,13 +27,13 @@ author:
       percentage: 100%
     - skill2:
       name: Prototyp
-      percentage: 90%
+      percentage: 100%
     - skill3:
       name: Latex šablóna
-      percentage: 70%
+      percentage: 100%
     - skill4:
       name: Prezentácia
-      percentage: 70%
+      percentage: 10%
     - skill5:
       name: Štúdium článkov
-      percentage: 90%
+      percentage: 100%

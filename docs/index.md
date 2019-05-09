@@ -19,17 +19,6 @@ layout: default
                             </div>
                         </div>
                     </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-badge info"></div>
-                        <div class="timeline-panel grid-block">
-                            <div class="timeline-heading">
-                                <h4 class="timeline-title"><strong>Ciele</strong></h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p></p>
-                            </div>
-                        </div>
-                    </li>
                 </ul>
                 <h3 class="title with-icon"><span class="fa fa-book cat-title"></span>Zdroje</h3>
                 <ul class="timeline">
@@ -51,11 +40,13 @@ layout: default
                         <div class="timeline-badge info"></div>
                         <div class="timeline-panel grid-block">
                             <div class="timeline-heading">
-                                <h4 class="timeline-title"><strong>Adroid aplikácia A* algoritmus</strong></h4>
+                                <h4 class="timeline-title"><strong>Android aplikácia A* algoritmus</strong></h4>
                             </div>
                             <div class="timeline-body">
                                 <p>Aplikácia zobrazí statický ohodnotený graf a ponúkne používateľovi navoliť si začiatočný a koncový vrchol. Po zadaní vrcholov nájde pomocou A* algoritmu najkratšiu cestu.</p>
-                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/tree/master/code/shortestPathApp" target="_blank">https://github.com/gabikaSlani/diploma-thesis/tree/master/code/shortestPathApp</a></p>
+                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/tree/master/code/shortestPathApp" target="_blank" class="link">
+                                  GITHUB
+                                </a></p>
                             </div>
                         </div>
                     </li>
@@ -69,8 +60,12 @@ layout: default
                                 <h4 class="timeline-title"><strong>Latex</strong></h4>
                             </div>
                             <div class="timeline-body">
-                                <p>PDF Dokument: <a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/main.pdf">https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/main.pdf</a></p>
-                                <p>BibTex súbor: <a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/literatura.bib">https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/literatura.bib</a></p>
+                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/main.pdf" class="link">
+                                  PDF Dokument
+                                </a></p>
+                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/literatura.bib" class="link">
+                                  BibTex súbor
+                                </a></p>
                             </div>
                         </div>
                     </li>
