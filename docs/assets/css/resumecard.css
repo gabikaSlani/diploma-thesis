@@ -37,8 +37,9 @@ a {
     padding: 20px 0;
     text-align: center;
     color: #f0f0f0;
-    background-color: #575757;
-    background-color: rgba(0, 0, 0, 0.6);
+    /* background-color: #575757; */
+    background-color: black;
+    /* background-color: rgba(0, 0, 0, 0.6); */
 }
 
 hr {
@@ -48,8 +49,9 @@ hr {
 }
 
 .header {
-    background-color: #f0f0f0;
-    background-image: url(../img/bg-top.jpg);
+    /* background-color: #f0f0f0; */
+    /* background-image: url(../img/bg-top.jpg); */
+    background-color: #249ebd;
     border-bottom: 1px solid #dddddd;
     box-shadow: 0 0 3px rgba(190, 190, 190, 0.75);
     top: 0;
@@ -59,6 +61,7 @@ hr {
     height: auto;
     padding: 20px 0;
     margin-bottom: 20px;
+    box-shadow: 0 6px 50px -6px black;
 }
 
 .header img {
