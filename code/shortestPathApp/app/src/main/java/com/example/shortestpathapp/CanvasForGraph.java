@@ -19,6 +19,7 @@ public class CanvasForGraph extends View {
     private int START_X = 50;
     private int START_Y = 50;
     private Paint blackNoFillLightStroke;
+    private Paint grayNoFillLightStroke;
     private Paint blackNoFillHeavyStroke;
     private Paint redNoFillHeavyStroke;
     private Paint whiteFillPaint;
@@ -64,14 +65,14 @@ public class CanvasForGraph extends View {
         int yLineGap = xWidth / yLineCount;
         for (int i = 0; i <= yLineCount; i++) {
             int x = START_X + (i * yLineGap);
-            canvas.drawLine(x, 0, x, (maxY - minY + 1) * yLineGap, blackNoFillLightStroke);
+            canvas.drawLine(x, 0, x, (maxY - minY + 1) * yLineGap, grayNoFillLightStroke);
         }
 
         // X lines
         int xLineCount = maxY - minY;
         for (int i = 0; i <= xLineCount; i++) {
             int y = START_Y + (i * yLineGap);
-            canvas.drawLine(0, y, canvas.getWidth(), y, blackNoFillLightStroke);
+            canvas.drawLine(0, y, canvas.getWidth(), y, grayNoFillLightStroke);
         }
         return yLineGap;
     }
@@ -118,9 +119,13 @@ public class CanvasForGraph extends View {
     }
 
     private void initializePaints() {
+        grayNoFillLightStroke = new Paint();
+        grayNoFillLightStroke.setColor(Color.GRAY);
+        grayNoFillLightStroke.setStyle(Paint.Style.STROKE);
+
         blackNoFillLightStroke = new Paint();
         blackNoFillLightStroke.setColor(Color.BLACK);
-        blackNoFillLightStroke.setTextSize(20);
+        blackNoFillLightStroke.setTextSize(25);
         blackNoFillLightStroke.setStyle(Paint.Style.STROKE);
 
         blackNoFillHeavyStroke = new Paint();
@@ -131,6 +136,7 @@ public class CanvasForGraph extends View {
         redNoFillHeavyStroke = new Paint();
         redNoFillHeavyStroke.setColor(Color.RED);
         redNoFillHeavyStroke.setStyle(Paint.Style.STROKE);
+        blackNoFillLightStroke.setTextSize(25);
         redNoFillHeavyStroke.setStrokeWidth(4);
 
         whiteFillPaint = new Paint();
@@ -138,11 +144,11 @@ public class CanvasForGraph extends View {
         whiteFillPaint.setStyle(Paint.Style.FILL);
 
         startNodeInPathFillPaint = new Paint();
-        startNodeInPathFillPaint.setColor(Color.GREEN);
+        startNodeInPathFillPaint.setColor(Color.YELLOW);
         startNodeInPathFillPaint.setStyle(Paint.Style.FILL);
 
         endNodeInPathFillPaint = new Paint();
-        endNodeInPathFillPaint.setColor(Color.CYAN);
+        endNodeInPathFillPaint.setColor(Color.GREEN);
         endNodeInPathFillPaint.setStyle(Paint.Style.FILL);
     }
 }
