@@ -87,8 +87,11 @@ layout: default
                                 <h4 class="timeline-title"><strong>Prezentácia</strong></h4>
                             </div>
                             <div class="timeline-body">
-                                <p><a href="" class="link">
+                                <p><a href="assets/prezentacia.pdf" download class="link">
                                   PDF Dokument
+                                </a></p>
+                                <p><a href="assets/prezentacia.pptx" download class="link">
+                                  PPTX Dokument
                                 </a></p>
                             </div>
                         </div>
