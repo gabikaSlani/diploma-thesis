@@ -5,15 +5,14 @@ import com.example.shortestpathapp.graph.Graph;
 import com.example.shortestpathapp.graph.Node;
 import com.example.shortestpathapp.graph.Path;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class MainActivityController {
 
-    public static double euclideanDist(Node node1, Node node2) {
+    private static final Double AVERAGE_VELOCITY = 20.00;
+
+    private static double euclideanDist(Node node1, Node node2) {
         return Math.sqrt(
                 Math.pow((node1.getPos_x() - node2.getPos_x()), 2)
                         +
@@ -21,7 +20,11 @@ public class MainActivityController {
         );
     }
 
-    public static Node getLowestDistanceNode(Set<Node> unsettledNodes) {
+    private static double heuristicTime(Node node1, Node node2){
+        return euclideanDist(node1, node2) / AVERAGE_VELOCITY;
+    }
+
+    private static Node getLowestDistanceNode(Set<Node> unsettledNodes) {
         Node lowestDistanceNode = null;
         double lowestDistance = Double.MAX_VALUE;
         for (Node node : unsettledNodes) {
@@ -37,7 +40,7 @@ public class MainActivityController {
     public static Path aStarSearch(Graph graph, Node source, Node target) {
         Set<Node> settled = new HashSet<>();
         Set<Node> unsettled = new HashSet<>();
-        source.setF(euclideanDist(source, target));
+        source.setF(heuristicTime(source, target));
         unsettled.add(source);
         while (!unsettled.isEmpty()) {
             Node current = getLowestDistanceNode(unsettled);
@@ -51,7 +54,7 @@ public class MainActivityController {
             Set<Node> neighbours = current.getNeighbours();
             for (Node neighbour : neighbours) {
                 double g = current.getG() + graph.getEdgeCost(current, neighbour);
-                double h = euclideanDist(neighbour, target);
+                double h = heuristicTime(neighbour, target);
                 double f = g + h;
 
                 if(!(unsettled.contains(neighbour) || settled.contains(neighbour)) || neighbour.getF() > f){
@@ -66,7 +69,7 @@ public class MainActivityController {
         return new Path();
     }
 
-    public static Path getPath(Node target) {
+    private static Path getPath(Node target) {
         Path path = new Path();
 
         for (Node node = target; node != null; node = node.getParent()) {
