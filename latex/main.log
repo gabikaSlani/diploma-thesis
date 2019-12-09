@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.7)  9 DEC 2019 12:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.7)  9 DEC 2019 15:24
 entering extended mode
 **./main.tex
 (main.tex
@@ -1032,14 +1032,14 @@ Package hyperref Warning: Composite letter `\textasciicaron+l'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 115.
 
-<images/bounding-box.png, id=350, 617.30624pt x 683.55376pt>
+<images/bounding-box.png, id=352, 617.30624pt x 683.55376pt>
 File: images/bounding-box.png Graphic file (type png)
 <use images/bounding-box.png>
 Package pdftex.def Info: images/bounding-box.png  used on input line 129. on in
 put line 129.
 Package pdftex.def Info: Requested size: 190.51665pt x 210.96075pt on input lin
 e 129.
-<images/bounding-box-rect.png, id=351, 643.40375pt x 639.38875pt>
+<images/bounding-box-rect.png, id=353, 643.40375pt x 639.38875pt>
 File: images/bounding-box-rect.png Graphic file (type png)
 <use images/bounding-box-rect.png>
 Package pdftex.def Info: images/bounding-box-rect.png  used on input line 135. 
@@ -1057,7 +1057,7 @@ Overfull \hbox (3.97021pt too wide) in paragraph at lines 144--146
 /cmtt/m/n/10 https : / / www . researchgate . net / publication /
  []
 
-<images/bounding-box-result.png, id=363, 782.925pt x 967.615pt>
+<images/bounding-box-result.png, id=365, 782.925pt x 967.615pt>
 File: images/bounding-box-result.png Graphic file (type png)
 <use images/bounding-box-result.png>
 Package pdftex.def Info: images/bounding-box-result.png  used on input line 157
@@ -1075,7 +1075,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+l'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 166.
 
-<images/circular-route.png, id=378, 584.79027pt x 155.81146pt>
+<images/circular-route.png, id=380, 584.79027pt x 155.81146pt>
 File: images/circular-route.png Graphic file (type png)
 <use images/circular-route.png>
 Package pdftex.def Info: images/circular-route.png  used on input line 173. on 
@@ -1083,7 +1083,7 @@ input line 173.
 Package pdftex.def Info: Requested size: 308.71106pt x 82.25395pt on input line
  173.
 [9 <./images/bounding-box-result.png> <./images/circular-route.png>]
-<images/flow-chart.png, id=390, 832.61063pt x 648.17157pt>
+<images/flow-chart.png, id=392, 832.61063pt x 648.17157pt>
 File: images/flow-chart.png Graphic file (type png)
 <use images/flow-chart.png>
 Package pdftex.def Info: images/flow-chart.png  used on input line 184. on inpu
@@ -1091,7 +1091,7 @@ t line 184.
 Package pdftex.def Info: Requested size: 441.01773pt x 343.3216pt on input line
  184.
  [10 <./images/flow-chart.png>] [11] [12]
-<images/raptor-optimal.png, id=410, 440.9133pt x 209.7377pt>
+<images/raptor-optimal.png, id=412, 440.9133pt x 209.7377pt>
 File: images/raptor-optimal.png Graphic file (type png)
 <use images/raptor-optimal.png>
 Package pdftex.def Info: images/raptor-optimal.png  used on input line 240. on 
@@ -1099,14 +1099,14 @@ input line 240.
 Package pdftex.def Info: Requested size: 352.81552pt x 167.83199pt on input lin
 e 240.
  [13 <./images/raptor-optimal.png>] [14]
-<images/raptor-structure.png, id=422, 557.38513pt x 264.54799pt>
+<images/raptor-structure.png, id=424, 557.38513pt x 264.54799pt>
 File: images/raptor-structure.png Graphic file (type png)
 <use images/raptor-structure.png>
 Package pdftex.def Info: images/raptor-structure.png  used on input line 268. o
 n input line 268.
 Package pdftex.def Info: Requested size: 308.71106pt x 146.52312pt on input lin
 e 268.
-<images/raptor-structure2.png, id=424, 384.6196pt x 209.20264pt>
+<images/raptor-structure2.png, id=426, 384.6196pt x 209.20264pt>
 File: images/raptor-structure2.png Graphic file (type png)
 <use images/raptor-structure2.png>
 Package pdftex.def Info: images/raptor-structure2.png  used on input line 279. 
@@ -1119,7 +1119,7 @@ Overfull \hbox (14.6695pt too wide) in paragraph at lines 293--306
  []
 
 [16]
-<images/similar-paths.png, id=442, 285.76486pt x 71.82799pt>
+<images/similar-paths.png, id=444, 285.76486pt x 71.82799pt>
 File: images/similar-paths.png Graphic file (type png)
 <use images/similar-paths.png>
 Package pdftex.def Info: images/similar-paths.png  used on input line 326. on i
@@ -1149,7 +1149,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+l'
 (hyperref)                removing `\textasciicaron' on input line 69.
 
 [24]
-<images/deployment-diagram.png, id=488, 512.66531pt x 330.18356pt>
+<images/deployment-diagram.png, id=490, 512.66531pt x 330.18356pt>
 File: images/deployment-diagram.png Graphic file (type png)
 <use images/deployment-diagram.png>
 Package pdftex.def Info: images/deployment-diagram.png  used on input line 91. 
@@ -1157,7 +1157,7 @@ on input line 91.
 Package pdftex.def Info: Requested size: 441.01773pt x 284.04301pt on input lin
 e 91.
  [25 <./images/deployment-diagram.png>] [26]
-<images/ERD.png, id=508, 385.28944pt x 232.61906pt>
+<images/ERD.png, id=510, 385.28944pt x 232.61906pt>
 File: images/ERD.png Graphic file (type png)
 <use images/ERD.png>
 Package pdftex.def Info: images/ERD.png  used on input line 130. on input line 
@@ -1191,10 +1191,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 274.
  ) 
 Here is how much of TeX's memory you used:
- 12924 strings out of 493312
- 187958 string characters out of 3138899
+ 12922 strings out of 493312
+ 187935 string characters out of 3138899
  336953 words of memory out of 3000000
- 16089 multiletter control sequences out of 15000+200000
+ 16088 multiletter control sequences out of 15000+200000
  23362 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,12n,40p,1153b,503s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1221,9 +1221,9 @@ cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program
  Files/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on main.pdf (43 pages, 1445223 bytes).
+Output written on main.pdf (43 pages, 1444951 bytes).
 PDF statistics:
- 1240 PDF objects out of 1440 (max. 8388607)
- 133 named destinations out of 1000 (max. 500000)
+ 1239 PDF objects out of 1440 (max. 8388607)
+ 132 named destinations out of 1000 (max. 500000)
  405 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -73,12 +73,6 @@ Frank Schulz.
 \newblock PhD thesis, Universität Karlsruhe (TH), Fakultät für Informatik,
   2005.
 
-\bibitem{onlineSP}
-L.~H. {U}, H.~J. {Zhao}, M.~L. {Yiu}, Y.~{Li}, and Z.~{Gong}.
-\newblock Towards online shortest path computation.
-\newblock {\em IEEE Transactions on Knowledge and Data Engineering},
-  26(4):1012--1025, April 2014.
-
 \bibitem{stochastic}
 Y.~Zhao Z.~Sun, W.~Gu and C.~Wang.
 \newblock Optimal path finding method study based on stochastic travel time.
