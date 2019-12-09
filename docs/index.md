@@ -61,10 +61,7 @@ layout: default
                                 <h4 class="timeline-title"><strong>Prezentácia 2</strong></h4>
                             </div>
                             <div class="timeline-body">
-                                <p><a href="assets/prezentacia1.pdf" download class="link">
-                                  PDF
-                                </a></p>
-                                <p><a href="assets/prezentacia1.pptx" download class="link">
+                                <p><a href="assets/prezentacia2.pptx" download class="link">
                                   PPTX
                                 </a></p>
                             </div>
@@ -94,8 +91,8 @@ layout: default
                                 <h4 class="timeline-title"><strong>Progresívna webová aplikácia MHD BA</strong></h4>
                             </div>
                             <div class="timeline-body">
-                                <p>Aplikácia, ktorá umožní používateľovi vyhľadávať optimálne cesty z reálnych dát.</p>
-                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/tree/master/code/shortestPathApp" target="_blank" class="link">
+                                <p>Aplikácia, ktorá umožní používateľovi vyhľadávať optimálne cesty v MHD Bratislava z reálnych dát.</p>
+                                <p><a href="https://github.com/gabikaSlani/MHD-BA" target="_blank" class="link">
                                   GITHUB
                                 </a></p>
                             </div>
@@ -145,7 +142,7 @@ layout: default
                                 <p class="border"><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/articles/Timetable_information_and_Shortest_Paths.pdf">
                                   Frank Schulz. <strong>Timetable Information and Shortest Paths.</strong> PhD thesis, Universität Karlsruhe (TH), Fakultät für Informatik, 2005.
                                 </a></p>
-                                <p class="border"><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/articles/Optimal_path_finging_method_study_based_on_stochastic_travel_time.pdf">
+                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/articles/Optimal_path_finging_method_study_based_on_stochastic_travel_time.pdf">
                                   Y. Zhao Z. Sun, W. Gu and C. Wang. <strong>Optimal path fnding method study based on stochastic travel time.</strong> Journal of Transportation Technologies, 3(4):260 - 265, 2013.
                                 </a></p>
                             </div>
@@ -159,13 +156,13 @@ layout: default
                             </div>
                             <div class="timeline-body">
                                 <p class="border"><a href="https://github.com/alexiscolin/vue-timeselector">
-                                   vue-timeselector
+                                  Vue komponent na zvolenie času: vue-timeselector
                                 </a></p>
-                                <p class="border"><a href="https://www.npmjs.com/package/vue2-datepicker">
-                                   vue2-datepicker
+                                <p class="border"><a href="https://www.npmjs.com/package/vuejs-datepicker">
+                                  Vue komponent na zvolenie dátumu: vuejs-datepicker
                                 </a></p>
-                                <p class="border"><a href="https://www.npmjs.com/package/vue2-google-maps">
-                                   vue2-google-maps
+                                <p><a href="https://www.npmjs.com/package/vue2-google-maps">
+                                   Vue komponent na prácu s google maps: vue2-google-maps
                                 </a></p>
                             </div>
                         </div>
