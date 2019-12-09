@@ -20,6 +20,81 @@ layout: default
                         </div>
                     </li>
                 </ul>
+                <h3 class="title with-icon"><span class="fa fa-file cat-title"></span>Dokumenty</h3>
+                <ul class="timeline">
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge info"></div>
+                        <div class="timeline-panel grid-block">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title"><strong>Diplomová práca</strong></h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/main.pdf" class="link">
+                                  PDF Dokument
+                                </a></p>
+                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/literatura.bib" class="link">
+                                  BibTex súbor
+                                </a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge info"></div>
+                        <div class="timeline-panel grid-block">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title"><strong>Prezentácia 1</strong></h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p><a href="assets/prezentacia1.pdf" download class="link">
+                                  PDF Dokument
+                                </a>
+                                <a href="assets/prezentacia1.pptx" download class="link">
+                                  PPTX Dokument
+                                </a></p>
+                            </div>
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title"><strong>Prezentácia 2</strong></h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p><a href="assets/prezentacia1.pdf" download class="link">
+                                  PDF Dokument
+                                </a>
+                                <a href="assets/prezentacia1.pptx" download class="link">
+                                  PPTX Dokument
+                                </a></p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <h3 class="title with-icon"><span class="fa fa-mobile fa-lg cat-title"></span>Prototyp</h3>
+                <ul class="timeline">
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge info"></div>
+                        <div class="timeline-panel grid-block">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title"><strong>Android aplikácia A* algoritmus</strong></h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Aplikácia zobrazí statický ohodnotený graf a ponúkne používateľovi navoliť si začiatočný a koncový vrchol. Po zadaní vrcholov nájde pomocou A* algoritmu najkratšiu cestu. Implementácia aplikácie slúžila na osvojenie si A* algoritmu.</p>
+                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/tree/master/code/shortestPathApp" target="_blank" class="link">
+                                  GITHUB
+                                </a></p>
+                            </div>
+                        </div>
+                        <div class="timeline-panel grid-block">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title"><strong>Progresívna webová aplikácia MHD BA</strong></h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Aplikácia, ktorá umožní používateľovi vyhľadávať optimálne cesty z reálnych dát.</p>
+                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/tree/master/code/shortestPathApp" target="_blank" class="link">
+                                  GITHUB
+                                </a></p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
                 <h3 class="title with-icon"><span class="fa fa-link cat-title"></span>Zdroje</h3>
                 <ul class="timeline">
                     <li class="timeline-inverted">
@@ -43,55 +118,22 @@ layout: default
                                 </a></p>
                             </div>
                         </div>
-                    </li>
-                </ul>
-                <h3 class="title with-icon"><span class="fa fa-mobile fa-lg cat-title"></span>Prototyp</h3>
-                <ul class="timeline">
-                    <li class="timeline-inverted">
-                        <div class="timeline-badge info"></div>
                         <div class="timeline-panel grid-block">
                             <div class="timeline-heading">
-                                <h4 class="timeline-title"><strong>Android aplikácia A* algoritmus</strong></h4>
+                                <h4 class="timeline-title"><strong>Použité knižnice</strong></h4>
                             </div>
                             <div class="timeline-body">
-                                <p>Aplikácia zobrazí statický ohodnotený graf a ponúkne používateľovi navoliť si začiatočný a koncový vrchol. Po zadaní vrcholov nájde pomocou A* algoritmu najkratšiu cestu.</p>
-                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/tree/master/code/shortestPathApp" target="_blank" class="link">
-                                  GITHUB
+                                <p class="border"><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/articles/A_new_time-dependent_shortest_path_algorithm_for_multimodal_transportation_network.pdf">
+                                  Abdelfattah Idri, Mariyem Oukarfi, Azedine Boulmakoul, Karine Zeitouni, and Ali Masri. <strong>A new time-dependent shortest path algorithm for multimodal transportation network.</strong> Procedia Computer Science, 109:692 - 697, 2017. 8th International Conference on Ambient Systems, Networks and Technologies, ANT-2017 and the 7th International Conference on Sustainable Energy Information Technology, SEIT 2017, 16-19 May 2017, Madeira, Portugal.
                                 </a></p>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <h3 class="title with-icon"><span class="fa fa-file cat-title"></span>Dokumenty</h3>
-                <ul class="timeline">
-                    <li class="timeline-inverted">
-                        <div class="timeline-badge info"></div>
-                        <div class="timeline-panel grid-block">
-                            <div class="timeline-heading">
-                                <h4 class="timeline-title"><strong>Latex</strong></h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/main.pdf" class="link">
-                                  PDF Dokument
+                                <p class="border"><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/articles/Shortest_alternate_path_discovery_through_recursive_bounding_box_pruning.pdf">
+                                  R. Parmar and B. Trivedi. <strong>Shortest alternate path discovery through recursive bounding box pruning.</strong> Journal of Transportation Technologies, 7:167 - 180, 2017.
                                 </a></p>
-                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/literatura.bib" class="link">
-                                  BibTex súbor
+                                <p class="border"><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/articles/Optimal_route_computation_for_circilar_public_transport_routes_with_differential_fare_structure.pdf">
+                                  Lilian S.C. Pun-Cheng and Albert W.F. Chan. <strong>Optimal route computation for circular public transport routes with differential fare structure.</strong> Travel Behaviour and Society, 3:71 - 77, 2016.
                                 </a></p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-badge info"></div>
-                        <div class="timeline-panel grid-block">
-                            <div class="timeline-heading">
-                                <h4 class="timeline-title"><strong>Prezentácia</strong></h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p><a href="assets/prezentacia.pdf" download class="link">
-                                  PDF Dokument
-                                </a></p>
-                                <p><a href="assets/prezentacia.pptx" download class="link">
-                                  PPTX Dokument
+                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/articles/Towards_Online_Shortest_Paths_Computation.pdf">
+                                  L. H. U, H. J. Zhao, M. L. Yiu, Y. Li, and Z. Gong. <strong>Towards online shortest path computation.</strong> IEEE Transactions on Knowledge and Data Engineering, 26(4):1012 - 1025, April 2014.
                                 </a></p>
                             </div>
                         </div>

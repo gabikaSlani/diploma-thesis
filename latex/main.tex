@@ -10,7 +10,29 @@
 \usepackage{float}
 \usepackage{listings}
 \usepackage{csquotes}
+\usepackage{mathtools}
+\usepackage{amsfonts} 
+\usepackage[table]{xcolor}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+\SetMathAlphabet{\mathcal}{bold}{OMS}{cmsy}{b}{n}
 \linespread{1.25} % hodnota 1.25 by mala zodpovedat 1.5 riadkovaniu
+
+\algnewcommand\algorithmicforeach{\textbf{for each}}
+\algdef{S}[FOR]{ForEach}[1]{\algorithmicforeach\ #1\ \algorithmicdo}
 
 \usepackage{color}
 
@@ -152,6 +174,8 @@ Konzultant: & \mfkonzultant \\
 \vfill
 {\bf Poďakovanie:}
 \\ \\
+Chcela by som sa poďakovať vedúcemu mojej bakalárskej práce doc. RNDr. Milanovi Ftáčnikovi, CSc. za jeho cenné rady, pripomienky, ústretový prístup a usmerňovanie pri
+tvorbe a písaní práce. Moja vďaka patrí aj Mgr. Ľuborovi Illekovi ze jeho čas a rady.
 
 
 % --- Koniec poďakovania
@@ -164,6 +188,7 @@ Konzultant: & \mfkonzultant \\
 
 
 \paragraph*{Kľúčové slová:} 
+RAPTOR algoritmus, hľadanie optimálnej cesty, progresívna webová aplikácia
 % --- Koniec Abstrakt - Slovensky
 
 
@@ -174,7 +199,7 @@ Konzultant: & \mfkonzultant \\
 \section*{Abstract}
 
 \paragraph*{Key words:}
-
+RAPTOR algorithm, optimal path finding, progressive web application
 % --- Koniec Abstrakt - Anglicky
 
 % -------------------
@@ -194,7 +219,7 @@ Konzultant: & \mfkonzultant \\
 \newpage 
 
 \listoffigures
-%\listoftables
+\listoftables
 
 % ---  Koniec Zoznamov
 
@@ -205,7 +230,7 @@ Konzultant: & \mfkonzultant \\
 
 \input vychodiska.tex
 
-\input specifikacia.tex
+% \input specifikacia.tex
 
 \input navrh.tex
 

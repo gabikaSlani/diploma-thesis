@@ -23,17 +23,47 @@ author:
 #  stackoverflow: 4582127
   programmingSkills:
     - skill1:
-      name: Webová stránka
-      percentage: 100%
-    - skill2:
-      name: Prototyp
-      percentage: 100%
-    - skill3:
       name: Latex šablóna
       percentage: 100%
-    - skill4:
-      name: Prezentácia
-      percentage: 100%
-    - skill5:
+    - skill2:
       name: Štúdium článkov
       percentage: 100%
+    - skill3:
+      name: Prototyp A*
+      percentage: 100%
+    - skill4:
+      name: Prezentácia 1
+      percentage: 100%
+    - skill5:
+      name: Kapitola 1 - Východiská
+      percentage: 100%
+    - skill6:
+      name: Štúdium RAPTOR algoritmus
+      percentage: 100%
+    - skill7:
+      name: Kapitola 2 - Návrh
+      percentage: 60%
+    - skill8:
+      name: Vytvorenie testovacích dát
+      percentage: 100%
+    - skill9:
+      name: Implementácia frontendovej časti
+      percentage: 80%
+    - skill10:
+      name: Implemenácia základnej verzie RAPTOR (najkratšia cesta)
+      percentage: 100%
+    - skill11:
+      name: Prezentácia 2
+      percentage: 100%
+    - skill12:
+      name: Parsovanie statických dát od DPB
+      percentage: 10%
+    - skill13:
+      name: Implementácia vylepšenej verzie RAPTOR (k-optimálnych ciest)
+      parcentage: 0%
+    - skill14:
+      name: Rozšírenie o rRAPTOR
+      percentage: 0%
+    - skill15:
+      name: Zohľadniť meškanie spojov pri vyhľadávaní
+      percentage: 0%
