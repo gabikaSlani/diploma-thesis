@@ -50,7 +50,7 @@ author:
       name: Implementácia frontendovej časti
       percentage: 80%
     - skill10:
-      name: Implemenácia základnej verzie RAPTOR (najkratšia cesta)
+      name: Implemenácia základnej verzie RAPTOR
       percentage: 100%
     - skill11:
       name: Prezentácia 2
@@ -60,7 +60,7 @@ author:
       percentage: 10%
     - skill13:
       name: Implementácia vylepšenej verzie RAPTOR (k-optimálnych ciest)
-      parcentage: 0%
+      percentage: 0%
     - skill14:
       name: Rozšírenie o rRAPTOR
       percentage: 0%

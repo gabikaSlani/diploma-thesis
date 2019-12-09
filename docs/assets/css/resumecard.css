@@ -314,6 +314,8 @@ hr {
     height: 10px;
     box-shadow: none;
     overflow: inherit;
+    margin-bottom: 30px;
+    background-color: #d4d4d4;
 }
 
 .list-skills li .progress .progress-bar {
