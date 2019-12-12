@@ -29,7 +29,7 @@ author:
       name: Štúdium článkov
       percentage: 100%
     - skill3:
-      name: Prototyp A*
+      name: Prototyp A* algoritmus
       percentage: 100%
     - skill4:
       name: Prezentácia 1
@@ -44,26 +44,41 @@ author:
       name: Kapitola 2 - Návrh
       percentage: 60%
     - skill8:
-      name: Vytvorenie testovacích dát
+      name: Návrh architektúry systému
       percentage: 100%
     - skill9:
-      name: Implementácia frontendovej časti
-      percentage: 80%
+      name: Vystaveie webservisov
+      percentage: 100%
     - skill10:
-      name: Implemenácia základnej verzie RAPTOR
+      name: Vytvorenie testovacích dát
       percentage: 100%
     - skill11:
-      name: Prezentácia 2
+      name: Návrh obrazoviek aplikácie
       percentage: 100%
     - skill12:
+      name: Implementácia frontendovej časti
+      percentage: 80%
+    - skill13:
+      name: Návrh a implementácia dátovej štruktúry
+      percentage: 100%
+    - skill14:
+      name: Implemenácia základnej verzie RAPTOR
+      percentage: 100%
+    - skill15:
+      name: Prezentácia 2
+      percentage: 100%
+    - skill16:
       name: Parsovanie statických dát od DPB
       percentage: 10%
-    - skill13:
+    - skill17:
       name: Implementácia vylepšenej verzie RAPTOR (k-optimálnych ciest)
       percentage: 0%
-    - skill14:
+    - skill18:
       name: Rozšírenie o rRAPTOR
       percentage: 0%
-    - skill15:
+    - skill19:
+      name: Parsovanie meškaní zo súboru
+      percentage: 0%
+    - skill20:
       name: Zohľadniť meškanie spojov pri vyhľadávaní
       percentage: 0%
