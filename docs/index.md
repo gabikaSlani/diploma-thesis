@@ -107,7 +107,7 @@ layout: default
                                 <p>
                                  Po vyhľadaní aplikácia zobrazí zatiaľ jednu najkratšiu cestu. Cesta je tvorená postupnosťou akcií, pričom akcia môže byť peší presun alebo spoj.
                                 </p>
-                                <video width="320" height="240" controls>
+                                <video width="320" height="240" controls style="width: 100%; height: 500px; margin: 15px 0;">
                                   <source src="assets/screen-video.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                                 </video>
@@ -175,13 +175,13 @@ layout: default
                             </div>
                             <div class="timeline-body">
                                 <p class="border"><a href="https://github.com/alexiscolin/vue-timeselector">
-                                  Vue komponent na zvolenie času: vue-timeselector
+                                  Vue komponent na zvolenie času: <strong>vue-timeselector</strong>
                                 </a></p>
                                 <p class="border"><a href="https://www.npmjs.com/package/vuejs-datepicker">
-                                  Vue komponent na zvolenie dátumu: vuejs-datepicker
+                                  Vue komponent na zvolenie dátumu: <strong>vuejs-datepicker</strong>
                                 </a></p>
                                 <p><a href="https://www.npmjs.com/package/vue2-google-maps">
-                                   Vue komponent na prácu s google maps: vue2-google-maps
+                                   Vue komponent na prácu s google maps: <strong>vue2-google-maps</strong>
                                 </a></p>
                             </div>
                         </div>
