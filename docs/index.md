@@ -92,7 +92,7 @@ layout: default
                             </div>
                             <div class="timeline-body">
                                 <p>Aplikácia, ktorá umožní používateľovi vyhľadávať optimálne cesty v MHD Bratislava z reálnych dát.</p>
-                                <h5><strong>Aktuálna verzia riešenia</strong></h5>
+                                <h5><strong style="font-size: 17px;">Aktuálna verzia riešenia</strong></h5>
                                 <p><strong>Linky</strong></p>
                                 <p>
                                   Aplikácia dokáže zobraziť zoznam všetkých liniek. Po kliknutí na linku sa zobrazí detail linky (typ, názov linky a zoznam zastávok).
@@ -107,6 +107,10 @@ layout: default
                                 <p>
                                  Po vyhľadaní aplikácia zobrazí zatiaľ jednu najkratšiu cestu. Cesta je tvorená postupnosťou akcií, pričom akcia môže byť peší presun alebo spoj.
                                 </p>
+                                <video width="320" height="240" controls>
+                                  <source src="assets/screen-video.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                                </video>
                                 <p><a href="https://github.com/gabikaSlani/MHD-BA" target="_blank" class="link">
                                   GITHUB
                                 </a></p>
