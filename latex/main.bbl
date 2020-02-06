@@ -2,6 +2,22 @@
   \newcommand{\singleletter}[1]{#1} \newcommand{\switchargs}[2]{#2#1}
 \begin{thebibliography}{10}
 
+\bibitem{bounding-box}
+Shortest alternate path discovery through recursive bounding box pruning -
+  scientific figure on researchgate - figure 13. bounding box consideration of
+  approx 89 nods.
+\newblock
+  \url{https://www.researchgate.net/figure/Moving-Q-to-I-bounding-box-Q-I_fig3_316188932}.
+\newblock Navštívené: 18. august 2019.
+
+\bibitem{bounding-box-1}
+Shortest alternate path discovery through recursive bounding box pruning -
+  scientific figure on researchgate - figure 5. moving q to i; bounding box (q,
+  i).
+\newblock
+  \url{https://www.researchgate.net/figure/Bounding-box-consideration-of-approx-89-nods_fig7_316188932}.
+\newblock Navštívené: 18. august 2019.
+
 \bibitem{routing}
 Kristóf Bérczi, Alpár Jüttner, Marco Laumanns, and Jácint Szabó.
 \newblock Arrival time dependent routing policies in public transport.

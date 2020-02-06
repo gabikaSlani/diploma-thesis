@@ -2,8 +2,8 @@
 \label{kap:vyc} % id kapitoly pre prikaz ref
 
 \section{Úvod do problematiky}
-
-Problém hľadania optimálnej cesty je veľmi rozšíreným problémom nie len v doprave. Doteraz bolo navrhnutých množstvo algoritmov, metód a techník na vyriešenie tohto problému. Pri hľadaní optimálnej trasy vo verejnej doprave je dobré si najskôr ujasniť, čo  výraz optimálna csesta znamená.
+\label{sec:intro}
+Problém hľadania optimálnej cesty je veľmi rozšíreným problémom nie len v doprave. Doteraz bolo navrhnutých množstvo algoritmov, metód a techník na vyriešenie tohto problému. Pri hľadaní optimálnej trasy vo verejnej doprave je dobré si najskôr ujasniť, čo  výraz optimálna cesta znamená.
 
 Najlepšie zhrnutie podproblémov, ktoré môžu nastať sme postrehli v článku \cite{circular}. 
 Autori analyzujú ich návrh v najzložitejšom systéme verejnej dopravy - v Hongkongu. Pre verejnú dopravu je praktickejšie navrhnúť viac alternatívnych ciest. Najbežnejšie používateľské preferencie sú:
@@ -24,7 +24,9 @@ Sumarizáciou nášho problému je, ako sa vysporiadať s dynamickými dátami, 
 V tejto kapitole ďalej opíšeme často skloňované algoritmy pri téme multimodálneho časovo závislého vyhľadávania vo verejnej doprave a priblížime výskumy, ktoré riešili podobné problémy ako my.
 
 \section{Známe algoritmy hľadania najkratšej cesty}
+\label{sec:known-algorithms}
 \subsection{Dijkstrov algoritmus}
+\label{sec:dijkstra}
 Najznámejším algoritmom hľadania najkratšej cesty v orientovanom, kladne ohodnotenom grafe je Dijkstrov algoritmus. Algoritmus vie nájsť najrýchlejšiu cestu medzi dvomi danými vrcholmi. Známejšou verziou Dijkstrovho algoritmu je hľadanie najkratšej cesty z jedného vrcholu do všetkých ostatných vrcholov v grafe. 
 
 Rozhodujúcou hodnotou je vzdialenosť vrcholu $d(n)$, ktorá predstavuje dĺžku cesty od začiatočného vrcholu po vrchol $n$, pričom cesta vedie cez aktuálny vrchol.
@@ -38,6 +40,7 @@ $\mathcal{O}(|V|)$, kde $V$ je množina všetkých vrcholov v grafe. V pôvodnej
 Nevýhodou algoritmu je veľký prehľadávaný priestor. Existuje viacero algoritmov, ktoré vznikli modifikáciou Dijkstrovho algoritmu. Napríklad Bellman-Fordov algoritmus, ktorý sa vie vysporiadať aj so zápornými hranami alebo A*, ktorý využíva heuristiku na zmenšenie prehľadávaného priestoru. 
 
 \subsection{A* algoritmus}
+\label{sec:a-star}
 A* algoritmus je grafový optimálny algoritmus na nájdenie najkratšej cesty medzi dvoma bodmi. Vznikol kombináciou heuristických a formálnych prístupov. Udržuje strom ciest začínajúcich v koreni stromu a predlžuje tieto cesty po jednej hrane. Pri každej iterácii sa rozhodne, ktorú z ciest rozšíri. Algoritmus sa skončí, ak už neexistuje žiadna cesta na rozšírenie alebo pri dosiahnutí koncového vrcholu. Pri prehľadávaní používa stratégiu najskôr najlepšieho. Heuristika, ktorá sa využíva na vyhodnotenie vzdialeností, je funkcia
 \begin{equation}
 f(n) = g(n) + h(n), 
@@ -50,6 +53,7 @@ Heuristika je prípustná, ak nikdy neprecení skutočné náklady na dosiahnuti
 Časová zložitosť A* algoritmu závisí od zvolenej heuristiky. V najhoršom prípade je zložitosť algoritmu exponenciálna, v najlepšom prípade môže byť polynomiálna.
 
 \section{Časovo závislý algoritmus}
+\label{sec:time-dependant-algorithm}
 Stretávame sa s problémom, kedy ohodnotenie hrán v grafe nie je konštantné, ale je závislé od času. Boli navrhnuté rôzne riešenia, ako ohodnotiť hrany, aby sa na model dal aplikovať niektorý z klasických algoritmov hľadania najkratšej cesty. 
 
 V článku \cite{trains} tvrdia, že ak dokážeme odhadnúť hodnotu hrany konštantným číslom, potom riešenie klasického problému hľadania najkratšej cesty môže fungovať ako heuristické riešenie problému najkratšej cesty závislej od stavu.
@@ -57,15 +61,11 @@ V článku \cite{trains} tvrdia, že ak dokážeme odhadnúť hodnotu hrany kon�
 Ďalšia navrhovaná metóda je založena na stochastickom čase jazdy. V článku \cite{stochastic} používajú Bayesovu formulu na získanie prevdepodobnostného rozdelenia času cestého úseku. Na hľadanie optimálnej trasy navrhli a následne použili genetické algoritmy.
 
 \subsection{Multimodálny algoritmus}
+\label{sec:multimodal-algorithm}
 Článok \cite{timedependent} navrhuje časovo závislý algoritmus hľadania najkratšej cesty pre multimodálnu dopravnú sieť, pričom využíva A* algoritmus. Navrhnutý algoritmus hľadá len jednu cestu medzi začiatočným a koncovým vrcholom. 
 
 Autori definujú graf $G = (V, E, M, T)$ ako multimodálny časovo závislý graf, kde $V$ je množina vrcholov, $E$ je množina hrán, $M$ je množina módov a $T$ je množina jázd.
-Hrana $e_i = (v_i, v_j, m_i)$ je cesta z vrcholu $v_i$ do $v_j$ použitím módu $m_i$. Vrchol, kde sa menia módy je prestupný vrchol. Ďalej definujú čas prestupu ako súčet:
-\begin{itemize}
-\item{času potrebného na prestup medzi dvomi zastávkami}
-\item{času potrebného na čakanie na prestupný mód}
-\item{času, ktorý stojí mód na zastávke (týka sa skôr prímestskej dopravy)}
-\end{itemize}
+Hrana $e_i = (v_i, v_j, m_i)$ je cesta z vrcholu $v_i$ do $v_j$ použitím módu $m_i$. Vrchol, kde sa menia módy je prestupný vrchol. Ďalej definujú čas prestupu ako súčet času potrebného na prestup medzi dvomi zastávkami, času potrebného na čakanie na prestupný mód a času, ktorý stojí mód na zastávke (týka sa skôr prímestskej dopravy).
 
 Preto je potrebné pridať ďalšie prestupné hrany s tým, že ohodnotenie hrán nebude statické, ale bude to funkcia $cost_{transfer}()$ závislá od času.
 
@@ -80,10 +80,12 @@ Tieto dáta môžeme získať v rôznej forme. Ak by našimi dátami bola pozíc
 Ak už dáta máme spracované, potrebujeme model, na ktorom bude časovo-závislý algoritmus bežať. Na vytvorenie modelu boli v článku \cite{models} navrhnuté 2 prístupy: time-expanded model a time-dependent model.
 
 \subsection{Time-expanded model}
+\label{sec:time-expanded-model}
 \textit{Time-expanded} model rozdelí čas na konečný počet intervalov a pre každý interval zduplikuje vrchol. Každá udalosť na každej stanici je modelovaná ako vrchol. Model je vhodný pre siete založené na cestovných poriadkoch. Je teda vhodný pre verejnú dopravu. Ľahko sa modeluje, ale vyžaduje veľa pamäte a vykonávanie dotazov je pomalé.
 
-\subsection{Time-dependent model}
-\textit{Time-dependent} model má klasickú topológiu. Počet vrcholov vo výslednom modeli je rádovo menší ako v \textit{time-expanded} modeli. Okrem iného je tento model aj efektívnejší. 
+\subsection{Time-dependant model}
+\label{sec:time-dependant-model}
+\textit{Time-dependant} model má klasickú topológiu. Počet vrcholov vo výslednom modeli je rádovo menší ako v \textit{time-expanded} modeli. Okrem iného je tento model aj efektívnejší. 
 
 Pre každú zastávku $p$ je do modelu vložený \textit{station node}. Navyše pre každú zastávku $p$ v linke $r$ je vytvorený ďalší vrchol \textit{route node} $r_p$. \textit{Route nodes} sú spojené so \textit{stations nodes} hranami s konštantným ohodnotením. Toto ohodnotenie predstavuje čas potrebný na prestup. Jazda vozidla \textit{t} je definovaná ako postupnosť zastávok, ktoré vozidlo navštevuje podľa daného cestovného poriadku. Jazdy, ktoré pozostávajú z rovnakých vrcholov sú zoskupené do liniek. \textit{Route nodes}, ktoré patria jednej linke sú spojené hranou , ktorej hodnotou je funkcia. Hoci je takto vytvorený model menší, pre algoritmy je komplikovanejší. Ťažko sa na ňom vykonávajú dotazy v prípade, že je potrebné brať do úvahy prestupy.
 
@@ -94,9 +96,7 @@ V tejto sekcii spomenieme optimalizačné metódy, ktoré minimalizujú prehľad
 
 \subsection{Minimalizácia prehľadávaného priestoru v okolí virtuálnej cesty}
 
-V článku \cite{timedependent} navrhujú optimalizáciu A* algoritmu založenú na vypočítaní virtuálnej cesty, ktorá predstavuje Euklidovskú vzdialenosť zo začiatočného do koncového vrcholu. Algoritmus hľadá cestu cez vrcholy, ktoré sú blízko virtuálnej cesty. 
-
-Definujeme parametre:
+V článku \cite{timedependent} navrhujú optimalizáciu A* algoritmu založenú na vypočítaní virtuálnej cesty, ktorá predstavuje Euklidovskú vzdialenosť zo začiatočného do koncového vrcholu. Algoritmus hľadá cestu cez vrcholy, ktoré sú blízko virtuálnej cesty. Definujeme parametre:
 \begin{itemize}
 \item{virtuálna cesta ($st$) – Euklidovská vzdialenosť z $s$ do $t$} a zároveň dolné ohraničenie prehľadávaného priestoru
 \item{vzdialenosť $d$ - priemerná vzdialenosť všetkých vrcholov k virtuálnej ceste a predstavuje horné ohraničenie prehľadávaného priestoru}
@@ -104,13 +104,7 @@ Definujeme parametre:
 \item{$\Delta d$ – priemerná vzdialenosť od všetkých vrcholov ku všetkým susedom}
 \end{itemize}
 
-Algoritmus funguje nasledovne:
-\begin{enumerate}
-\item Vypočítame: $D = dist(s,t)$, $d$ a $\Delta d$. Prehľadávaný priestor ma rozmery $(2d,D)$.
-\item Začneme vytvárať cestu tak, že hľadáme vrchol $v_i$, ktorý spĺňa podmienku \\$dist(v_i, st) \leq d$. Ak nevieme nájsť žiadneho takého kandidáta, navyšujeme $d$ o $\Delta d$, až kým nejakého nenájdeme.
-\item V každej ďalšej iterácii po výbere vrcholu $v_i$ hľadáme ďalšieho kandidáta.
-\item Ak sme prehľadali všetky vrcholy v grafe a nezostavili sme najkratšiu cestu, začneme prehľadávať odznovu s väčším prehľadávaným priestorom.
-\end{enumerate}
+Najskôr vypočítame hodnotu $D = dist(s,t)$, $d$ a $\Delta d$. Prehľadávaný priestor bude mať rozmery $(2d,D)$. Začneme vytvárať cestu tak, že hľadáme vrchol $v_i$, ktorý spĺňa podmienku $dist(v_i, st) \leq d$. Ak nevieme nájsť žiadneho takého kandidáta, navyšujeme $d$ o $\Delta d$, až kým nejakého nenájdeme. V každej ďalšej iterácii po výbere vrcholu $v_i$ hľadáme ďalšieho kandidáta. Ak sme prehľadali všetky vrcholy v grafe a nezostavili sme najkratšiu cestu, začneme prehľadávať odznovu s väčším prehľadávaným priestorom.
 
 \subsection{Minimalizácia prehľadávaného priestoru bounding boxom}
 V článku \cite{alternate} sa autori snažia nájsť spôsob, ako efektívne vypočítať najkratšiu cestu a tak odľahčiť cesty od dopravných zápch. Navrhujú algoritmus na nájdenie najkratšej alternatívnej cesty s minimálnym potrebným výpočtovým časom. 
@@ -120,7 +114,7 @@ Pre nás zaujímavý je ich prístup k vyhodnoteniu najkratšej cesty a k minima
 Na začiatku potrebujeme vymodelovať graf mesta, kde sú vrcholy popísané zemepisnou šírkou a výškou a hrany sú ohodnotené reálnou vzdialenosťou medzi jednotlivými vrcholmi. Graf je opísaný tabuľkovou maticou a reprezentovaný graficky. Keď poznáme začiatočný a koncový vrchol, vytvoríme si tabuľku všetkých vrcholov, ich súradníc a vzdialeností do začiatočného vrcholu a koncového vrcholu. Podľa súradníc vieme vypočítať vzdialenosti medzi jednotlivými vrcholmi. Následne vygenerujeme grafickú reprezentáciu tejto tabuľky. 
 
 \subsubsection{Bounding box}
-Majme dopravnú sieť tvorenú 26 vrcholmi a majme začiatočný a koncový vrchol. \textit{Bounding box} je na začiatku vytvorený medzi začiatočným a koncovým vrcholom, ako je ukázané na obrázku \ref{fig:boundingBoxReal}. \textit{Bounding box} zredukuje sieť na 8 vrcholov, čím zredukuje prehľadávaný priestor, výpočtovú cenu a čas. Ďalšiu redukciu vieme dosiahnuť, ak nakloníme bounding box tým spôsobom, že spojnica začiatočného a koncového vrcholu bude osou boxu, ako môžeme vidieť na obrázku \ref{fig:boundingBoxRect}. 
+\textit{Bounding box} je na začiatku vytvorený medzi začiatočným a koncovým vrcholom, ako je ukázané na obrázku \ref{fig:boundingBoxReal}. Ďalšiu redukciu vieme dosiahnuť, ak nakloníme bounding box tým spôsobom, že spojnica začiatočného a koncového vrcholu bude osou boxu, ako môžeme vidieť na obrázku \ref{fig:boundingBoxRect}. 
 
 \begin{figure}[H]
 \centering
@@ -136,32 +130,20 @@ Majme dopravnú sieť tvorenú 26 vrcholmi a majme začiatočný a koncový vrch
 			\caption{Naklonený bounding box}
 		\label{fig:boundingBoxRect}
 	\end{subfigure}
-	\caption[Bounding box]{}
+	\caption[Bounding box]{Bounding box \cite{bounding-box} \cite{bounding-box-1}}
 	\label{fig:boundingBox}
 \end{figure}
 
-\begin{footnotesize}
-Zdroj: Shortest Alternate Path Discovery through Recursive Bounding Box Pruning: Figure 5, Figure 13. Január 2017 [citované 18.8.2019]. Dostupné z \url{https://www.researchgate.net/publication/316188932_Shortest_Alternate_Path_Discovery_through_Recursive_Bounding_Box_Pruning}
-\end{footnotesize}
-
-\subsubsection{Navrhovaný algoritmus}
-Dvojdimenzionálne súradnice v dopravnej sieti pomôžu určiť, či daný vrchol konverguje ku koncovému vrcholu alebo nie. 
-
-Na začiatku vytvoríme \textit{bounding box} medzi začiatočným a koncovým vrcholom. Získame susedné vrcholy začiatočného vrcholu a pre všetky susedné vrcholy vypočítame vzdialenosť $d$. Vzdialenosť $d$ je rovná súčtu vzdialenosti medzi začiatočným vrcholom a daným susedným vrcholom a karteziánskou vzdialenosťou daného susedného vrcholu od koncového vrcholu. Zo susedných vrcholov je vybraný taký vrchol, ktorého hodnota $d$ je najmenšia. 
-
-Nový vrchol sa stane začiatočným vrcholom a \textit{bounding box} sa znovu vygeneruje. Proces hľadania najbližšieho vrcholu pokračuje, kým sa najbližší vybraný vrchol nestane koncovým vrcholom. Týmto spôsobom nájdeme najkratšiu cestu. 
-
-Následne vrcholy, ktoré sme nevyhodnotili, vyhodnotíme rovnakým spôsobom. Keď algoritmus spracuje všetky vrcholy, výsledok uloží vo vzostupnom poradí podľa veľkosti. Takto získame okrem najkratšej cesty aj alternatívne najkratšie cesty, viď obrázok \ref{fig:boundingBoxResult}. Na záver vymeníme začiatočný vrchol s koncovým vrcholom a výsledné polia spolu zjednotíme, aby sme získali čo najlepší výsledok. V prípade, že sa algoritmu nepodarí nájsť najkratšiu cestu, rozšírime \textit{bounding box}. Maximálna výpočtová cena tohto algoritmu je $7 \cdot \sqrt{2}N$.
-
-\begin{figure}[H]
-\centerline{\includegraphics[width=0.4\textwidth]{images/bounding-box-result}}
-\caption[Bounding box: 3 najkratšie cesty]{Bounding box: 3 najkratšie cesty}
-\label{fig:boundingBoxResult}
-\end{figure}
-
-\begin{footnotesize}
-Zdroj: Shortest Alternate Path Discovery through Recursive Bounding Box Pruning: Figure 5, Figure 12. Január 2017 [citované 18.8.2019]. Dostupné z \url{https://www.researchgate.net/publication/316188932_Shortest_Alternate_Path_Discovery_through_Recursive_Bounding_Box_Pruning}
-\end{footnotesize}
+%
+%\begin{figure}[H]
+%\centerline{\includegraphics[width=0.4\textwidth]{images/bounding-box-result}}
+%\caption[Bounding box: 3 najkratšie cesty]{Bounding box: 3 najkratšie cesty}
+%\label{fig:boundingBoxResult}
+%\end{figure}
+%
+%\begin{footnotesize}
+%Zdroj: Shortest Alternate Path Discovery through Recursive Bounding Box Pruning: Figure 5, Figure 12. Január 2017 [citované 18.8.2019]. Dostupné z \url{https://www.researchgate.net/publication/316188932_Shortest_Alternate_Path_Discovery_through_Recursive_Bounding_Box_Pruning}
+%\end{footnotesize}
 
 \section{Zohľadnenie zadania polohy mimo zastávky}
 \label{sec:actual-location}
@@ -176,6 +158,7 @@ Navrhovaným riešením je nájsť viacero zastávok radiálnym vyhľadávaním,
 \end{figure}
 
 \section{Alternatívne optimálne cesty}
+\label{sec:alternative-optimal-paths}
 Pri hľadaní optimálnej cesty je potrebné zohľadniť, čo daný používateľ považuje za optimálne. Používateľ pri zadávaní vyhľadávacích parametrov nemusí poznať svoje preferencie alebo ich môže často meniť. Zadávanie preferencií pri každom vyhľadávaní nie je používateľsky prívetivé. Aby si napriek tomu používateľ mohol zvoliť cestu, ktorá najviac vyhovuje jeho potrebám, systém musí ponúknuť viac alternatívnych ciest. Tu sa dostávame k problému \textit{K} najkratších ciest.
 
 Autori článku \cite{dissimilar}, poukazujú na to, že väčšina navigačných služieb neposkytuje používateľom viac ciest. A ak áno, využívajú taký algoritmus, ktorý poskytuje viacero alternatívnych ciest, ktoré sú podobné vo veľkej časti úsekov. Správny algoritmus by mal vybrať trasy s najmenšou spoločnou dĺžkou spomedzi tých, ktoré vyhovujú zadaným preferenciám. Autori článku predstavili vývoj heuristického algoritmu, ktorý efektívne vyhľadáva rôzne alternatívne cesty. Algoritmus je popísaný vývojovým diagramom na obrázku \ref{fig:flowchart}.
