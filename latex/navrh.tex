@@ -69,7 +69,7 @@ Cesta, ktorú nám vráti základná verzia RAPTOR algoritmu je najkratšia a ne
 Našim cieľom je zlúčiť rRAPTOR algoritmus s vylepšeným RAPTOR algoritmom na hľadanie viacerých ciest a zakomponovať mechanizmus schopný zohľadniť zadané používateľské preferencie, ktoré bude algoritmus prijímať ako vstupné parametre. Preferencie, ktoré bude vedieť algoritmus zohľadniť: minimálny čas na prestup, maximálny počet prestupov, maximálna dĺžka pešieho prestupu a vyhľadanie len nízkopodlažných spojov. Na obrázku \ref{fig:algorithm} sú zachytené jednotlivé podalgoritmy, ktoré budú tvoriť náš výsledný algoritmus.
 
 \begin{figure}[H]
-\centerline{\includegraphics[width=0.8\textwidth]{images/algorithm}}
+\centerline{\includegraphics[width=0.6\textwidth]{images/algorithm}}
 \caption[Návrh algoritmu]{Návrh algoritmu}
 \label{fig:algorithm}
 \end{figure}
@@ -86,9 +86,25 @@ Pri vývoji aplikácie a pre jej testovanie sú nevyhnutné dáta. Pre účely a
 Od Dopravného podniku Bratislava sme získali statické cestovné poriadky, ktoré mali platnosť od $5.2.2018$ – $31.12.2018$. Dáta sú vo formáte GTFS. 
 
 \subsubsection{GTFS}
+\textit{General Transit Feed Specification (GTFS)} je dohodnutý formát dát, ktorý používajú tisíce poskytovateľov verejnej dopravy a mnohé softvérové aplikácie. Špecifikácia definuje súbory, v ktorých sú reprezentované entity v tabuľke. V stĺpcoch sú popísané vlastnosti entity a v každom riadku je nový záznam. V tekto sekcii analyzujeme len tie súbory, ktoré nám boli poskytnuté a opíšeme, ktoré z poskytnutých údajov využijeme.
+
+Súbor \textit{agency.txt} obsauje údaje o prepravných spoločnostiach. Tento súbor nebudeme potrebovať, kedže všetky linky spravuje jedna spoločnosť. 
+
+Súbor \textit{celandar.txt} obsahuje stĺpce \textit{service\_id}, \textit{monday}, \textit{tuesday}, \textit{wednesday}, \textit{thursday}, \textit{friday}, \textit{saturday}, \textit{sunday}, \textit{start\_date}, \textit{end\_date}. Vlasntosť \textit{service\_id} predstavuje unikátny názov typu dňa (pracovný deň, víkend,...). Vlasnosti \textit{monday, ..., sunday} môžu nadobúdať hodnoty $0$ a $1$. Ak je napríklad hodnota $monday = 0$, znamená to, že všetky pondelky medzi dátumom \textit{start\_date} a dátumom \textit{end\_date} patria do typu dňa \textit{service\_id}. Naopak, ak je hodnota rovná $1$, tak nejazdí. 
+
+V súbore \textit{calendar\_dates.txt} sú vlastnosti: \textit{service\_id}, \textit{date}, \textit{exception\_type}. V prípade, že vlastnosť \textit{exception\_type} má hodnotu $1$, znamená to, že do \textit{service\_id} výnimočne patrí aj deň \textit{date}. Ak je $exception\_type = 2$, tak nepatrí.
+
+Zastávky sú definované v súbore \textit{stops.txt}. Zastávka je určená identifikačným číslom \textit{stop\_id}, ktoré je unikátne pre každú zastávku. Vlastnosť \textit{stop\_name} predstavuje názov zastávky. Táto vlastnosť sa nachádza v súbore viac krát, kedže v rámci zastávky existujú rôzne nástupištia. Unikátnymi vlastnosťami sú aj \textit{stop\_lat} a \textit{stop\_lng}, teda súradnice zastávky. Zastávka má definovanú aj \textit{zone\_id}, teda zónu mesta, do ktorej je zastávka priradená. Jednotlivé stĺpce sú v súbore oddelené čiarkou, avšak čiarka sa môže nachádzať aj v názve zastávky. V takom prípade je názov zastávky uvedený v úvodzovkách.
+
+Súbor \textit{routes.txt} obsahuje zoznam liniek. Pre každú linku definuje identifikačné číslo linky (\textit{route\_id}), číslo prepravnej spoločnosti (\textit{agency\_id}), skrátený názov linky (\textit{route\_short\_name}) a mód linky (\textit{route\_type}). Podľa štandardu \textit{GTFS} hodnota $0$ definuje mód električku, hodnota $3$ autobus a hodnota $11$ trolejbus. Vlastnosť \textit{route\_long\_name} nie je definovaná a vlastnosť \textit{route\_text\_color} pre nás nie je potrebná.
+
+Jazdy jednotlivých liniek sú zaznamenané v súbore \textit{trips.txt}, ktorý obsahuje vlastnosti: identifikačné číslo jazdy (\textit{trip\_id}), \textit{service\_id}, \textit{trip\_headsign}, \textit{trip\_short\_name} a \textit{direction\_id}. Podľa GTFS špecifikácie by vlastnosť \textit{service\_id} mala predstavovať množinu rôznych \textit{service\_day} oddelených pomlčkou. V našich dátach existuje pre jeden záznam jazdy len jeden \textit{service\_day}. V prípade, že jazda patrí viacerým \textit{service\_day}, je vytvorený nový záznam s rovnakými vlastnosťami jazdy pre každý \textit{service\_day}. Vlastnosť \textit{trip\_headsign} predstavuje konečnú zastávku jazdy. Túto vlastnosť síce nevyužijeme, ale kedže obsahuje názvy zastávok rovnako ako v súbore \textit{stops.txt}, môže sa stať, že názov bude obsahovať oddelovač stĺpcov - čiarku. Vlastnosť \textit{trip\_short\_name} nie je definovaná v žiadnom zázname jazdy. \textit{Direction\_id} nadobúda hodnoty $0$ a $1$. V dátach nám chýba informácia o nízkopodlažných spojoch, ktorú sme chceli využiť pri vyfiltrovaní hľadanýhch ciest.
+
+Súbor \textit{stop\_times.txt} definuje indentifikačné číslo jazdy (\textit{trip\_id}), identifikačné číslo zastávky (\textit{stop\_id}), čas príchodu a odchodu jazdy na zastávku (\textit{arrival\_time} a \textit{departure\_time}), \textit{stop\_sequence}, \textit{stop\_headsign}, \textit{pickup\_type} a \textit{drop\_off\_type}. Vlastnosti \textit{arrival\_time} a \textit{departure\_time} sú vždy rovnaké, preto jednu z nich budeme ignorovať. Vlastnosť \textit{stop\_sequence} predstavuje poradie zastávky v rámci linky. Poradnie nie je iterované od $1$, ale začína rôznymi kladnými číslami. Položka \textit{stop\_headsign} nie je v žiadnom zázname definovaná. Vlastnosti \textit{pickup\_type} a \textit{drop\_off\_type} nadobúdajú hodnoty $0$ a $3$. V \textit{GTFS} špecifikácii znamená číslo $0$, že jazda na tejto zastávke stojí vždy a $3$ určuje, že na zastávke stojí len na znamenie. Hodnoty sú pre obe vlastnosti vždy rovnaké, takže jednu z nich môžeme opäť ignorovať.
+
 
 \subsection{Dáta o meškaní}
-Podarilo sa nám získať aj informácie o meškaní za rok 2018, pre mesiac február, marec a apríl. Pre každý deň v mesiaci existuje súbor vo formáte .csv. Každý záznam obsahuje údaje:
+Dopravný podnik Bratislava nám poskytol aj informácie o meškaní za rok 2018, pre mesiac február, marec a apríl. Pre každý deň v mesiaci existuje súbor vo formáte .csv. Každý záznam obsahuje údaje:
 \begin{itemize}
 \item{Id – identifikačné číslo záznamu}
 \item{Datum a cas – dátum a čas, kedy bol záznam o meškaní zaevidovaný}
@@ -139,14 +155,20 @@ V entite \textit{service\_days} sú názvy rôznych typov dní, v ktorých prem�
 Entita \textit{calendar\_dates} obsahuje zoznam všetkých dátumov (\textit{date}), v rozsahu platnosti aktuálneho cestovného poriadku. Ku každému dátumu je priradený typ dňa (\textit{service\_day}). Jeden dátum môže prislúchať k viacerým typom dňa a naopak jeden typ dňa môže prislúchať viacerým dátumom.
 
 \section{Dátová štruktúra}
-Rovnako dôležit8 je dobre navrhnutá dátová štruktúra, s ktorou bude algoritmus vedieť rýchlo a efektívne pracovať. Budeme sa inšpirovať dátovou štruktúrou z \ref{subsec:structure}, ktorá bola navrhnutá pre základnú verziu RAPTOR algoritmu. Dátová štruktúra bude obsahovať aktuálne cestovné poriadky s prispôsobenými príchodmi a odchodmi vozidiel podľa prípadných meškaní.  
+Aby algoritmus vedel rýchlo a efektívne pracovať potrebuje dobre navrhnutú dátovú štruktúru. Pri jej návrhu sa budeme inšpirovať dátovou štruktúrou z \ref{subsec:structure}, ktorá bola navrhnutá pre základnú verziu RAPTOR algoritmu. Dátová štruktúra uvedená v článku počíta so skutočnosťou, že jednotlivé jazdy v rámci linky majú rovnakú postupnosť zastávok. Avšak v našich dátach to tak nie je. Linka obsahuje jazdy, ktoré idú jedným aj druhým smerom. Zástavky cez ktoré prechádza linka majú síce rovnaký názov, ale majú iné identifikačné čísla, ktorými sú definované a ich postupnosť je iná. Okrem rôznych smerov obsahuje linka aj také jazdy, ktorých postupnosť zastávok je iná ako pri väčšine. Najmä v ranných a večerných hodinách prechádzajú niektoré jazdy len cez určitú podpostupnosť zastávok. 
+RAPTOR algoritmus potrebuje, aby všetky jazdy, ktoré patria konkrétnej linke mali rovnakú postupnosť zastávok. Rozhodli sme sa preto zoskupiť jazdy s rovnakou postupnosťou zastávok do úsekov (\textit{subroutes}). Teraz platí, že 1 linka (\textit{route}) má viacero úsekov a jednému úseku linky prislúcha viac jázd linky (\textit{trips}). Upravená štruktúra je zachytaná na obrázku \ref{fig:my-datastructure}.
 
-Dátová štruktúra uvedená v článku ráta s tým, že jednotlivé jazdy v rámci linky majú rovnakú postupnosť zastávok. V našich dátach to tak nie je. Linka obsahuje jazdy, ktoré idú jedným aj druhým smerom. Zástavky cez ktoré prechádza linka majú síce rovnaký názov, ale majú iné identifikačné čísla, ktorými sú definované. Okrem rôznych smerov obsahuje linka aj také jazdy, ktorých postupnosť zastávok je iná ako pri väčšine. Najmä v ranných a večerných hodinách prechádzajú niektoré jazdy len cez určitú podpostupnosť zastávok. 
-RAPTOR algoritmus potrebuje, aby všetky jazdy, ktoré patria konkrétnej linke mali rovnakú postupnosť zastávok. Rozhodli sme sa preto zoskupiť jazdy s rovnakou postupnosťou zastávok do úsekov. Teraz platí, že 1 linka má viacero úsekov a jednému úseku linky prislúcha viac jázd linky. 
+\begin{figure}[H]
+\centerline{\includegraphics[width=1.0\textwidth]{images/my-structure}}
+\caption[Návrh dátovej štruktúry]{Návrh dátovej štruktúry}
+\label{fig:my-datastructure}
+\end{figure}
 
-Často sa potrebujeme dopytovať na všetky linky, ktoré stoja na konkrétnej zastávke a rovnako potrebujem vedieť postupnosť zastávok, ktoré patria konkrétnej linke. 
+V algoritme sa potrebujeme často dopytovať na všetky úseky linky, ktoré stoja na konkrétnej zastávke. Toto vieme okamžite nájsť v poli \textit{StopSubroutes}. Pole \textit{SubrouteStops} priraďuje postupnosť zastávok konkrétnemu úseku linky. 
 
-\textit{StopTimes} bude objekt alebo pole, ktoré obsahuje nielen informáciu o čase, kedy podľa statického poriadku má stáť jazda linky na zastávke, ale aj informáciu o predpokladanom časovom meškaní danej jazdy na zastávku.
+V poli \textit{StopTimes} nebude obsahovať len informáciu o čase, kedy podľa statického poriadku má stáť jazda linky na zastávke, ale aj informáciu o predpokladanom časovom meškaní danej jazdy na zastávku.
+
+Aby sme pri hľadaní jazdy linky nemuseli prechádzať všetky prvky poľa \textit{Trips}, budeme si pri jej prvkoch držať aj informáciu o tom, počas akých typov dní (pracovné dni, víkendy, ...) jazda linky jazdí. 
 
 
 \section{Architektúra aplikácie}
@@ -169,8 +191,8 @@ Pri spustení aplikácie alebo po aktualizácii cestovných poriadkov sa spustí
 Spôsob akým bude aplikácia nasadená je znázornená na obrázku \ref{fig:deploymentDiagram}.
 
 \begin{figure}[H]
-\centerline{\includegraphics[width=1.0\textwidth]{images/deployment-diagram}}
-\caption[Diagram nasadenia]{Diagram nasadenia)}
+\centerline{\includegraphics[width=1.1\textwidth]{images/deployment-diagram}}
+\caption[Diagram nasadenia]{Diagram nasadenia}
 \label{fig:deploymentDiagram}
 \end{figure}
 
