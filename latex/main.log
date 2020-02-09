@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.7)  8 FEB 2020 22:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.7)  9 FEB 2020 22:25
 entering extended mode
 **./main.tex
 (main.tex
@@ -1135,47 +1135,39 @@ Package hyperref Warning: Composite letter `\textasciicaron+l'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 79.
 
-[24 <./images/algorithm.png>]
-Overfull \hbox (28.99321pt too wide) in paragraph at lines 99--100
-\T1/cmr/m/n/12 fi-nuje mód elek-tri£ku, hod-nota $\OT1/cmr/m/n/12 3$ \T1/cmr/m/
-n/12 au-to-bus a hod-nota $\OT1/cmr/m/n/12 11$ \T1/cmr/m/n/12 tro-lej-bus. Vlas
-t-nos´ \T1/cmr/m/it/12 route_long_name
- []
-
-[25] [26]
+[24 <./images/algorithm.png>] [25] [26]
 <images/ERD.png, id=528, 397.485pt x 281.4013pt>
 File: images/ERD.png Graphic file (type png)
 <use images/ERD.png>
-Package pdftex.def Info: images/ERD.png  used on input line 133. on input line 
-133.
+Package pdftex.def Info: images/ERD.png  used on input line 140. on input line 
+140.
 Package pdftex.def Info: Requested size: 441.01773pt x 312.23032pt on input lin
-e 133.
- [27 <./images/ERD.png>]
-<images/my-structure.png, id=537, 844.47606pt x 299.68845pt>
+e 140.
+ [27] [28 <./images/ERD.png>]
+<images/my-structure.png, id=541, 844.47606pt x 299.68845pt>
 File: images/my-structure.png Graphic file (type png)
 <use images/my-structure.png>
-Package pdftex.def Info: images/my-structure.png  used on input line 162. on in
-put line 162.
+Package pdftex.def Info: images/my-structure.png  used on input line 171. on in
+put line 171.
 Package pdftex.def Info: Requested size: 441.01773pt x 156.50652pt on input lin
-e 162.
- [28] [29 <./images/my-structure.png>]
-<images/deployment-diagram.png, id=548, 506.34169pt x 308.95425pt>
+e 171.
+ [29 <./images/my-structure.png>] [30]
+<images/deployment-diagram.png, id=552, 506.34169pt x 308.95425pt>
 File: images/deployment-diagram.png Graphic file (type png)
 <use images/deployment-diagram.png>
-Package pdftex.def Info: images/deployment-diagram.png  used on input line 194.
- on input line 194.
+Package pdftex.def Info: images/deployment-diagram.png  used on input line 206.
+ on input line 206.
 Package pdftex.def Info: Requested size: 485.1222pt x 296.02228pt on input line
- 194.
-)
-(implementacia.tex [30 <./images/deployment-diagram.png>]
+ 206.
+) (implementacia.tex [31 <./images/deployment-diagram.png>]
 Kapitola 3.
-) (test.tex [31
+) (test.tex [32
 
 ]
 Kapitola 4.
-) (zaver.tex [32
+) (zaver.tex [33
 
-]) [33
+]) [34
 
 ] (main.bbl
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 10.
@@ -1218,13 +1210,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--20
 esearchgate . net / figure /
  []
 
-[34
+[35
 
 
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 274.
- [35]
+ [36]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 274.
  (main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 274.
@@ -1234,13 +1226,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 274.
  ) 
 Here is how much of TeX's memory you used:
- 12948 strings out of 493312
- 188426 string characters out of 3138899
+ 12949 strings out of 493312
+ 188433 string characters out of 3138899
  336953 words of memory out of 3000000
  16109 multiletter control sequences out of 15000+200000
  24892 words of font info for 62 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,12n,43p,1216b,503s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,12n,43p,1212b,503s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\gabik\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
 ectt1200.pk> <C:\Users\gabik\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
 ec\dpi600\ecbx1000.pk> <C:\Users\gabik\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
@@ -1264,9 +1256,9 @@ cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program
  Files/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on main.pdf (45 pages, 1598384 bytes).
+Output written on main.pdf (46 pages, 1601182 bytes).
 PDF statistics:
- 1231 PDF objects out of 1440 (max. 8388607)
- 135 named destinations out of 1000 (max. 500000)
+ 1235 PDF objects out of 1440 (max. 8388607)
+ 136 named destinations out of 1000 (max. 500000)
  442 words of extra memory for PDF output out of 10000 (max. 10000000)
 
