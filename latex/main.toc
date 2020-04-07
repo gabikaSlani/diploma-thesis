@@ -6,48 +6,55 @@
 \contentsline {subsection}{\numberline {1.2.1}Dijkstrov algoritmus}{3}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}A* algoritmus}{4}{subsection.1.2.2}
 \contentsline {section}{\numberline {1.3}\IeC {\v C}asovo z\IeC {\'a}visl\IeC {\'y} algoritmus}{4}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}Multimod\IeC {\'a}lny algoritmus}{4}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.1}Multimod\IeC {\'a}lny algoritmus}{5}{subsection.1.3.1}
 \contentsline {section}{\numberline {1.4}Spracovanie re\IeC {\'a}lnych d\IeC {\'a}t}{5}{section.1.4}
 \contentsline {subsection}{\numberline {1.4.1}Time-expanded model}{5}{subsection.1.4.1}
-\contentsline {subsection}{\numberline {1.4.2}Time-dependant model}{5}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.2}Time-dependent model}{6}{subsection.1.4.2}
 \contentsline {section}{\numberline {1.5}Optimaliza\IeC {\v c}n\IeC {\'e} met\IeC {\'o}dy}{6}{section.1.5}
 \contentsline {subsection}{\numberline {1.5.1}Minimaliz\IeC {\'a}cia preh\IeC {\v l}ad\IeC {\'a}van\IeC {\'e}ho priestoru v okol\IeC {\'\i } virtu\IeC {\'a}lnej cesty}{6}{subsection.1.5.1}
 \contentsline {subsection}{\numberline {1.5.2}Minimaliz\IeC {\'a}cia preh\IeC {\v l}ad\IeC {\'a}van\IeC {\'e}ho priestoru bounding boxom}{7}{subsection.1.5.2}
 \contentsline {subsubsection}{Bounding box}{7}{section*.10}
 \contentsline {section}{\numberline {1.6}Zoh\IeC {\v l}adnenie zadania polohy mimo zast\IeC {\'a}vky}{8}{section.1.6}
-\contentsline {section}{\numberline {1.7}Alternat\IeC {\'\i }vne optim\IeC {\'a}lne cesty}{8}{section.1.7}
+\contentsline {section}{\numberline {1.7}Alternat\IeC {\'\i }vne cesty}{8}{section.1.7}
 \contentsline {section}{\numberline {1.8}RAPTOR algoritmus}{9}{section.1.8}
-\contentsline {subsection}{\numberline {1.8.1}Defin\IeC {\'\i }cie pojmov a premenn\IeC {\'y}ch}{10}{subsection.1.8.1}
+\contentsline {subsection}{\numberline {1.8.1}Defin\IeC {\'\i }cie pojmov a premenn\IeC {\'y}ch}{9}{subsection.1.8.1}
 \contentsline {subsection}{\numberline {1.8.2}Z\IeC {\'a}kladn\IeC {\'a} verzia algoritmu}{10}{subsection.1.8.2}
 \contentsline {subsection}{\numberline {1.8.3}Optimaliz\IeC {\'a}cie algoritmu}{11}{subsection.1.8.3}
 \contentsline {subsection}{\numberline {1.8.4}rRAPTOR}{12}{subsection.1.8.4}
-\contentsline {subsection}{\numberline {1.8.5}Paraleliz\IeC {\'a}cia}{13}{subsection.1.8.5}
-\contentsline {subsection}{\numberline {1.8.6}D\IeC {\'a}tov\IeC {\'a} \IeC {\v s}trukt\IeC {\'u}ra}{13}{subsection.1.8.6}
-\contentsline {subsection}{\numberline {1.8.7}Vylep\IeC {\v s}en\IeC {\'y} RAPTOR algoritmus}{14}{subsection.1.8.7}
-\contentsline {subsubsection}{Penaliz\IeC {\'a}cia prestupov}{15}{section*.18}
-\contentsline {subsubsection}{H\IeC {\v l}adanie viacer\IeC {\'y}ch ciest}{16}{section*.19}
-\contentsline {subsubsection}{Zhrnutie vylep\IeC {\v s}en\IeC {\'e}ho RAPTOR algoritmu}{17}{section*.21}
-\contentsline {section}{\numberline {1.9}Podobn\IeC {\'e} existuj\IeC {\'u}ce syst\IeC {\'e}my}{17}{section.1.9}
-\contentsline {subsection}{\numberline {1.9.1}Imhd.sk}{18}{subsection.1.9.1}
-\contentsline {subsection}{\numberline {1.9.2}IDS BK}{18}{subsection.1.9.2}
-\contentsline {subsection}{\numberline {1.9.3}CP}{18}{subsection.1.9.3}
-\contentsline {subsection}{\numberline {1.9.4}CG Transit}{19}{subsection.1.9.4}
-\contentsline {subsection}{\numberline {1.9.5}Ubian}{19}{subsection.1.9.5}
-\contentsline {chapter}{\numberline {2}N\IeC {\'a}vrh}{21}{chapter.2}
-\contentsline {section}{\numberline {2.1}Funkcie aplik\IeC {\'a}cie}{21}{section.2.1}
-\contentsline {section}{\numberline {2.2}Algoritmus}{22}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Vyh\IeC {\v l}ad\IeC {\'a}vanie z aktu\IeC {\'a}lnej polohy}{24}{subsection.2.2.1}
-\contentsline {section}{\numberline {2.3}D\IeC {\'a}ta}{24}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}D\IeC {\'a}ta statick\IeC {\'y}ch cestovn\IeC {\'y}ch poriadkov}{24}{subsection.2.3.1}
-\contentsline {subsubsection}{GTFS}{24}{section*.24}
-\contentsline {subsection}{\numberline {2.3.2}D\IeC {\'a}ta o me\IeC {\v s}kan\IeC {\'\i }}{26}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Pe\IeC {\v s}ie presuny}{27}{subsection.2.3.3}
-\contentsline {section}{\numberline {2.4}Datab\IeC {\'a}za}{27}{section.2.4}
-\contentsline {section}{\numberline {2.5}D\IeC {\'a}tov\IeC {\'a} \IeC {\v s}trukt\IeC {\'u}ra}{29}{section.2.5}
-\contentsline {section}{\numberline {2.6}Architekt\IeC {\'u}ra aplik\IeC {\'a}cie}{30}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Serverov\IeC {\'a} strana}{30}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}Klientsk\IeC {\'a} strana}{30}{subsection.2.6.2}
-\contentsline {subsection}{\numberline {2.6.3}Spracovanie d\IeC {\'a}t}{30}{subsection.2.6.3}
+\contentsline {subsection}{\numberline {1.8.5}D\IeC {\'a}tov\IeC {\'a} \IeC {\v s}trukt\IeC {\'u}ra}{12}{subsection.1.8.5}
+\contentsline {subsection}{\numberline {1.8.6}Vylep\IeC {\v s}en\IeC {\'y} RAPTOR algoritmus}{13}{subsection.1.8.6}
+\contentsline {subsubsection}{Penaliz\IeC {\'a}cia prestupov}{14}{section*.17}
+\contentsline {subsubsection}{H\IeC {\v l}adanie viacer\IeC {\'y}ch ciest}{15}{section*.18}
+\contentsline {section}{\numberline {1.9}Podobn\IeC {\'e} existuj\IeC {\'u}ce syst\IeC {\'e}my}{16}{section.1.9}
+\contentsline {subsection}{\numberline {1.9.1}Imhd.sk}{16}{subsection.1.9.1}
+\contentsline {subsection}{\numberline {1.9.2}IDS BK}{16}{subsection.1.9.2}
+\contentsline {subsection}{\numberline {1.9.3}CP}{17}{subsection.1.9.3}
+\contentsline {subsection}{\numberline {1.9.4}CG Transit}{17}{subsection.1.9.4}
+\contentsline {subsection}{\numberline {1.9.5}Ubian}{17}{subsection.1.9.5}
+\contentsline {chapter}{\numberline {2}N\IeC {\'a}vrh}{18}{chapter.2}
+\contentsline {section}{\numberline {2.1}Funkcie aplik\IeC {\'a}cie}{18}{section.2.1}
+\contentsline {section}{\numberline {2.2}D\IeC {\'a}ta}{19}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}D\IeC {\'a}ta statick\IeC {\'y}ch cestovn\IeC {\'y}ch poriadkov}{19}{subsection.2.2.1}
+\contentsline {subsubsection}{GTFS}{20}{section*.21}
+\contentsline {subsection}{\numberline {2.2.2}D\IeC {\'a}ta o me\IeC {\v s}kan\IeC {\'\i }}{21}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Pe\IeC {\v s}ie presuny}{22}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Datab\IeC {\'a}za}{22}{section.2.3}
+\contentsline {section}{\numberline {2.4}Parametre pre algoritmus}{24}{section.2.4}
+\contentsline {subsubsection}{Vyh\IeC {\v l}ad\IeC {\'a}vanie z aktu\IeC {\'a}lnej polohy}{24}{section*.24}
+\contentsline {section}{\numberline {2.5}Algoritmus}{25}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Pou\IeC {\v z}itie a prisp\IeC {\^o}sobenie RAPTOR algoritmu}{25}{subsection.2.5.1}
+\contentsline {subsubsection}{Optimaliz\IeC {\'a}cia}{26}{section*.25}
+\contentsline {subsubsection}{Zapracovanie d\IeC {\'a}t o me\IeC {\v s}kan\IeC {\'\i }}{26}{section*.26}
+\contentsline {subsubsection}{Preferencie}{26}{section*.27}
+\contentsline {subsubsection}{Alternat\IeC {\'\i }vne cesty}{26}{section*.28}
+\contentsline {subsubsection}{Filtre}{27}{section*.29}
+\contentsline {subsubsection}{Nasleduj\IeC {\'u}ce cesty}{28}{section*.30}
+\contentsline {subsubsection}{Zhrnutie}{28}{section*.31}
+\contentsline {section}{\numberline {2.6}D\IeC {\'a}tov\IeC {\'a} \IeC {\v s}trukt\IeC {\'u}ra}{28}{section.2.6}
+\contentsline {section}{\numberline {2.7}Architekt\IeC {\'u}ra aplik\IeC {\'a}cie}{30}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Serverov\IeC {\'a} strana}{30}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2}Klientsk\IeC {\'a} strana}{30}{subsection.2.7.2}
+\contentsline {subsection}{\numberline {2.7.3}Spracovanie d\IeC {\'a}t}{30}{subsection.2.7.3}
 \contentsline {chapter}{\numberline {3}Implement\IeC {\'a}cia}{32}{chapter.3}
 \contentsline {chapter}{\numberline {4}Testovanie a evalu\IeC {\'a}cia}{33}{chapter.4}
-\contentsline {chapter}{Z\IeC {\'a}ver}{34}{chapter*.28}
+\contentsline {chapter}{Z\IeC {\'a}ver}{34}{chapter*.34}

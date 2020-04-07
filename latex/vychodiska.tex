@@ -8,6 +8,7 @@ Problém hľadania optimálnej cesty je veľmi rozšíreným problémom nie len 
 Najlepšie zhrnutie podproblémov, ktoré môžu nastať sme postrehli v článku \cite{circular}. 
 Autori analyzujú ich návrh v najzložitejšom systéme verejnej dopravy - v Hongkongu. Pre verejnú dopravu je praktickejšie navrhnúť viac alternatívnych ciest. Najbežnejšie používateľské preferencie sú:
 \begin{itemize}
+\setlength\itemsep{-0.3em}
 \item{minimálny čas}
 \item{minimálne poplatky}
 \item{minimálny počet prestupov}
@@ -17,20 +18,27 @@ Autori analyzujú ich návrh v najzložitejšom systéme verejnej dopravy - v Ho
 
 Bratislavská verejná doprava má rôzne typy dopravných prostriedkov (autobus, trolejbus a električka), čo tiež predstavuje určitý problém. Pri prestupoch treba zohľadniť aj pešie presuny. Dopravná sieť, ktorú budeme modelovať v našej práci je teda multimodálna. Multimodálna sieť je definovaná ako kombinácia dvoch a viacerých dopravných prostriedkov na prepravu cestujúcich alebo tovaru z počiatočného miesta na miesto určenia \cite{timedependent}.
 
-Ďalším kľúčovým problémom sú podľa zadania reálne dáta. Bude potrebné vyriešiť, ako sa vysporiadať so spracovaním reálnych dát. Kľúčový bude výber dátovej štruktúry na ich spracovanie, ako aj nájdenie vhodného časovo závislého algoritmu.
+Ďalším kľúčovým problémom sú podľa zadania reálne dáta. Bude potrebné vyriešiť, ako sa vysporiadať so spracovaním reálnych dát o polohe vozidiel. Kľúčový bude výber dátovej štruktúry na ich spracovanie, ako aj nájdenie vhodného časovo závislého algoritmu.
 
-Sumarizáciou nášho problému je, ako sa vysporiadať s dynamickými dátami, alternatívnymi cestami, viacerými módmi, navigáciou z iného miesta ako zo zastávky. Ďalej chceme vyhovieť používateľským preferenciám, ako je minimálny čas, minimálny počet prestupov a minimálna vzdialenosť peších prestupov. Neposledným problémom je návrh architektúry systému.
+Sumarizáciou nášho problému je otázka, ako sa vysporiadať s dynamickými dátami, alternatívnymi cestami, viacerými módmi a navigáciou z iného miesta ako zo zastávky. Ďalej chceme vyhovieť používateľským preferenciám, ako je minimálny čas, minimálny počet prestupov a minimálna vzdialenosť peších prestupov. Neposledným problémom je návrh architektúry systému.
 
 V tejto kapitole ďalej opíšeme často skloňované algoritmy pri téme multimodálneho časovo závislého vyhľadávania vo verejnej doprave a priblížime výskumy, ktoré riešili podobné problémy ako my.
 
 \section{Známe algoritmy hľadania najkratšej cesty}
 \label{sec:known-algorithms}
+
+Najčestejším riešením na hľadanie najkratšej alebo optimálnej cesty je použitie niektorého grafového algoritmu alebo jeho modifikácií. 
+
+Pod pojmom graf rozumieme dvojicu $(V, E)$, kde $V$ predstavuje množinu vrcholov a $E$ množinu hrán. 
+
+Cesta v grafe $G = (V, E)$ je postupnosť $v_1, e_1, ..., v_{n-1}, e_{n-1}, v_n$, kde $ e_i = (v_i, v_{i+1}) \in E$ pre $ i = 1, 2,..., n-1$. Platí, že vrcholy $v_i$ a hrany $e_i$ sa v ceste neopakujú.
+
 \subsection{Dijkstrov algoritmus}
 \label{sec:dijkstra}
 Najznámejším algoritmom hľadania najkratšej cesty v orientovanom, kladne ohodnotenom grafe je Dijkstrov algoritmus. Algoritmus vie nájsť najrýchlejšiu cestu medzi dvomi danými vrcholmi. Známejšou verziou Dijkstrovho algoritmu je hľadanie najkratšej cesty z jedného vrcholu do všetkých ostatných vrcholov v grafe. 
 
 Rozhodujúcou hodnotou je vzdialenosť vrcholu $d(n)$, ktorá predstavuje dĺžku cesty od začiatočného vrcholu po vrchol $n$, pričom cesta vedie cez aktuálny vrchol.
-Pre začiatočný vrchol sa vzdialenosť $d(n) = 0$ a všetky ostatné vrcholy majú hodnotu $d(n) = \infty$. Na začiatku je začiatočný vrchol označený ako aktuálny. Pri každej iterácii algoritmus preskúma všetky susedné vrcholy aktuálneho vrcholu. Pre každý susedný vrchol prepočíta hodnotu $d(n)$. Ak je táto hodnota menšia ako predtým zaznamenaná, prepíše ju menšou hodnotou. Ďalej algoritmus označí aktuálny vrchol ako navštívený. Tým pádom sa tento vrchol už nebude viac prehľadávať. Aktuálnym vrcholom sa stane zatiaľ nenavštívený vrchol s najmenšou hodnotou $d(n)$. 
+Pre začiatočný vrchol sa vzdialenosť $d(n) = 0$ a všetky ostatné vrcholy majú hodnotu $d(n) = \infty$. Na začiatku je začiatočný vrchol označený ako aktuálny. Pri každej iterácii algoritmus preskúma všetky susedné vrcholy aktuálneho vrcholu. Pre každý susedný vrchol prepočíta hodnotu $d(n)$. Ak je táto hodnota menšia ako predtým zaznamenaná, prepíše ju menšou hodnotou. Ďalej algoritmus označí aktuálny vrchol ako navštívený. Potom sa tento vrchol už nebude viac prehľadávať. Aktuálnym vrcholom sa stane zatiaľ nenavštívený vrchol s najmenšou hodnotou $d(n)$. 
 
 Ak hľadáme cestu medzi dvomi konkrétnymi vrcholmi, algoritmus končí, keď bol konečný vrchol označený ako navštívený. Inak končí, ak neexistujú žiadne nenavštívené vrcholy alebo majú všetky hodnotu $d(n) = \infty$.
 
@@ -41,7 +49,7 @@ Nevýhodou algoritmu je veľký prehľadávaný priestor. Existuje viacero algor
 
 \subsection{A* algoritmus}
 \label{sec:a-star}
-A* algoritmus je grafový optimálny algoritmus na nájdenie najkratšej cesty medzi dvoma bodmi. Vznikol kombináciou heuristických a formálnych prístupov. Udržuje strom ciest začínajúcich v koreni stromu a predlžuje tieto cesty po jednej hrane. Pri každej iterácii sa rozhodne, ktorú z ciest rozšíri. Algoritmus sa skončí, ak už neexistuje žiadna cesta na rozšírenie alebo pri dosiahnutí koncového vrcholu. Pri prehľadávaní používa stratégiu najskôr najlepšieho. Heuristika, ktorá sa využíva na vyhodnotenie vzdialeností, je funkcia
+A* algoritmus je grafový optimálny algoritmus na nájdenie najkratšej cesty medzi dvoma bodmi. Vznikol kombináciou heuristických a formálnych prístupov. Udržuje strom ciest začínajúcich v koreni stromu a predlžuje tieto cesty po jednej hrane. Pri každej iterácii sa rozhodne, ktorú z ciest rozšíri. Algoritmus sa skončí, ak už neexistuje žiadna cesta na rozšírenie alebo pri dosiahnutí koncového vrcholu. Pri prehľadávaní používa stratégiu najskôr najlepšieho. Heuristika, ktorá sa využíva na vyhodnotenie vzdialenosti, je funkcia
 \begin{equation}
 f(n) = g(n) + h(n), 
 \end{equation}
@@ -56,9 +64,9 @@ Heuristika je prípustná, ak nikdy neprecení skutočné náklady na dosiahnuti
 \label{sec:time-dependant-algorithm}
 Stretávame sa s problémom, kedy ohodnotenie hrán v grafe nie je konštantné, ale je závislé od času. Boli navrhnuté rôzne riešenia, ako ohodnotiť hrany, aby sa na model dal aplikovať niektorý z klasických algoritmov hľadania najkratšej cesty. 
 
-V článku \cite{trains} tvrdia, že ak dokážeme odhadnúť hodnotu hrany konštantným číslom, potom riešenie klasického problému hľadania najkratšej cesty môže fungovať ako heuristické riešenie problému najkratšej cesty závislej od stavu.
+V článku \cite{trains} uvádzajú, že ak dokážeme odhadnúť hodnotu hrany konštantným číslom, potom riešenie klasického problému hľadania najkratšej cesty môže fungovať ako heuristické riešenie problému najkratšej cesty závislej od stavu.
 
-Ďalšia navrhovaná metóda je založena na stochastickom čase jazdy. V článku \cite{stochastic} používajú Bayesovu formulu na získanie prevdepodobnostného rozdelenia času cestého úseku. Na hľadanie optimálnej trasy navrhli a následne použili genetické algoritmy.
+Ďalšia navrhovaná metóda je založena na stochastickom čase jazdy. V článku \cite{stochastic} používajú Bayesovu formulu na získanie pravdepodobnostného rozdelenia času cestného úseku. Na hľadanie optimálnej trasy navrhli a následne použili genetické algoritmy.
 
 \subsection{Multimodálny algoritmus}
 \label{sec:multimodal-algorithm}
@@ -73,7 +81,7 @@ Nech hrana $e = (v, v’)_m$ má časovo závislú hodnotu $c_e(t)$, jazda pre h
 
 \section{Spracovanie reálnych dát}
 \label{sec:models}
-Verejná doprava má časté meškania spojov z dôvodu nehôd, rôznych porúch spojov alebo servisných prác. Takéto situácie spôsobujú problémy vo verejnej doprave, ale aj pri navrhovaní systému. Aby boli používateľom poskytnuté čo najoptimálnejšie trasy, potrebujeme reálne dáta o polohe vozidiel.
+Verejná doprava má časté meškania spojov z dôvodu nehôd, rôznych porúch spojov alebo servisných prác. Takéto situácie spôsobujú problémy vo verejnej doprave, ale aj pri navrhovaní systému. Aby boli používateľom poskytnuté čo najaktuálnejšie trasy, potrebujeme reálne dáta o polohe vozidiel.
 
 Tieto dáta môžeme získať v rôznej forme. Ak by našimi dátami bola pozícii vozidla z GPS, potrebujeme získané pozície vozidiel nejakým spôsobom spracovať. V článku \cite{mapmatching} navrhujú, ako spracovať takto získané dáta. Proces \textit{map-matching} je navrhnutá metóda integrácie údajov z digitálnych máp s údajmi z polohovacieho systému (GPS). Tento proces slúži na identifikáciu správnej linky, po ktorej vozidlo ide a na určenie presnej polohy tohto vozidla v rámci linky.
 
@@ -83,11 +91,11 @@ Ak už dáta máme spracované, potrebujeme model, na ktorom bude časovo-závis
 \label{sec:time-expanded-model}
 \textit{Time-expanded} model rozdelí čas na konečný počet intervalov a pre každý interval zduplikuje vrchol. Každá udalosť na každej stanici je modelovaná ako vrchol. Model je vhodný pre siete založené na cestovných poriadkoch. Je teda vhodný pre verejnú dopravu. Ľahko sa modeluje, ale vyžaduje veľa pamäte a vykonávanie dotazov je pomalé.
 
-\subsection{Time-dependant model}
+\subsection{Time-dependent model}
 \label{sec:time-dependant-model}
-\textit{Time-dependant} model má klasickú topológiu. Počet vrcholov vo výslednom modeli je rádovo menší ako v \textit{time-expanded} modeli. Okrem iného je tento model aj efektívnejší. 
+\textit{Time-dependent} model má klasickú topológiu. Počet vrcholov vo výslednom modeli je rádovo menší ako v \textit{time-expanded} modeli. Okrem iného je tento model aj efektívnejší. 
 
-Pre každú zastávku $p$ je do modelu vložený \textit{station node}. Navyše pre každú zastávku $p$ v linke $r$ je vytvorený ďalší vrchol \textit{route node} $r_p$. \textit{Route nodes} sú spojené so \textit{stations nodes} hranami s konštantným ohodnotením. Toto ohodnotenie predstavuje čas potrebný na prestup. Jazda vozidla \textit{t} je definovaná ako postupnosť zastávok, ktoré vozidlo navštevuje podľa daného cestovného poriadku. Jazdy, ktoré pozostávajú z rovnakých vrcholov sú zoskupené do liniek. \textit{Route nodes}, ktoré patria jednej linke sú spojené hranou , ktorej hodnotou je funkcia. Hoci je takto vytvorený model menší, pre algoritmy je komplikovanejší. Ťažko sa na ňom vykonávajú dotazy v prípade, že je potrebné brať do úvahy prestupy.
+Pre každú zastávku $p$ je do modelu vložený \textit{station node}. Navyše pre každú zastávku $p$ v linke $r$ je vytvorený ďalší vrchol \textit{route node} $r_p$. \textit{Route nodes} sú spojené so \textit{stations nodes} hranami s konštantným ohodnotením. Toto ohodnotenie predstavuje čas potrebný na prestup. Jazda vozidla \textit{t} je definovaná ako postupnosť zastávok, ktoré vozidlo navštevuje podľa daného cestovného poriadku. Jazdy, ktoré pozostávajú z rovnakých vrcholov sú zoskupené do liniek. \textit{Route nodes}, ktoré patria jednej linke sú spojené hranou, ktorej hodnotou je funkcia. Hoci je takto vytvorený model menší, pre algoritmy je komplikovanejší. Ťažko sa na ňom vykonávajú dotazy v prípade, že je potrebné brať do úvahy prestupy.
 
 
 \section{Optimalizačné metódy}
@@ -98,6 +106,7 @@ V tejto sekcii spomenieme optimalizačné metódy, ktoré minimalizujú prehľad
 
 V článku \cite{timedependent} navrhujú optimalizáciu A* algoritmu založenú na vypočítaní virtuálnej cesty, ktorá predstavuje Euklidovskú vzdialenosť zo začiatočného do koncového vrcholu. Algoritmus hľadá cestu cez vrcholy, ktoré sú blízko virtuálnej cesty. Definujeme parametre:
 \begin{itemize}
+\setlength\itemsep{-0.3em}
 \item{virtuálna cesta ($st$) – Euklidovská vzdialenosť z $s$ do $t$} a zároveň dolné ohraničenie prehľadávaného priestoru
 \item{vzdialenosť $d$ - priemerná vzdialenosť všetkých vrcholov k virtuálnej ceste a predstavuje horné ohraničenie prehľadávaného priestoru}
 \item{$d_{max}$ – vzdialenosť najvzdialenejšieho vrcholu od virtuálnej cesty}
@@ -111,7 +120,7 @@ V článku \cite{alternate} sa autori snažia nájsť spôsob, ako efektívne vy
 
 Pre nás zaujímavý je ich prístup k vyhodnoteniu najkratšej cesty a k minimalizácii grafu. Minimalizácia grafu prebieha nepretržite. Vždy, keď zvažujeme ďalší susedný vrchol, definujeme nový \textit{bounding box} a tým odstránime nadbytočné vrcholy, ktoré pri výpočte nie sú relevantné.
 
-Na začiatku potrebujeme vymodelovať graf mesta, kde sú vrcholy popísané zemepisnou šírkou a výškou a hrany sú ohodnotené reálnou vzdialenosťou medzi jednotlivými vrcholmi. Graf je opísaný tabuľkovou maticou a reprezentovaný graficky. Keď poznáme začiatočný a koncový vrchol, vytvoríme si tabuľku všetkých vrcholov, ich súradníc a vzdialeností do začiatočného vrcholu a koncového vrcholu. Podľa súradníc vieme vypočítať vzdialenosti medzi jednotlivými vrcholmi. Následne vygenerujeme grafickú reprezentáciu tejto tabuľky. 
+Na začiatku potrebujeme vymodelovať graf mesta, kde sú vrcholy popísané zemepisnou šírkou a výškou a hrany sú ohodnotené reálnou vzdialenosťou medzi jednotlivými vrcholmi. Keď poznáme začiatočný a koncový vrchol, vytvoríme si tabuľku všetkých vrcholov, ich súradníc a vzdialeností do začiatočného vrcholu a koncového vrcholu. Podľa súradníc vieme vypočítať vzdialenosti medzi jednotlivými vrcholmi. Následne vygenerujeme grafickú reprezentáciu tejto tabuľky. 
 
 \subsubsection{Bounding box}
 \textit{Bounding box} je na začiatku vytvorený medzi začiatočným a koncovým vrcholom, ako je ukázané na obrázku \ref{fig:boundingBoxReal}. Ďalšiu redukciu vieme dosiahnuť, ak nakloníme bounding box tým spôsobom, že spojnica začiatočného a koncového vrcholu bude osou boxu, ako môžeme vidieť na obrázku \ref{fig:boundingBoxRect}. 
@@ -120,13 +129,13 @@ Na začiatku potrebujeme vymodelovať graf mesta, kde sú vrcholy popísané zem
 \centering
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
- 		\includegraphics[width=0.9\linewidth]{images/bounding-box}
+ 		\includegraphics[width=0.7\linewidth]{images/bounding-box}
 		\caption{Bounding box}
 		\label{fig:boundingBoxReal}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=0.9\linewidth]{images/bounding-box-rect}
+		\includegraphics[width=0.7\linewidth]{images/bounding-box-rect}
 			\caption{Naklonený bounding box}
 		\label{fig:boundingBoxRect}
 	\end{subfigure}
@@ -149,7 +158,7 @@ Na začiatku potrebujeme vymodelovať graf mesta, kde sú vrcholy popísané zem
 \label{sec:actual-location}
 V článku \cite{circular} autori poukazujú na to, že správny systém na hľadanie optimálnej trasy vo verejnej doprave by mal ponúknuť používateľovi možnosť vyhľadať trasu z miesta (prípadne na miesto), ktoré nie je nutne zastávkou. Ak hľadáme najkratšiu cestu z takto zadaného vrcholu, prvým krokom bude nájdenie prvej zastávky. Autori upozorňujú na to, že vyhľadanie najbližšej zastávky k danej pozícii nemusí byť správnym riešením.
 
-Navrhovaným riešením je nájsť viacero zastávok radiálnym vyhľadávaním, ktorému určíme polomer. Vo vybranej zóne sa môže nachádzať viac zastávok, ktoré prislúchajú tej istej trase, ako môžeme vidieť na obrázku \ref{fig:circularRoute}. V tomto prípade by výber zastávky č. 2 (najbližšej zastávky k zadanej pozícii) nebol optimálny. Rovnako aj výberom zastávky č. 6 ako konečnej zastávky by nebolo súčasťou správneho riešenia hľadania najkratšej cesty. 
+Navrhovaným riešením je nájsť viacero zastávok radiálnym vyhľadávaním, ktorému určíme polomer. Vo vybranej zóne sa môže nachádzať viac zastávok, ktoré prislúchajú tej istej trase, ako môžeme vidieť na obrázku \ref{fig:circularRoute}. V tomto prípade by výber zastávky č. 2 (najbližšej zastávky k zadanej pozícii) nebol optimálny, lebo trvanie pešieho presunu na zastávku č. 2 spolu s časom jazdy na zastávku č. 3 je dlhšie, ako trvanie pešieho presunu na zastávku č. 3. Rovnako aj výberom zastávky č. 6 ako konečnej zastávky by nebolo súčasťou správneho riešenia hľadania najkratšej cesty. 
 
 \begin{figure}[H]
 \centerline{\includegraphics[width=0.7\textwidth]{images/circular-route}}
@@ -157,17 +166,17 @@ Navrhovaným riešením je nájsť viacero zastávok radiálnym vyhľadávaním,
 \label{fig:circularRoute}
 \end{figure}
 
-\section{Alternatívne optimálne cesty}
+\section{Alternatívne cesty}
 \label{sec:alternative-optimal-paths}
-Pri hľadaní optimálnej cesty je potrebné zohľadniť, čo daný používateľ považuje za optimálne. Používateľ pri zadávaní vyhľadávacích parametrov nemusí poznať svoje preferencie alebo ich môže často meniť. Zadávanie preferencií pri každom vyhľadávaní nie je používateľsky prívetivé. Aby si napriek tomu používateľ mohol zvoliť cestu, ktorá najviac vyhovuje jeho potrebám, systém musí ponúknuť viac alternatívnych ciest. Tu sa dostávame k problému \textit{K} najkratších ciest.
+Pri hľadaní optimálnej cesty je potrebné zohľadniť, čo daný používateľ považuje za optimálne. Používateľ pri zadávaní vyhľadávacích parametrov nemusí poznať svoje preferencie alebo ich môže často meniť. Zadávanie preferencií pri každom vyhľadávaní nie je používateľsky prívetivé. Aby si napriek tomu používateľ mohol zvoliť cestu, ktorá najviac vyhovuje jeho potrebám, systém mu môže ponúknuť viac alternatívnych ciest. Tu sa dostávame k problému \textit{K} najkratších ciest.
 
-Autori článku \cite{dissimilar}, poukazujú na to, že väčšina navigačných služieb neposkytuje používateľom viac ciest. A ak áno, využívajú taký algoritmus, ktorý poskytuje viacero alternatívnych ciest, ktoré sú podobné vo veľkej časti úsekov. Správny algoritmus by mal vybrať trasy s najmenšou spoločnou dĺžkou spomedzi tých, ktoré vyhovujú zadaným preferenciám. Autori článku predstavili vývoj heuristického algoritmu, ktorý efektívne vyhľadáva rôzne alternatívne cesty. Algoritmus je popísaný vývojovým diagramom na obrázku \ref{fig:flowchart}.
+Autori článku \cite{dissimilar}, poukazujú na to, že väčšina navigačných služieb neposkytuje používateľom viac ciest. A ak áno, využívajú taký algoritmus, ktorý poskytuje viacero alternatívnych ciest, ktoré sú podobné vo veľkej časti úsekov. Správny algoritmus by mal vybrať trasy s najmenšou spoločnou dĺžkou spomedzi tých, ktoré vyhovujú zadaným preferenciám. Autori článku predstavili vývoj heuristického algoritmu, ktorý efektívne vyhľadáva rôzne alternatívne cesty. %Algoritmus je popísaný vývojovým diagramom na obrázku \ref{fig:flowchart}.
 
-\begin{figure}[H]
-\centerline{\includegraphics[width=1.0\textwidth]{images/flow-chart}}
-\caption[Algoritmus K najkratších ciest - vývojový diagram]{Algoritmus K najkratších ciest - vývojový diagram}
-\label{fig:flowchart}
-\end{figure}
+%\begin{figure}[H]
+%\centerline{\includegraphics[width=1.0\textwidth]{images/flow-chart}}
+%\caption[Algoritmus K najkratších ciest - vývojový diagram]{Algoritmus K najkratších ciest - vývojový diagram}
+%\label{fig:flowchart}
+%\end{figure}
 
 \section{RAPTOR algoritmus}
 \label{sec:raptor}
@@ -180,9 +189,11 @@ Autori článku \cite{raptor} predstavujú RAPTOR – Round-bAsed Public Transit
 Na rozdiel od grafových algoritmov, RAPTOR sa ľahko paralelizuje. Jednoducho rozdelí nezávislé linky medzi rôzne CPU jadrá. Existujú dve rozšírenia algoritmu a to McRAPTOR, ktorý zvláda riešiť viacero kritérií okrem času príchodu a počtu prestupov a rRAPTOR, ktorý vracia množinu ciest pre všetky odchody zo zastávky v danom časovom rozsahu. Bez potrebného pre-processingu a post-processingu dokáže spracovať aj kritérium preferovaných prestupných miest.
 
 \subsection{Definície pojmov a premenných}
+\label{sec:raptor-definitions}
 
 Definujeme cestovný poriadok ako $(\mathcal{S,T,R,F},\Pi)$, kde 
 \begin{itemize}
+\setlength\itemsep{-0.3em}
 \item $\Pi \subset \mathbb{N}_{0}$ je čas v sekundách, 
 \item $\mathcal{S}$ je množina zastávok,
 \item $\mathcal{T}$ je množina jázd, 
@@ -190,7 +201,7 @@ Definujeme cestovný poriadok ako $(\mathcal{S,T,R,F},\Pi)$, kde
 \item $\mathcal{F}$ je množina peších presunov.
 \end{itemize}
 
-Zastávka $p$ predstavuje miesto pre nastúpenie a vystúpenie z vozidla. Môže to byť aj platforma. Jazda $t$ reprezentuje postupnosť zastávok konkrétneho vozidla. Každá zastávka $p$ z jazdy $t$ má priradený čas odchodu $\tau_{dep}(t, p) \in \Pi$ a čas príchodu $\tau_{arr}(t, p) \in \Pi$. Každá linka z $\mathcal{R}$ pozostáva z jázd, ktoré majú rovnaké postupnosti zastávok. Pešie prechody z množiny $\mathcal{F}$ reprezentujú prestupy medzi zastávkami. Každý prestup pozostáva z dvoch zastávok $p_1$ a $p_2$ a času potrebného na presun medzi nimi $l(p_1, p_2)$. 
+Zastávka $p$ predstavuje miesto pre nastúpenie a vystúpenie z vozidla. Jazda $t$ reprezentuje postupnosť zastávok konkrétneho vozidla. Každá zastávka $p$ z jazdy $t$ má priradený čas odchodu $\tau_{dep}(t, p) \in \Pi$ a čas príchodu $\tau_{arr}(t, p) \in \Pi$. Každá linka z $\mathcal{R}$ pozostáva z jázd, ktoré majú rovnaké postupnosti zastávok. Pešie prechody z množiny $\mathcal{F}$ reprezentujú prestupy medzi zastávkami. Každý prestup pozostáva z dvoch zastávok $p_1$ a $p_2$ a času potrebného na presun medzi nimi $l(p_1, p_2)$. 
 
 Výstupom z algoritmu je cesta $\mathcal{J}$, ktorá je definovaná postupnosťou jázd a peších prestupov. Cesta, ktorá obsahuje $k$ jázd, má presne $k-1$ prestupov. Majme začiatočnú zastávku $p_s$ a konečnú zastávku $p_t$ a čas odchodu $\tau$. Najzákladnejším kritériom, na ktoré algoritmus prihliada, je \textit{Earliest Arrival Problem}, ktorý hľadá cestu nezačínajucú skôr než $\tau$ v bode $p_s$ a do $p_t$ sa dostane čo najrýchlejšie. Ďalej chceme viacero alternatívnych ciest s tým, že žiadna z ciest nezačína skorej ako $\tau$ a cesty môžu obsahovať aj prestupy. 
 
@@ -231,7 +242,7 @@ RAPTOR algoritmus hľadá cestu zo začiatočnej zastávky do všetkých zastáv
 
 \subsection{rRAPTOR}
 \label{sub:rraptor}
-rRAPTOR je rozšírenie RAPTOR algoritmu, ktoré nám vráti množinu najkratších ciest pre všetky odchody zo zastávky v danom časovom rozsahu. 
+rRAPTOR je rozšírenie RAPTOR algoritmu, ktoré vráti množinu najkratších ciest pre všetky odchody zo zastávky v danom časovom rozsahu. 
 
 Nech $\Delta \subseteq \Pi$ je časový úsek. Najskôr vložíme do množiny $\Psi$ časy odchodov jázd začínajúcich na danej zastávke, ktoré patria do časového úseku $\Delta$. Pre každý čas odchodu $\tau$ z $\Psi$ spustíme RAPTOR algoritmus nezávisle. Znamená to, že hodnota $\tau_k(p)$ bude existovať pre každý čas odchodu $\tau$, zastávku $p$ a kolo $k$. Nemusí platiť, že všetky nájdené cesty budú optimálne. Na porovnanie ciest využijeme pravidlo dominancie ciest: cesta $\mathcal{J}_1$ dominuje nad cestou $\mathcal{J}_2$, ak platí:
 
@@ -240,12 +251,12 @@ $\tau_{dep}(\mathcal{J}_1) \geq \tau_{dep}(\mathcal{J}_2)$ a $\tau_{arr}(\mathca
 Aby sme mohli použiť toto pravidlo, zoradíme časy v množine $\Psi$ od najneskoršieho po najskorší čas. Pri iterovaní nebudeme prepisovať hodnotu $\tau_k(p)$ medzi kolami, ale nastavíme vždy na začiatku kola pre všetky zastávky $p$ $\tau_k(p) = \tau_{k-1}(p)$, kde je $\tau_{k-1}(p)$ lepšie ako $\tau_k(p)$. Pri tomto rozšírení algorimu nemôžeme použiť \textit{local prunning}, keďže nechceme, aby sa hodnota $\tau^*(p)$ porovnávala s ďalším spustením algoritmu pre skoršie časy z množiny $\Psi$. 
 
 
-\subsection{Paralelizácia}
-Ako sme si mohli všimnúť, linky sú individuálne a nie je potrebné ich iterovať v špecifickom poradí. Ak máme k dispozícii viac CPU jadier, každé z nich môže spracovávať inú podmnonžinu liniek. Nákladné môže byť zamedzenie prístupu do spoločného miesta v pamäti $(\tau_k(p))$. Autori navrhli 2 prístupy na riešenie paralelizácie bez využitia zámkov. Jeden prístup počíta s tým, že hardvér zaisťuje atomické zapisovanie do pamäte a druhý sa zaobíde aj bez tejto možnosti. 
+%\subsection{Paralelizácia}
+%Ako sme si mohli všimnúť, linky sú individuálne a nie je potrebné ich iterovať v špecifickom poradí. Ak máme k dispozícii viac CPU jadier, každé z nich môže spracovávať inú podmnonžinu liniek. Nákladné môže byť zamedzenie prístupu do spoločného miesta v pamäti $(\tau_k(p))$. Autori článku \cite{raptor} navrhli 2 prístupy na riešenie paralelizácie bez využitia zámkov. Jeden prístup počíta s tým, že hardvér zaisťuje atomické zapisovanie do pamäte a druhý sa zaobíde aj bez tejto možnosti. 
 
 \subsection{Dátová štruktúra}
 \label{subsec:structure}
-Autori článku navrhli aj štruktúru, ktorá je vhodná pre RAPTOR algoritmus. Linky, jazdy a zastávky indexujeme od $0$. Potrebujeme pole liniek \textit{Routes}, ktoré si pre každú linku $r_i$ uchováva informáciu o počte zastávok na linke $r_i$ a smerník na pole \textit{RouteStops}, ktorý označuje začiatok postupnosti zastávok na linke $r_i$. Podobne aj pre jazdy si linka $r_i$ uchováva smerník, ktorý ukazuje na začiatok bloku v poli \textit{StopTimes}. Jeden blok v poli \textit{StopTimes} obsahuje všetky jazdy prislúchajúce linke $r_i$ zoradené podľa času odchodu z prvej zastávky. Každú jazdu reprezentuje postupnosť časov (čas príchodu a čas odchodu). Štruktúra ja zobrazená na obrázku \ref{fig:raptor-structure}. 
+Autori článku navrhli aj štruktúru, ktorá je vhodná pre RAPTOR algoritmus. Linky, jazdy a zastávky indexujeme od $0$. Potrebujeme pole liniek \textit{Routes}, ktoré si pre každú linku $r_i$ uchováva informáciu o počte zastávok na linke $r_i$ a smerník na pole \textit{RouteStops}, ktorý označuje začiatok postupnosti zastávok na linke $r_i$. Podobne aj pre jazdy si linka $r_i$ uchováva smerník, ktorý ukazuje na začiatok bloku v poli \textit{StopTimes}. Jeden blok v poli \textit{StopTimes} obsahuje všetky jazdy prislúchajúce linke $r_i$ zoradené podľa času odchodu z prvej zastávky. Každú jazdu reprezentuje postupnosť časov (čas príchodu a čas odchodu). Štruktúra je zobrazená na obrázku \ref{fig:raptor-structure}. 
 
 \begin{figure}[H]
 \centerline{\includegraphics[width=0.7\textwidth]{images/raptor-structure}}
@@ -279,11 +290,11 @@ V tomto článku nám pribudlo označenie $k$-tej najkratšej cesty. Kedže pís
 \textbf{Premenná} & \textbf{Popis} \\ \hline
 $t_r$             & jazda $t$ linky $r$          \\ \hline
 $Tr_c$             & penalizácia prestupu typu $c$          \\ \hline
-$l(p, p_i)$       & čas pešieho prestupu zo zastávky $p$ do zastávky $p_i$ \\ \hline
+%$l(p, p_i)$       & čas pešieho prestupu zo zastávky $p$ do zastávky $p_i$ \\ \hline
 $\tau_k(p)$			& najskorší známy čas príchodu na zastávku $p$ v $k$ kolách \\ \hline
-$\tau_k(t, p)$    & najskorší známy čas príchodu na zastácku $p$ použitím jazdy $t$ v $k$ kolách \\ \hline
-$\mathcal{J}_k(p)$ & množina ciest, ktorými sa viam dostať na zastávku $p$ v $k$ kolách \\ \hline
-$\mathcal{J}_{k,m}(p)$ & $m$-tá najskoršia cesta, ktorou sa viem dostať na zastávku $p$ v $k$ kolách \\ \hline
+%$\tau_k(t, p)$    & najskorší známy čas príchodu na zastávku $p$ použitím jazdy $t$ v $k$ kolách \\ \hline
+$\mathcal{J}_k(p)$ & množina ciest, ktorými sa vieme dostať na zastávku $p$ v $k$ kolách \\ \hline
+$\mathcal{J}_{k,m}(p)$ & $m$-tá najskoršia cesta, ktorou sa vieme dostať na zastávku $p$ v $k$ kolách \\ \hline
 $\mathcal{J}_k(p, p_i)$ & cesta zo zastávky $p$ do zastávky $p_i$ v $k$ kolách \\ \hline
 \end{tabular}
 \caption{Tabuľka premenných pre vylepšený RAPTOR algoritmus}
@@ -306,7 +317,7 @@ Druhé pravidlo považuje cesty za podobné, ak je postupnosť zastávok v oboch
 V $\mathcal{J}_k(p)$ sú uložené cesty, ktorými sme sa dostali na zastávku $p$ v kole $k$. Ak prídeme na zastávku $p$ v čase $\tau_k(p)$, porovnáme časy príchodov už existujúcich ciest z množiny $\mathcal{J}_k(p)$ a len cesta s minimálnym časom príchodu bude aktualizovaná.
 
 \begin{figure}[H]
-\centerline{\includegraphics[width=0.7\textwidth]{images/similar-paths}}
+\centerline{\includegraphics[width=0.6\textwidth]{images/similar-paths}}
 \caption[RAPTOR - podobné cesty]{RAPTOR - podobné cesty}
 \label{fig:similar-paths}
 \end{figure}
@@ -327,67 +338,37 @@ V $\mathcal{J}_k(p)$ sú uložené cesty, ktorými sme sa dostali na zastávku $
 \end{algorithmic}
 \end{algorithm}
 
-\subsubsection{Zhrnutie vylepšeného RAPTOR algoritmu}
-Algoritmus nám vráti $M$ najskorších ciest, ktoré vedú na zastávku $p_t$. Vstupom pre algoritmus je čas odchodu $\tau$, začiatočná zastávka $p_s$ a konečná zastávka $p_t$. Začíname v kole $m=0$. Pre každú zastávku $p$ nastavíme hodnotu $\tau_k(p)=\infty$, okrem začiatočnej zastávky $p_s$. Tá bude mať hodnotu $\tau_k(p_s)=\tau$ a bude označená.
-\\
-\\
-\textbf{KROK 1:} Ak nie sme v kole $0$, pre každú zastávku $p$ nastavíme $\tau_k(p) = \tau_{k-1}(p)$ a $\mathcal{J}_k(p)=\mathcal{J}_{k-1}(p)$.\\
-\textbf{KROK 2:} Pre každú zastávku $p$ označenú v kole $k-1$ hľadáme všetky zastávky $p_i$, na ktoré sa vieme dostať peším presunom zo zastávky $p$. Ak $\tau_k(t, p)$ cesty $\mathcal{J}_k(p, p_i)$ je skôr ako $\tau_k(p_i)$, tak do $\tau_k(p_i)$ vložíme hodnotu $\tau_k(t, p)$ a označíme zastávku $p_i$. Ak počet ciest v množine $\mathcal{J}_k(p_i) < K$, pridaj cestu $\mathcal{J}_k(p, p_i)$ do tejto množiny. Ak je veľkosť množiny rovnaká ako $K$, nahraď cestu $\mathcal{J}_{k,m}(p_i)$ cestou $\mathcal{J}_k(p, p_i)$ a označ zastávku $p_i$. Ak nastane nejaká zmena v množine $\mathcal{J}_k(p_i)$, zotrieď ju podľa času príchodu do zastávky $p_i$. \\
-\textbf{KROK 3:} Pre každú označenú zastávku $p$, vložíme všetky dvojice $(r, p)$ do poľa $Q$, pričom platí, že linka $r$ obsluhuje zastávku $p$.\\
-\textbf{KROK 4:} Pre každú dvojicu $(r, p)$ hľadáme jazdu $t_r$, ktorá príde na zastávku $p$ po čase $\tau_k(p) + Tr_c$.\\
-\textbf{KROK 5:} Ak je posledná linka v množine $\mathcal{J}_{k,m}(p)$ identická s linkou $r$, preskoč KROK 6 a KROK 7.\\
-\textbf{KROK 6:} Hľadaj jazdu $t_r$ linky $r$ a pre každú zastávku $p_i$, ktorá patrí tejto linke over, či existuje podobná cesta ceste $\mathcal{J}_k(p, p_i)$. Ak už podobná cesta existuje, pokračuj KROKOM 7. Inak, ak počet ciest v $\mathcal{J}_k(p_i) < K$, pridaj cestu $\mathcal{J}_k(p, p_i)$ do tejto množiny. Ak je veľkosť množiny rovnaká ako $K$, porovnaj čas $\tau_k(p_i)$ cesty $\mathcal{J}_{k,m}(p_i)$ s časom $\tau_k(t, p)$ cesty $\mathcal{J}_k(p, p_i)$. Ak je čas $\tau_k(t,p)$ menší, nahraď $\mathcal{J}_{k,m}(p_i)$ cestou $\mathcal{J}_k(p, p_i)$ a označ zastávku $p_i$.  Ak nastane nejaká zmena v množine $\mathcal{J}_k(p_i)$, zotrieď ju podľa času príchodu do zastávky $p_i$. \\
-\textbf{KROK 7:} Nájdi cestu, ktorá má rovnakú postupnosť liniek akú má $\mathcal{J}_k(p, p_i)$ a ak platí $\tau_k(t, p)$ cesty $\mathcal{J}_k(p, p_i)$ < $\tau_k(p_i)$ cesty $\mathcal{J}_{k,m}(p_i)$, tak aktualizuj $\tau_k(p)$, označ zastávku $p_i$ a zotrieď množinu $\mathcal{J}_k(p_i)$\\
-\textbf{KROK 8:} Ak existuje zastávka, ktorá má hodnotu $\tau_k(p)$ aktualizovanú v kole $k$, pokračuj v algoritme znovu od KROKU 1. Inak ukonči proces.
+%\subsubsection{Zhrnutie vylepšeného RAPTOR algoritmu}
+%Algoritmus nám vráti $M$ najskorších ciest, ktoré vedú na zastávku $p_t$. Vstupom pre algoritmus je čas odchodu $\tau$, začiatočná zastávka $p_s$ a konečná zastávka $p_t$. Začíname v kole $m=0$. Pre každú zastávku $p$ nastavíme hodnotu $\tau_k(p)=\infty$, okrem začiatočnej zastávky $p_s$. Tá bude mať hodnotu $\tau_k(p_s)=\tau$ a bude označená.
+%\\
+%\\
+%\textbf{KROK 1:} Ak nie sme v kole $0$, pre každú zastávku $p$ nastavíme $\tau_k(p) = \tau_{k-1}(p)$ a $\mathcal{J}_k(p)=\mathcal{J}_{k-1}(p)$.\\
+%\textbf{KROK 2:} Pre každú zastávku $p$ označenú v kole $k-1$ hľadáme všetky zastávky $p_i$, na ktoré sa vieme dostať peším presunom zo zastávky $p$. Ak $\tau_k(t, p)$ cesty $\mathcal{J}_k(p, p_i)$ je skôr ako $\tau_k(p_i)$, tak do $\tau_k(p_i)$ vložíme hodnotu $\tau_k(t, p)$ a označíme zastávku $p_i$. Ak počet ciest v množine $\mathcal{J}_k(p_i) < M$, pridaj cestu $\mathcal{J}_k(p, p_i)$ do tejto množiny. Ak je veľkosť množiny rovnaká ako $M$, nahraď cestu $\mathcal{J}_{k,m}(p_i)$ cestou $\mathcal{J}_k(p, p_i)$ a označ zastávku $p_i$. Ak nastane nejaká zmena v množine $\mathcal{J}_k(p_i)$, zotrieď ju podľa času príchodu do zastávky $p_i$. \\
+%\textbf{KROK 3:} Pre každú označenú zastávku $p$, vložíme všetky dvojice $(r, p)$ do poľa $Q$, pričom platí, že linka $r$ obsluhuje zastávku $p$.\\
+%\textbf{KROK 4:} Pre každú dvojicu $(r, p)$ hľadáme jazdu $t_r$, ktorá príde na zastávku $p$ po čase $\tau_k(p) + Tr_c$.\\
+%\textbf{KROK 5:} Ak je posledná linka v množine $\mathcal{J}_{k,m}(p)$ identická s linkou $r$, preskoč KROK 6 a KROK 7.\\
+%\textbf{KROK 6:} Hľadaj jazdu $t_r$ linky $r$ a pre každú zastávku $p_i$, ktorá patrí tejto linke over, či existuje podobná cesta ceste $\mathcal{J}_k(p, p_i)$. Ak už podobná cesta existuje, pokračuj KROKOM 7. Inak, ak počet ciest v $\mathcal{J}_k(p_i) < M$, pridaj cestu $\mathcal{J}_k(p, p_i)$ do tejto množiny. Ak je veľkosť množiny rovnaká ako $M$, porovnaj čas $\tau_k(p_i)$ cesty $\mathcal{J}_{k,m}(p_i)$ s časom $\tau_k(t, p)$ cesty $\mathcal{J}_k(p, p_i)$. Ak je čas $\tau_k(t,p)$ menší, nahraď $\mathcal{J}_{k,m}(p_i)$ cestou $\mathcal{J}_k(p, p_i)$ a označ zastávku $p_i$.  Ak nastane nejaká zmena v množine $\mathcal{J}_k(p_i)$, zotrieď ju podľa času príchodu do zastávky $p_i$. \\
+%\textbf{KROK 7:} Nájdi cestu, ktorá má rovnakú postupnosť liniek akú má $\mathcal{J}_k(p, p_i)$ a ak platí $\tau_k(t, p)$ cesty $\mathcal{J}_k(p, p_i)$ < $\tau_k(p_i)$ cesty $\mathcal{J}_{k,m}(p_i)$, tak aktualizuj $\tau_k(p)$, označ zastávku $p_i$ a zotrieď množinu $\mathcal{J}_k(p_i)$\\
+%\textbf{KROK 8:} Ak existuje zastávka, ktorá má hodnotu $\tau_k(p)$ aktualizovanú v kole $k$, pokračuj v algoritme znovu od KROKU 1. Inak ukonči proces.
 
 \section{Podobné existujúce systémy}
 \label{sec:applications}
 V tejto sekcii popíšeme niektoré existujúce mobilné aplikácie, ktoré umožňujú vyhľadávanie spojov v Bratislavskej mestskej hromadnej doprave. Z používania aplikácie nevieme zistiť, aký algoritmus používajú na vyhľadávanie spojení a v akých dátových štruktúrach udržujú dáta. Vieme však porovnať, aké funkcionality ponúkajú používateľom a zhodnotiť, čo nám chýba alebo prekáža pri používaní týchto aplikácii.
 
 \subsection{Imhd.sk}
-Mobilná aplikácia Imhd.sk ponúka vyhľadávanie MHD spojení v Bratislave a v Košiciach. Pri prvom spustení aplikácia sťahuje databázu cestovných poriadkov do úložiska zariadenia. Aplikácia funguje aj v offline režime, kedy používa cestovné poriadky, ktoré boli naposledy stiahnuté do zariadenia. 
-
-Aplikácia ponúka možnosť zobraziť všetky existujúce linky a ich zastávky. Ak používateľ nepozná názov zastávky, z ktorej alebo na ktorú sa chce dostať, môže vybrať zastávku priamo z mapy. 
-
-Pri vyhľadávaní spojov je možné nastaviť rýchlosť chôdze, minimálny čas potrebný na presun, maximálny počet prestupov, akceptáciu peších presunov, vyfiltrovanie nízkopodlažných spojení alebo spojení na prepravu bicyklov. Používateľ si môže uložiť obľúbené linky, zastávky alebo cesty. Rovnako je možné vyhľadávanie spojení z/do aktuálnej polohy. Aplikácia vyhľadáva spojenia podľa statických cestovných poriadkov. Nezohľadňuje aktuálny stav dopravy a neponúka informácie o prípadnom meškaní spojov.
-
-Aplikácia informuje o možnosti kúpy SMS lístkov a v prípade pripojenia na internet zobrazuje aktuálne správy o zmenách, presunoch alebo výlukách v spojoch.  
+Mobilná aplikácia Imhd.sk ponúka vyhľadávanie MHD spojení v Bratislave a v Košiciach. Pri prvom spustení aplikácia sťahuje databázu cestovných poriadkov do úložiska zariadenia. Aplikácia funguje aj v offline režime, kedy používa cestovné poriadky, ktoré boli naposledy stiahnuté do zariadenia. Aplikácia ponúka možnosť zobraziť všetky existujúce linky a ich zastávky. Ak používateľ nepozná názov zastávky, z ktorej alebo na ktorú sa chce dostať, môže vybrať zastávku priamo z mapy. Pri vyhľadávaní spojov je možné nastaviť rýchlosť chôdze, minimálny čas potrebný na presun, maximálny počet prestupov, akceptáciu peších presunov, vyfiltrovanie nízkopodlažných spojení alebo spojení na prepravu bicyklov. Používateľ si môže uložiť obľúbené linky, zastávky alebo cesty. Rovnako je možné vyhľadávanie spojení z/do aktuálnej polohy. Aplikácia vyhľadáva spojenia podľa statických cestovných poriadkov. Nezohľadňuje aktuálny stav dopravy a neponúka informácie o prípadnom meškaní spojov. Aplikácia informuje o možnosti kúpy SMS lístkov a v prípade pripojenia na internet zobrazuje aktuálne správy o zmenách, presunoch alebo výlukách v spojoch.  
 
 \subsection{IDS BK}
-Aplikácia IDS BK je oficiálnou aplikáciou Integrovaného dopravného systému v Bratislavskom kraji. Na rozdiel od predchádzajúcej aplikácie umožňuje nákup lístkov a dobíjanie kreditu na kartu a vyžaduje pripojenie na internet.
-
-Rovnako ako v predchádzajúcej aplikácii používateľ vie zvoliť zastávku priamo z mapy. Pri vyhľadávaní spojov vieme nastaviť maximálny počet prestupov a maximálny povolený peší presun. Nevieme ale vyfiltrovať nízkopodlažné spoje a nastaviť preferenciu minimálneho potrebného času na prestup medzi spojeniami. Po vyhľadaní spojov aplikácia neponúka zobrazenie postupnosti zastávok konkrétneho spoja.
-
-Aplikácia IDS BK rovnako ako Imhd.sk vyhľadáva spojenia zo statických cestovných poriadkov.  
+Aplikácia IDS BK je oficiálnou aplikáciou Integrovaného dopravného systému v Bratislavskom kraji. Na rozdiel od predchádzajúcej aplikácie umožňuje nákup lístkov a dobíjanie kreditu na kartu a vyžaduje pripojenie na internet. Rovnako ako v predchádzajúcej aplikácii používateľ vie zvoliť zastávku priamo z mapy. Pri vyhľadávaní spojov vieme nastaviť maximálny počet prestupov a maximálny povolený peší presun. Nevieme ale vyfiltrovať nízkopodlažné spoje a nastaviť preferenciu minimálneho potrebného času na prestup medzi spojeniami. Po vyhľadaní spojov aplikácia neponúka zobrazenie postupnosti zastávok konkrétneho spoja. Aplikácia IDS BK rovnako ako Imhd.sk vyhľadáva spojenia zo statických cestovných poriadkov.  
 
 \subsection{CP}
-Mobilná aplikácia CP je oficiálna aplikácia pre vyhľadávanie v cestovných poriadkoch autobusovej, vlakovej a mestskej hromadnej dopravy celého Slovenska. Aplikácia pracuje online a používa vždy aktuálne cestovné poriadky. Pri vyhľadávaní vlakových spojení zobrazí informáciu o prípadných meškaniach a výlukách hľadaných spojov. 
-
-V aplikácii si používateľ nevie zobraziť linky a postupnosť ich zastávok. Pri vyhľadávaní spojenia vieme nastaviť rôzne preferencie. Na rozdiel od predchádzajúcich aplikácii chýba možnosť nastavenia obmedzenia pešieho presunu.
-
-Používateľ si vie zvoliť obľúbené položky a pamätá si históriu hľadania, podľa čoho ponúka používateľovi inteligentné našepkávanie zastávok. Zastávky je možné zadať aj priamo z mapy. 
-
-Aj v tejto aplikácii je možnosť priamo kúpiť lístky od zmluvných dopravcov. 
-
-Ani aplikácia CP neponúka vyhľadávanie spojov z MHD so zohľadnením reálnej polohy vozidiel MHD.
+Mobilná aplikácia CP je oficiálna aplikácia pre vyhľadávanie v cestovných poriadkoch autobusovej, vlakovej a mestskej hromadnej dopravy celého Slovenska.  Pri vyhľadávaní vlakových spojení zobrazí informáciu o prípadných meškaniach a výlukách hľadaných spojov. V aplikácii si používateľ nevie zobraziť linky a postupnosť ich zastávok. Pri vyhľadávaní spojenia vieme nastaviť rôzne preferencie. Na rozdiel od predchádzajúcich aplikácii chýba možnosť nastavenia obmedzenia pešieho presunu. Používateľ si vie zvoliť obľúbené položky a pamätá si históriu hľadania, podľa čoho ponúka používateľovi inteligentné našepkávanie zastávok. Zastávky je možné zadať aj priamo z mapy. Aj v tejto aplikácii je možnosť priamo kúpiť lístky od zmluvných dopravcov.
 
 \subsection{CG Transit}
-Aplikácia CG Tranzit ponúka vyhľadávanie v cestovných poriadkoch vlakov, autobusov a MHD v Slovenskej aj v Českej republike. Ponúka aj offline režim, pričom aplikácia sa automaticky aktualizuje po pripojení na internet. 
-
-Aplikácia ponúka zobrazenie liniek a ich zastávok, zobrazenie zastávok na mape, históriu posledných a obľúbených spojov.
-
-Pri vyhľadávaní spojov vieme nastaviť maximálny počet prestupov a prestupové časy pre vlaky, autobusy a MHD zvlášť. Na rozdiel od predchádzajúcich aplikácií nevieme obmedziť peší presun a vyfiltrovať len nízkopodlažné spoje.
-
-Aj CG Tranzit aplikácia v online verzii zobrazuje prípadné meškanie vlakov. Pre MHD a autobusové spoje túto funkcionalitu neponúka.
+Aplikácia CG Tranzit ponúka vyhľadávanie v cestovných poriadkoch vlakov, autobusov a MHD v Slovenskej aj v Českej republike. Ponúka aj offline režim, pričom aplikácia sa automaticky aktualizuje po pripojení na internet. Aplikácia ponúka zobrazenie liniek a ich zastávok, zobrazenie zastávok na mape, históriu posledných a obľúbených spojov. Pri vyhľadávaní spojov vieme nastaviť maximálny počet prestupov a prestupové časy pre vlaky, autobusy a MHD zvlášť. Na rozdiel od predchádzajúcich aplikácií nevieme obmedziť peší presun a vyfiltrovať len nízkopodlažné spoje. Aj CG Tranzit aplikácia v online verzii zobrazuje prípadné meškanie vlakov. Pre MHD a autobusové spoje túto funkcionalitu neponúka.
 
 \subsection{Ubian}
-Aplikácia ponúka vyhľadávanie v cestovných poriadkoch vlakov, autobusov a MHD na celom Slovensku. Ako jediná aplikácia zobrazuje aktuálne polohy vozidiel na mape a ich meškania aj pre MHD Bratislava. Pre Bratislavu majú od Dopravného podniku Bratislava online polohu vozidiel, rovnako aj od Železničnej spoločnosti Slovensko a mnohých autobusových medzimestských prepravcov.
-
-Taktiež ponúkajú možnosť zobraziť najbližšie zastávky v okolí s možnosťou navigácie na zastávku a zobrazenie odchodov z tejto zastávky. 
-
-Aplikácia UBIAN neponúka možnosť nastavenia preferencií pri vyhľadávaní spojov, ale umožňuje používateľovi vybrať jednu z možností: najskorší odchod, najrýchlejšia cesta, najmenej prestupov, najmenej chôdze alebo najmenej čakania.
-
-Aplikácie nefunguje v offline režime a neponúka zobrazenie liniek a ich zastávok.
+Aplikácia ponúka vyhľadávanie v cestovných poriadkoch vlakov, autobusov a MHD na celom Slovensku. Ako jediná aplikácia zobrazuje aktuálne polohy vozidiel na mape a ich meškania aj pre MHD Bratislava. Taktiež ponúkajú možnosť zobraziť najbližšie zastávky v okolí s možnosťou navigácie na zastávku a zobrazenie odchodov z tejto zastávky. Aplikácia UBIAN neponúka možnosť nastavenia preferencií pri vyhľadávaní spojov, ale umožňuje používateľovi vybrať jednu z možností: najskorší odchod, najrýchlejšia cesta, najmenej prestupov, najmenej chôdze alebo najmenej čakania. Aplikácie nefunguje v offline režime a neponúka zobrazenie liniek a ich zastávok.
 
 Hoci aplikácia dokáže zobraziť meškanie spoja, nevyužíva túto informáciu pri vyhľadávaní. Ak používateľ hľadá spojenia, ktoré majú odchod zo zastávky od aktuálneho času, zobrazí mu len tie, ktoré podľa statických cestovných poriadkov majú mať v budúcnosti odchod z danej zastávky. Ak existuje spojenie, ktoré mešká a ešte na zastávku nedorazilo, nezobrazí ho.
 
