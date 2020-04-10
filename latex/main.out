@@ -38,10 +38,30 @@
 \BOOKMARK [1][-]{section.2.5}{Algoritmus}{chapter.2}% 38
 \BOOKMARK [2][-]{subsection.2.5.1}{Pou\236itie a prisp\364sobenie RAPTOR algoritmu}{section.2.5}% 39
 \BOOKMARK [1][-]{section.2.6}{D\341tov\341 \235trukt\372ra}{chapter.2}% 40
-\BOOKMARK [1][-]{section.2.7}{Architekt\372ra aplik\341cie}{chapter.2}% 41
+\BOOKMARK [1][-]{section.2.7}{Architekt\372ra syst\351mu}{chapter.2}% 41
 \BOOKMARK [2][-]{subsection.2.7.1}{Serverov\341 strana}{section.2.7}% 42
 \BOOKMARK [2][-]{subsection.2.7.2}{Klientsk\341 strana}{section.2.7}% 43
 \BOOKMARK [2][-]{subsection.2.7.3}{Spracovanie d\341t}{section.2.7}% 44
 \BOOKMARK [0][-]{chapter.3}{Implement\341cia}{}% 45
-\BOOKMARK [0][-]{chapter.4}{Testovanie a evalu\341cia}{}% 46
-\BOOKMARK [0][-]{chapter*.34}{Z\341ver}{}% 47
+\BOOKMARK [1][-]{section.3.1}{Technol\363gie}{chapter.3}% 46
+\BOOKMARK [1][-]{section.3.2}{D\341ta}{chapter.3}% 47
+\BOOKMARK [2][-]{subsection.3.2.1}{Parsovanie d\341t zo s\372boru}{section.3.2}% 48
+\BOOKMARK [2][-]{subsection.3.2.2}{Pou\236itie datab\341zy}{section.3.2}% 49
+\BOOKMARK [2][-]{subsection.3.2.3}{Testovacie d\341ta}{section.3.2}% 50
+\BOOKMARK [1][-]{section.3.3}{D\341tov\341 \235trukt\372ra}{chapter.3}% 51
+\BOOKMARK [2][-]{subsection.3.3.1}{Implement\341cia d\341tovej \235trukt\372ry}{section.3.3}% 52
+\BOOKMARK [2][-]{subsection.3.3.2}{Naplnenie d\341tovej \235trukt\372ry}{section.3.3}% 53
+\BOOKMARK [1][-]{section.3.4}{Casov\375 simul\341tor}{chapter.3}% 54
+\BOOKMARK [2][-]{subsection.3.4.1}{Vlastn\341 trieda Time}{section.3.4}% 55
+\BOOKMARK [1][-]{section.3.5}{RAPTOR Algoritmus}{chapter.3}% 56
+\BOOKMARK [2][-]{subsection.3.5.1}{V\375sledky RAPTOR algoritmu}{section.3.5}% 57
+\BOOKMARK [2][-]{subsection.3.5.2}{Hladanie najbli\236\235ej vyhovuj\372cej jazdy}{section.3.5}% 58
+\BOOKMARK [2][-]{subsection.3.5.3}{Zapracovanie pou\236\355vatelsk\375ch preferenci\355}{section.3.5}% 59
+\BOOKMARK [1][-]{section.3.6}{Klientsk\341 strana}{chapter.3}% 60
+\BOOKMARK [2][-]{subsection.3.6.1}{Implement\341cia klientskej strany}{section.3.6}% 61
+\BOOKMARK [2][-]{subsection.3.6.2}{D\341tum s cas}{section.3.6}% 62
+\BOOKMARK [2][-]{subsection.3.6.3}{Zobrazovanie zast\341vok na mape}{section.3.6}% 63
+\BOOKMARK [2][-]{subsection.3.6.4}{Zobrazovanie casov ciest}{section.3.6}% 64
+\BOOKMARK [2][-]{subsection.3.6.5}{Nasleduj\372ce cesty}{section.3.6}% 65
+\BOOKMARK [0][-]{chapter.4}{Testovanie a evalu\341cia}{}% 66
+\BOOKMARK [0][-]{chapter*.49}{Z\341ver}{}% 67

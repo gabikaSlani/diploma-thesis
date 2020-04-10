@@ -51,10 +51,39 @@
 \contentsline {subsubsection}{Nasleduj\IeC {\'u}ce cesty}{28}{section*.30}
 \contentsline {subsubsection}{Zhrnutie}{28}{section*.31}
 \contentsline {section}{\numberline {2.6}D\IeC {\'a}tov\IeC {\'a} \IeC {\v s}trukt\IeC {\'u}ra}{28}{section.2.6}
-\contentsline {section}{\numberline {2.7}Architekt\IeC {\'u}ra aplik\IeC {\'a}cie}{30}{section.2.7}
+\contentsline {section}{\numberline {2.7}Architekt\IeC {\'u}ra syst\IeC {\'e}mu}{30}{section.2.7}
 \contentsline {subsection}{\numberline {2.7.1}Serverov\IeC {\'a} strana}{30}{subsection.2.7.1}
 \contentsline {subsection}{\numberline {2.7.2}Klientsk\IeC {\'a} strana}{30}{subsection.2.7.2}
 \contentsline {subsection}{\numberline {2.7.3}Spracovanie d\IeC {\'a}t}{30}{subsection.2.7.3}
 \contentsline {chapter}{\numberline {3}Implement\IeC {\'a}cia}{32}{chapter.3}
-\contentsline {chapter}{\numberline {4}Testovanie a evalu\IeC {\'a}cia}{33}{chapter.4}
-\contentsline {chapter}{Z\IeC {\'a}ver}{34}{chapter*.34}
+\contentsline {section}{\numberline {3.1}Technol\IeC {\'o}gie}{32}{section.3.1}
+\contentsline {section}{\numberline {3.2}D\IeC {\'a}ta}{32}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Parsovanie d\IeC {\'a}t zo s\IeC {\'u}boru}{32}{subsection.3.2.1}
+\contentsline {subsubsection}{D\IeC {\'a}ta statick\IeC {\'y}ch cestovn\IeC {\'y}ch poriadkov}{32}{section*.34}
+\contentsline {subsubsection}{D\IeC {\'a}ta o me\IeC {\v s}kan\IeC {\'\i } vozidiel}{33}{section*.35}
+\contentsline {subsection}{\numberline {3.2.2}Pou\IeC {\v z}itie datab\IeC {\'a}zy}{33}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Testovacie d\IeC {\'a}ta}{34}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}D\IeC {\'a}tov\IeC {\'a} \IeC {\v s}trukt\IeC {\'u}ra}{34}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Implement\IeC {\'a}cia d\IeC {\'a}tovej \IeC {\v s}trukt\IeC {\'u}ry}{35}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Naplnenie d\IeC {\'a}tovej \IeC {\v s}trukt\IeC {\'u}ry}{36}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}\IeC {\v C}asov\IeC {\'y} simul\IeC {\'a}tor}{36}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Vlastn\IeC {\'a} trieda \textit {Time}}{36}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}RAPTOR Algoritmus}{37}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}V\IeC {\'y}sledky RAPTOR algoritmu}{37}{subsection.3.5.1}
+\contentsline {subsubsection}{Target prunning}{38}{section*.36}
+\contentsline {subsection}{\numberline {3.5.2}H\IeC {\v l}adanie najbli\IeC {\v z}\IeC {\v s}ej vyhovuj\IeC {\'u}cej jazdy}{38}{subsection.3.5.2}
+\contentsline {subsubsection}{Zoradenie j\IeC {\'a}zd v r\IeC {\'a}mci linky}{39}{section*.37}
+\contentsline {subsubsection}{Prihliadanie na me\IeC {\v s}kanie vozidiel}{40}{section*.39}
+\contentsline {subsection}{\numberline {3.5.3}Zapracovanie pou\IeC {\v z}\IeC {\'\i }vate\IeC {\v l}sk\IeC {\'y}ch preferenci\IeC {\'\i }}{41}{subsection.3.5.3}
+\contentsline {subsubsection}{Maxim\IeC {\'a}lny po\IeC {\v c}et prestupov}{41}{section*.41}
+\contentsline {subsubsection}{Maxim\IeC {\'a}lny \IeC {\v c}as pe\IeC {\v s}ieho presunu}{41}{section*.42}
+\contentsline {subsubsection}{Minim\IeC {\'a}lny \IeC {\v c}as na prestup}{42}{section*.43}
+\contentsline {subsubsection}{Vyfiltrovanie len n\IeC {\'\i }zkopodla\IeC {\v z}n\IeC {\'y}ch vozidiel}{42}{section*.44}
+\contentsline {section}{\numberline {3.6}Klientsk\IeC {\'a} strana}{42}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Implement\IeC {\'a}cia klientskej strany}{42}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}D\IeC {\'a}tum s \IeC {\v c}as}{43}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}Zobrazovanie zast\IeC {\'a}vok na mape}{43}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.4}Zobrazovanie \IeC {\v c}asov ciest}{44}{subsection.3.6.4}
+\contentsline {subsection}{\numberline {3.6.5}Nasleduj\IeC {\'u}ce cesty}{45}{subsection.3.6.5}
+\contentsline {chapter}{\numberline {4}Testovanie a evalu\IeC {\'a}cia}{47}{chapter.4}
+\contentsline {chapter}{Z\IeC {\'a}ver}{48}{chapter*.49}
