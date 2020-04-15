@@ -86,4 +86,4 @@
 \contentsline {subsection}{\numberline {3.6.4}Zobrazovanie \IeC {\v c}asov ciest}{44}{subsection.3.6.4}
 \contentsline {subsection}{\numberline {3.6.5}Nasleduj\IeC {\'u}ce cesty}{46}{subsection.3.6.5}
 \contentsline {chapter}{\numberline {4}Testovanie a evalu\IeC {\'a}cia}{47}{chapter.4}
-\contentsline {chapter}{Z\IeC {\'a}ver}{48}{chapter*.49}
+\contentsline {chapter}{Z\IeC {\'a}ver}{49}{chapter*.51}
