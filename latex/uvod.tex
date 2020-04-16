@@ -3,18 +3,29 @@
 \addcontentsline{toc}{chapter}{Úvod} % rucne pridanie do obsahu
 \markboth{Úvod}{Úvod} % vyriesenie hlaviciek
 
-Hlavné mesto je obrazom celého štátu a infraštruktúra je jeho neoddeliteľnou súčasťou. Mestská hromadná doprava je nevyhnutným spôsobom prepravy pre každé mesto, pre Bratislavu obzvlášť, keďže naše hlavné mesto nemá vybudované mestské podzemné dráhy.
-
-MHD pomáha nielen ľudom, ktorí nevlastnia osobné vozidlá, ale aj zdravotne znevýhodneným a účastníkom cestovného ruchu. Navyše minimalizuje počet aut v meste, čím odbremeňuje mesto od dopravných zápch. Prispieva k ekologickej preprave v meste a v niektorých prípadoch môže byť mestská hromadná doprava najrýchlejším a najekonomickejším spôsobom prepravy.
-Aby bolo cestovanie verejnou dopravou komfortné a cestujúci viac motivovaní, kľúčovú rolu zohráva presnosť spojov, vysoká frekvencia spojov, hustota rozsadenia zastávok, minimálna nutnosť peších presunov medzi zastávkami, pohodlnosť cestovania a mnohé iné faktory. 
+Dopravná infraštruktúra je neoddeliteľnou súčasťou hlavného mesta najmä vtedy ak mesto nemá vybudované podzemnú dráhu. 
+MHD slúži všetkým ľudom, ktorí nevlastnia osobné vozidlá, sú zdravotne znevýhodnení, ale aj
+účastníkom cestovného ruchu. Navyše minimalizuje počet aut v meste, čím odbremeňuje mesto od dopravných zápch. Prispieva k ekologickej preprave v meste a v niektorých prípadoch môže byť mestská hromadná doprava najrýchlejším a najekonomickejším spôsobom prepravy.
+Aby bolo cestovanie verejnou dopravou komfortné a cestujúci viac motivovaní využívať tento spôsob prepravy, kľúčovú rolu zohráva presnosť spojov, vysoká frekvencia spojov, hustota rozsadenia zastávok, minimálna nutnosť peších presunov medzi zastávkami, pohodlnosť cestovania a mnohé iné faktory. 
 
 Študent informatiky je schopný prispieť k zefektívneniu MHD vytvorením aplikácie, ktorá bude ponúkať čo najpresnejšie vyhľadávanie spojov, okolitých zastávok a prispeje k celkovému sprehľadneniu hromadnej dopravy.
 
 Aktuálne sú dostupné mnohé aplikácie, ktoré poskytujú spomínané funkcionality. Okrem možnosti vyhľadávania spojov ponúkajú aj priamu kúpu cestovného lístka, sledovanie pohybu vozidiel v reálnom čase, ako aj informáciu o možnosti prestupu na prímestskú dopravu. Avšak vyhľadávanie je realizované nad statickými cestovnými poriadkami. 
 
-Dopravný podnik Bratislava disponuje informáciami o aktuálnych polohách vozidiel, z čoho vie určiť meškanie jednotlivých spojov. Tieto informácie sú zobrazené na elektronických tabuliach na vybraných zastávkach. Prečo nevyužiť tieto dáta na spresnenie vyhľadávania spojení?
+Dopravný podnik Bratislava disponuje informáciami o aktuálnych polohách vozidiel, z čoho vie následne určiť meškanie jednotlivých spojov. Tieto informácie sú zobrazené na elektronických tabuliach na vybraných zastávkach. Prečo teda nevyužiť tieto dáta na spresnenie vyhľadávania spojení? 
 
-Rozhodli sme sa vytvoriť aplikáciu, ktorá bude pri vyhľadávaní cesty prihliadať na aktuálnu dopravnú situáciu. Zároveň chceme vytvoriť túto aplikácie pre široké spektrum cestujúcich. Vieme, že existujú cestujúci, ktorí preferujú minimálny počet prestupov, iní hľadajú najrýchlejšiu cestu do cieľa a sú aj takí, ktorí potrebujú na svoj presun nízkopodlažné vozidlá. Preto táto aplikácia bude poskytovať alternatívne optimálne cesty.
+Rozhodli sme sa vytvoriť aplikáciu, ktorá bude pri vyhľadávaní cesty prihliadať na aktuálnu dopravnú situáciu. Zároveň chceme vytvoriť túto aplikácie pre široké spektrum cestujúcich. Vieme, že existujú cestujúci, ktorí preferujú minimálny počet prestupov, iní hľadajú najrýchlejšiu cestu do cieľa a sú aj takí, ktorí potrebujú na svoj presun nízkopodlažné vozidlá. Preto táto aplikácia bude poskytovať navyše alternatívne optimálne cesty.
+
+Práca popisuje priebeh vývoja aplikácie a je rozdelená do štyroch kapitol. 
+V prvej kapitole sú zhrnuté poznatky, ktoré sme nadobudli štúdiom zaujímavých vedeckých článkov, 
+ako aj skúmaním funkcií už existujúcich aplikácií na vyhľadávanie ciest v bratislavskej mestskej hromadnej doprave. V literatúre sa vyhľadávanie ciest často spája s Dijkstrovým algoritmom.  
+Spomíname aj algoritmus A* spolu s jeho rôznymi optimalizáciami a modifikáciami. Jedna z modifikácií sa dokonca zaoberá časovými dátami a počíta s multimodalitou dopravnej siete. Pri grafových algoritmoch sú často spomínané aj minimalizácie prehľadávaného priestoru, ktoré by mohli zrýchliť beh algoritmu. Zmieňujeme sa aj o takej literatúre, ktorá by nám mohla pomôcť s vyhľadávaním alternatívnych ciest. Spomedzi všetkých algoritmov na vyhľadávanie ciest nás napokon najviac zaujal negrafový algoritmus RAPTOR, čo je skratkou pre Round bAsed Public Transit Optimal Router. Ako aj z názvu vyplýva, je určený na vyhľadávanie ciest v sieti verejnej dopravy. V tejto kapitole popisujeme jeho základnú verziu, ale aj vylepšenú verziu, ktorá sa zaoberá vyhľadávaním alternatívnych ciest. Výhodou algoritmu je, že je prispôsobiteľný, aby spracovával aj dynamické dáta. 
+
+Druhou kapitolou je kapitola Návrh, v ktorej vysvetľujeme, ako sme sa rozhodli vytvoriť našu aplikáciu z pohľadu funkcií, vyhľadávacieho algoritmu, dát a architektúry. Popisujeme funkcie, ktoré bude aplikácia cestujúcim ponúkať, pričom sme sa inšpirovali existujúcimi aplikáciami a vlastnými skúsenosťami. V tejto kapitole objasňujeme výber algoritmu na vyhľadávanie ciest. Vybraným algoritmom je RAPTOR algoritmus, ktorý modifikujeme, aby sme dosiahli požadované funkcie aplikácie. Ďalej po podrobnej analýze približujeme návrh spracovania dát. Popíšeme dáta statických cestovných poriadkov uložených vo formáte GTFS. Dopravný podnik Bratislava nám poskytol aj dáta o meškaní vozidiel. Opisujeme ako ukladáme dáta do databázy a do dátovej štruktúry pre algoritmus. V neposlednom rade popisujeme aj návrh architektúry systému.
+
+V kapitole Implementácia približujeme technológie, ktoré sme použili pri vývoji aplikácie. Spomíname riešenie problémov, ktoré vznikali pri importovaní a spracovávaní statických dát a dát o meškaní. Popisujeme akým spôsobom je implementovaná dátová štruktúra a ako do nej ukladáme dáta o meškaní vozidiel. Pre správne fungovanie aplikácie bolo potrebné simulovať čas v minulosti, keďže poskytnuté dáta mali platnosť v roku 2018. Ďalej ukazujeme implementáciu niektorých kľúčových častí RAPTOR algoritmu. Poskytujeme časti kódu na ukážku, ktorými sme obohatili algoritmus, aby prihliadal na preferencie zadané používateľom. Približujeme aj problémy, ktoré vznikali pri implementácii na klientskej strane.
+
+V poslednej kapitole spomíname testovacie dáta, ktoré sme vytvorili na overenie správnosti vyhľadávacieho algoritmu. Na ukážkach vyhľadaných ciest približujeme, ako sa algoritmus postupne vyvíjal a ako sa podľa toho menil zoznam vyhľadaných ciest. Ukazujeme, ako sa algoritmus vysporiadal s pridanými používateľskými preferenciami a ako dokázal prihliadnuť pri výpočte na meškanie spojov. Keďže nás nezaujíma jedna najkratšia cesta, ale viacero optimálnych alternatív, ukazujeme aj, ako vyzerá zoznam vyhľadaných ciest po filtrovaní.
 
 
  

@@ -78,7 +78,7 @@ Súbor \textit{stop\_times.txt} definuje indentifikačné číslo jazdy (\textit
 \label{sec:delay-data}
 Dopravný podnik Bratislava nám poskytol aj informácie o meškaní za rok 2018, pre mesiac február, marec a apríl. Pre každý deň v mesiaci existuje súbor vo formáte \textit{csv}. Každý záznam obsahuje údaje: identifikačné číslo záznamu, dátum a čas, kedy bol záznam o meškaní zaevidovaný, identifikačné číslo vozidla, názov linky, poradie, číslo zastávky, názov zastávky a meškanie.
 
-Z pozorovania dát vyplýva, že vlastnosť hodnota meškania nadobúda hodnotu $0$, kladné a záporné celé čísla alebo hodnotu $n/a$. Zaujímajú nás len záporné čísla. Na prelome dní sa v dátach vyskytuje hodnota $-1229$, ktorú budeme ignorovať.
+Z pozorovania dát vyplýva, že vlastnosť hodnota meškania nadobúda hodnotu $0$, kladné a záporné celé čísla alebo hodnotu $n/a$. Na prelome dní sa v dátach vyskytuje hodnota meškania $-1229$, ktorú budeme ignorovať. Riadky, ktoré majú hodnotu meškania $n/a$ budeme tiež ignorovať.
 
 Aby sme boli schopní správne zohľadniť meškanie v našom algoritme, potrebujeme hodnotu meškania zapísať do dátovej štruktúry. Na to potrebujeme vedieť identifikačné číslo zástavky a konkrétnu jazdu linky, na ktorej meškanie vzniklo. 
 
@@ -86,7 +86,7 @@ Z poskytnutých dát vieme zistiť číslo zastávky, ktoré sa však nezhoduje 
 
 Ďalej potrebujeme vedieť priradiť poskytnutý názov linky ku konkrétnej linke zo statických dát. Názov linky je v statických dátach unikátny, takže linku môžeme vyhľadať aj podľa názvu. V dátach o meškaní existujú také názvy liniek, ktoré sa nenachádzajú v tých statických. Sú to napríklad trojciferné čísla začínajúce cifrou $4$. Ak cifru $4$ zmeníme na písmeno $N$, názvy liniek sa zhodujú s názvami nočných spojov. Existujú aj ďalšie názvy liniek, ktoré nenájdeme v zozname liniek statických cestovných poriadkov. Tieto už budeme ignorovať. 
 
-Pôvodne sme si mysleli, že údaj poradie určuje poradie jazdy v rámci linky. Nie je to však tak, keďže hodnoty sú príliš malé. Máme však už všetky údaje potrebné na špecifikovanie správnej jazdy. Poznáme identifikačné číslo linky $r$, poznáme hodnotu meškania $d$ jazdy $t$ na zastávku $p$ a poznáme aj čas a dátum $\tau$, kedy boli tieto údaje zaznemenané. Po odpočítaní $d$ minút z času $\tau$, získame približný čas, kedy stojí hľadaná jazda $t$ linky $r$ na zastávke $p$. Neexistujú dve jazdy jednej linky, ktoré stoja na zastávke v rovnakom čase v rovnaký typ dňa. Týmto spôsobom získame jazdu, ktorej meškanie prislúcha.
+Pôvodne sme si mysleli, že údaj poradie určuje poradie jazdy v rámci linky. Nie je to však tak, keďže hodnoty sú príliš malé. Máme však už všetky údaje potrebné na špecifikovanie správnej jazdy. Poznáme identifikačné číslo linky $r$, poznáme hodnotu meškania $d$ jazdy $t$ na zastávku $p$ a poznáme aj čas a dátum $\tau$, kedy boli tieto údaje zaznemenané. Po pripočítaní $d$ minút k času $\tau$, získame približný čas, kedy stojí hľadaná jazda $t$ linky $r$ na zastávke $p$. Neexistujú dve jazdy jednej linky, ktoré stoja na zastávke v rovnakom čase v rovnaký typ dňa. Týmto spôsobom získame jazdu, ktorej meškanie prislúcha.
 
 Získané dáta umožňujú našej aplikácii ponúknuť správne cesty s prihliadnutím na meškanie spojov od $5.2.2018$ – $30.4.2018$. Statické vyhľadávanie bez meškania bude správne fungovať od $5.2.2018$ do konca roka $2018$.
 
@@ -131,9 +131,9 @@ Entita \textit{calendar\_dates} obsahuje zoznam všetkých dátumov (\textit{dat
 Používateľ môže pre vyhľadanie ciest zadať začiatočnú a konečnú zastávku tak, že vyberie zastávky z ponúkaného zoznamu zastávok. V zozname predstavuje zastávka \textit{stop areu}, ktorá zoskupuje zastávky s rovnakým názvom a rôznymi identifikačnými číslami. Preto vyhľadávanie ciest medzi začiatočnou a konečnou zastávkou bude vyhľadávanie ciest medzi  dvomi množinami zastávok, ako je ilustrované na obrázku \ref{fig:initial-parameters} a).
 
 \subsubsection{Vyhľadávanie z aktuálnej polohy}
-Začiatočný bod vie používateľ vybrať aj ako aktuálnu polohu, na ktorej sa nachádza. Radiálnym vyhľadávaním nájdeme okolité zastávky, ako bolo spomenuté v \ref{sec:actual-location}. Najbližšia vyhľadaná zastávka k aktuálnemu bodu nemusí znamenať optimálne riešenie a preto budeme považovať za začiatočnú zastávku každú z nich. Pre každú z týchto zastávok zistíme vzdialenosť od aktuálnej lokality  v minútach použitím \textit{Distance Matrix API}. 
+Začiatočný bod vie používateľ vybrať aj ako aktuálnu polohu, na ktorej sa nachádza. Radiálnym vyhľadávaním nájdeme okolité zastávky, ako bolo spomenuté v \ref{sec:actual-location}. Najbližšia vyhľadaná zastávka k aktuálnemu bodu nemusí znamenať optimálne riešenie a preto budeme považovať za začiatočnú zastávku každú z nich. Pre každú z týchto zastávok zistíme vzdialenosť od aktuálnej polohy  v minútach použitím \textit{Distance Matrix API}. 
 
-Tieto zastávky vytvoria množinu začiatočných zastávok s informáciou o iniciálnych vzdialenostiach z aktuálnej polohy do začiatočnej zastávky. Tento prípad je zobrazený na obrázku \ref{fig:initial-parameters} b). Do finálneho riešenia zakomponujeme peší presun od aktuálnej polohy po začiatočnú zastávku vybraných optimálnych ciest. Pri vstupných parametroch bude informácia o tom, či používateľ vyhľadával z aktuálnej lokality.
+Tieto zastávky vytvoria množinu začiatočných zastávok s informáciou o iniciálnych vzdialenostiach z aktuálnej polohy do začiatočnej zastávky. Tento prípad je zobrazený na obrázku \ref{fig:initial-parameters} b). Do finálneho riešenia zakomponujeme peší presun od aktuálnej polohy po začiatočnú zastávku vybraných optimálnych ciest. Pri vstupných parametroch bude informácia o tom, či používateľ vyhľadával z aktuálnej polohy.
 
 \begin{figure}[H]
 \centerline{\includegraphics[width=1.0\textwidth]{images/initial-parameters}}
@@ -141,7 +141,7 @@ Tieto zastávky vytvoria množinu začiatočných zastávok s informáciou o ini
 \label{fig:initial-parameters}
 \end{figure} 
 
-Vstupom pre algoritmus bude teda množina začiatočných zastávok aj s iniciálnymi vzdialenosťami. V prípade, že nevyhľadávame z aktuálnej lokality, budú mať vzdialenosti hodnotu 0. Vstup algoritmu tvorí aj množina konečných zastávok, dátum a čas, 4 parametre predstavujúce používateľské preferencie a informácia o vyhľadávaní z aktuálnej lokality.
+Vstupom pre algoritmus bude teda množina začiatočných zastávok aj s iniciálnymi vzdialenosťami. V prípade, že nevyhľadávame z aktuálnej polohy, budú mať vzdialenosti hodnotu 0. Vstup algoritmu tvorí aj množina konečných zastávok, dátum a čas, 4 parametre predstavujúce používateľské preferencie a informácia o vyhľadávaní z aktuálnej polohy.
 
 \section{Algoritmus}
 Pri hľadaní algoritmu na nájdenie optimálnej cesty sme najskôr siahli po najznámejšom vyhľadávacom grafovom algoritme. Dijkstrov algoritmus \ref{sec:dijkstra} sa zdal vhodný, avšak jeho vylepšená verzia A* algoritmus \ref{sec:a-star} je pri správne zvolenej heuristike efektívnejšia. Keďže zastávky, ktoré predstavujú vrcholy v grafe majú dané súradnice, uvažovali sme aj o optimalizovaní prehľadávaného priestoru. Pri štúdiu článkov sme narazili na rôzne optimalizácie prehľadávaného priestoru. Minimalizácia v okolí virtuálnej cesty a minimalizácia \textit{bounding boxom} sú spomenuté v \ref{sec:optimalization}.
