@@ -57,11 +57,11 @@ Od Dopravného podniku Bratislava sme získali statické cestovné poriadky, kto
 
 \subsubsection{GTFS}
 \label{sec:gtfs}
-\textit{General Transit Feed Specification (GTFS)} je dohodnutý formát dát, ktorý používajú tisíce poskytovateľov verejnej dopravy a mnohé softvérové aplikácie. Špecifikácia definuje súbory, v ktorých sú reprezentované entity v tabuľke. V stĺpcoch sú popísané vlastnosti entity a v každom riadku je nový záznam. V tekto sekcii analyzujeme len tie súbory, ktoré nám boli poskytnuté a opíšeme, ktoré z poskytnutých údajov využijeme.
+\textit{General Transit Feed Specification (GTFS)} je dohodnutý formát dát, ktorý používajú tisíce poskytovateľov verejnej dopravy a mnohé softvérové aplikácie. Špecifikácia definuje súbory, v ktorých sú reprezentované entity v tabuľke. V stĺpcoch sú popísané vlastnosti entity a v každom riadku je nový záznam. V tejto sekcii analyzujeme len tie súbory, ktoré nám boli poskytnuté a opíšeme, ktoré z poskytnutých údajov využijeme.
 
-Súbor \textit{agency.txt} obsauje údaje o prepravných spoločnostiach. Tento súbor nebudeme potrebovať, kedže všetky linky spravuje jedna spoločnosť. 
+Súbor \textit{agency.txt} obsahuje údaje o prepravných spoločnostiach. Tento súbor nebudeme potrebovať, kedže všetky linky spravuje jedna spoločnosť. 
 
-Súbor \textit{celendar.txt} obsahuje stĺpce \textit{service\_id}, \textit{monday}, \textit{tuesday}, \textit{wednesday}, \textit{thursday}, \textit{friday}, \textit{saturday}, \textit{sunday}, \textit{start\_date}, \textit{end\_date}. Vlasntosť \textit{service\_id} predstavuje unikátny názov typu dňa (pracovný deň, víkend,...). Vlasnosti \textit{monday, ..., sunday} môžu nadobúdať hodnoty $0$ a $1$. Ak je napríklad hodnota $monday = 1$, znamená to, že všetky pondelky medzi dátumom \textit{start\_date} a dátumom \textit{end\_date} patria do typu dňa \textit{service\_id}. Naopak, ak je hodnota rovná $0$, tak nepatria. 
+Súbor \textit{calendar.txt} obsahuje stĺpce \textit{service\_id}, \textit{monday}, \textit{tuesday}, \textit{wednesday}, \textit{thursday}, \textit{friday}, \textit{saturday}, \textit{sunday}, \textit{start\_date}, \textit{end\_date}. Vlasntosť \textit{service\_id} predstavuje unikátny názov typu dňa (pracovný deň, víkend,...). Vlasnosti \textit{monday, ..., sunday} môžu nadobúdať hodnoty $0$ a $1$. Ak je napríklad hodnota $monday = 1$, znamená to, že všetky pondelky medzi dátumom \textit{start\_date} a dátumom \textit{end\_date} patria do typu dňa \textit{service\_id}. Naopak, ak je hodnota rovná $0$, tak nepatria. 
 
 V súbore \textit{calendar\_dates.txt} sú vlastnosti: \textit{service\_id}, \textit{date}, \textit{exception\_type}. V prípade, že vlastnosť \textit{exception\_type} má hodnotu $1$, znamená to, že do \textit{service\_id} výnimočne patrí aj deň \textit{date}. Ak je $exception\_type = 2$, tak nepatrí.
 
@@ -86,7 +86,7 @@ Z poskytnutých dát vieme zistiť číslo zastávky, ktoré sa však nezhoduje 
 
 Ďalej potrebujeme vedieť priradiť poskytnutý názov linky ku konkrétnej linke zo statických dát. Názov linky je v statických dátach unikátny, takže linku môžeme vyhľadať aj podľa názvu. V dátach o meškaní existujú také názvy liniek, ktoré sa nenachádzajú v tých statických. Sú to napríklad trojciferné čísla začínajúce cifrou $4$. Ak cifru $4$ zmeníme na písmeno $N$, názvy liniek sa zhodujú s názvami nočných spojov. Existujú aj ďalšie názvy liniek, ktoré nenájdeme v zozname liniek statických cestovných poriadkov. Tieto už budeme ignorovať. 
 
-Pôvodne sme si mysleli, že údaj poradie určuje poradie jazdy v rámci linky. Nie je to však tak, keďže hodnoty sú príliš malé. Máme však už všetky údaje potrebné na špecifikovanie správnej jazdy. Poznáme identifikačné číslo linky $r$, poznáme hodnotu meškania $d$ jazdy $t$ na zastávku $p$ a poznáme aj čas a dátum $\tau$, kedy boli tieto údaje zaznemenané. Po pripočítaní $d$ minút k času $\tau$, získame približný čas, kedy stojí hľadaná jazda $t$ linky $r$ na zastávke $p$. Neexistujú dve jazdy jednej linky, ktoré stoja na zastávke v rovnakom čase v rovnaký typ dňa. Týmto spôsobom získame jazdu, ktorej meškanie prislúcha.
+Pôvodne sme si mysleli, že údaj poradie určuje poradie jazdy v rámci linky. Nie je to však tak, keďže hodnoty sú príliš malé. Máme však už všetky údaje potrebné na špecifikovanie správnej jazdy. Poznáme identifikačné číslo linky $r$, poznáme hodnotu meškania $d$ jazdy $t$ na zastávku $p$ a poznáme aj čas a dátum $\tau$, kedy boli tieto údaje zaznamenané. Po pripočítaní $d$ minút k času $\tau$, získame približný čas, kedy stojí hľadaná jazda $t$ linky $r$ na zastávke $p$. Neexistujú dve jazdy jednej linky, ktoré stoja na zastávke v rovnakom čase v rovnaký typ dňa. Týmto spôsobom získame jazdu, ktorej meškanie prislúcha.
 
 Získané dáta umožňujú našej aplikácii ponúknuť správne cesty s prihliadnutím na meškanie spojov od $5.2.2018$ – $30.4.2018$. Statické vyhľadávanie bez meškania bude správne fungovať od $5.2.2018$ do konca roka $2018$.
 
@@ -95,7 +95,7 @@ Získané dáta umožňujú našej aplikácii ponúknuť správne cesty s prihli
 \label{sec:foot-paths}
 V dátach sa nenachádzajú informácie o peších presunoch. V sekcii \ref{sec:raptor-improved} bolo navrhnuté, ako vypočítať peší presun s použitím Manhattanovskej vzdialenosti, prípadne penalizovať prestupy podľa ich typu. Napokon sme sa rozhodli využiť   \textit{Google API}, ktoré okrem iného ponúka možnosť vyhľadania peších vzdialeností medzi 2 bodmi prostredníctvom \textit{Distance Matrix API}. Počet bezplatných dopytov na \textit{Distance Matrix API} je však obmedzený. Z toho dôvodu nebudeme vyhľadávať pešie presuny pri hľadaní cesty. Vytvoríme jednorazovo súbor \textit{foot\_paths.txt}, ktorý bude obsahovať údaje o peších presunoch, ktoré sú pre nás zaujímavé. Nebudeme vyhľadávať pešie vzdialenosti medzi každou dvojicou zastávok, nakoľko to nie je potrebné. 
 
-Budeme postupovať nasledovne: pre každú zastávku $p$ nájdeme zastávky v okolí 800 metrov radiálnym vyhľadávaním. Pomocou \textit{Distance Matrix API} zistíme vzdialenosti nájdených zastávok od zastávky $p$. Každú dvojicu zastávok uložíme do súboru spolu so zistenými vzdialenosťami určených v minútach.
+Budeme postupovať nasledovne: pre každú zastávku $p$ nájdeme zastávky v okolí 800 metrov radiálnym vyhľadávaním. Pomocou \textit{Distance Matrix API} zistíme vzdialenosti nájdených zastávok od zastávky $p$. Každú dvojicu zastávok uložíme do súboru spolu so zistenými vzdialenosťami určenými v minútach.
 
 \section{Databáza}
 
@@ -128,7 +128,7 @@ Entita \textit{calendar\_dates} obsahuje zoznam všetkých dátumov (\textit{dat
 
 
 \section{Parametre pre algoritmus}
-Používateľ môže pre vyhľadanie ciest zadať začiatočnú a konečnú zastávku tak, že vyberie zastávky z ponúkaného zoznamu zastávok. V zozname predstavuje zastávka \textit{stop areu}, ktorá zoskupuje zastávky s rovnakým názvom a rôznymi identifikačnými číslami. Preto vyhľadávanie ciest medzi začiatočnou a konečnou zastávkou bude vyhľadávanie ciest medzi  dvomi množinami zastávok, ako je ilustrované na obrázku \ref{fig:initial-parameters} a).
+Používateľ môže pre vyhľadanie ciest zadať začiatočnú a konečnú zastávku tak, že vyberie zastávky z ponúkaného zoznamu zastávok. V zozname predstavuje zastávka \textit{stop area}, ktorá zoskupuje zastávky s rovnakým názvom a rôznymi identifikačnými číslami. Preto vyhľadávanie ciest medzi začiatočnou a konečnou zastávkou bude vyhľadávanie ciest medzi  dvomi množinami zastávok, ako je ilustrované na obrázku \ref{fig:initial-parameters} a).
 
 \subsubsection{Vyhľadávanie z aktuálnej polohy}
 Začiatočný bod vie používateľ vybrať aj ako aktuálnu polohu, na ktorej sa nachádza. Radiálnym vyhľadávaním nájdeme okolité zastávky, ako bolo spomenuté v \ref{sec:actual-location}. Najbližšia vyhľadaná zastávka k aktuálnemu bodu nemusí znamenať optimálne riešenie a preto budeme považovať za začiatočnú zastávku každú z nich. Pre každú z týchto zastávok zistíme vzdialenosť od aktuálnej polohy  v minútach použitím \textit{Distance Matrix API}. 
@@ -137,7 +137,7 @@ Tieto zastávky vytvoria množinu začiatočných zastávok s informáciou o ini
 
 \begin{figure}[H]
 \centerline{\includegraphics[width=1.0\textwidth]{images/initial-parameters}}
-\caption[Vstupné množiny zasáavok]{Vstupné množiny zastávok}
+\caption[Vstupné množiny zastávok]{Vstupné množiny zastávok}
 \label{fig:initial-parameters}
 \end{figure} 
 
@@ -159,7 +159,7 @@ V našej aplikácii sme sa rozhodli použiť tento negrafový algoritmus. Jeho v
 RAPTOR algoritmus počíta s tým, že každá linka pozostáva z jázd, ktoré majú rovnaké postupnosti zastávok, ako bolo spomenuté v \ref{sec:raptor-definitions}. Pri skúmaní dát sme zistili, že v prípade našich dát táto vlastnosť nie je splnená. Bude potrebné prispôsobiť algoritmus aj dátovú štruktúru, aby zohľadňovali rôzne postupnosti zastávok v rámci linky.
 
 \subsubsection{Optimalizácia}
-Na základnú verziu RAPTOR algoritmu popísanú v \ref{sub:raptor-basic} použijeme aj jeho optimalizáciu opísanú v \ref{sub:raptor-optimalisation}, kedy označujeme zastávky, aby sme nemuseli prechádzať tie linky, ktorým sa nevylepšil čas $\tau_{k-1}(p)$. Označené zastávky predstavujú potenciálne prestupné zastávky.  Rovnako využijeme aj optimalizácie \textit{local-prunning} a \textit{target-prunning}, ktoré nám zredukujú počet označených zastávok. Pri optimalizácii \textit{target-prunning} však nebudeme využívať hodnotu $\tau^*(p_t)$, ktorá predstavuje najlepší čas do konečnej zastávky $p_t$. Nás zaujíma najlepší čas zo všetkých konečných zastávok zoskupených v \textit{stop area} $\tau^*(P_t)$. 
+Na základnú verziu RAPTOR algoritmu popísanú v \ref{sub:raptor-basic} použijeme aj jeho optimalizáciu opísanú v \ref{sub:raptor-optimalisation}, kedy označujeme zastávky, aby sme nemuseli prechádzať tie linky, ktorým sa nevylepšil čas $\tau_{k-1}(p)$. Označené zastávky predstavujú potenciálne prestupné zastávky.  Rovnako využijeme aj optimalizácie \textit{local-prunning} a \textit{target-prunning}, ktoré nám zredukujú počet označených zastávok. Pri optimalizácii \textit{target-prunning} však nebudeme využívať hodnotu $\tau^*(p_t)$, ktorá predstavuje najlepší čas do konečnej zastávky $p_t$. Nás zaujíma čas $\tau^*(P_t)$, ktorý predstavuje najlepší čas zo všetkých zastávok zoskupených v konečnej \textit{stop area} $P_t$. 
 
 \subsubsection{Zapracovanie dát o meškaní}
 Kedže cieľom našej práce je vyhľadávanie ciest s prihliadnutím na prípadné meškania spojov, potrebujeme dosiahnuť, aby algoritmus pri hľadaní optimálnych ciest prihliadal na zaznamenané meškania. Spoliehame sa na to, že dátová štruktúra si bude držať pri každej zastávke v každej jazde hodnotu meškania. Prihliadať na meškania budeme len v prípade, že používateľ vyhľadáva v aktuálny deň. Inak bude údaje o meškaniach ignorovať a vyhľadávať cesty zo statických cestovných poriadkov.
@@ -172,9 +172,9 @@ Po dobehnutí RAPTOR algoritmu získame tabuľku najlepších časov pre každé
 
 V sekcii \ref{sec:raptor-improved} sme spomenuli vylepšený RAPTOR algoritmus, ktorý pre každú zastávku nehľadá najlepší čas, ale $K$ optimálnych ciest. Prihliada na to, aby cesty neboli podobné na veľkej časti úsekov. Po dobehnutí algoritmu máme pre každú zastávku najviac $K$ optimálnych ciest.
 
-Najskôr sme použili spomínané navrhnuté vylepšenie RAPTOR algoritmu, narážali sme však na problém, ako správne zvoliť premennú $K$, aby sme neodfiltrovali tie cesty, ktoré môžu byť správne. Navyše po každom vylepšení času $\tau^*_k(p)$ bolo potrebné prejsť všetky cesty v množine $\mathcal{J}_k(p)$ a odfiltrovať najmenej optimálne. Cesty by boli vyfiltrované len v rámci zastávok (\textit{stop}) a nie pre celú skupinu zastávok (\textit{stopArea}).
+Najskôr sme použili spomínané navrhnuté vylepšenie RAPTOR algoritmu, narážali sme však na problém, ako správne zvoliť premennú $K$, aby sme neodfiltrovali tie cesty, ktoré môžu byť správne. Navyše po každom vylepšení času $\tau^*_k(p)$ bolo potrebné prejsť všetky cesty v množine $\mathcal{J}_k(p)$ a odfiltrovať najmenej efektívne. Cesty by boli vyfiltrované len v rámci zastávok (\textit{stop}) a nie pre celú skupinu zastávok (\textit{stopArea}).
 
-Rozhodli sme sa napokon využiť základnú verziu algoritmu, kedy získavame tabuľku najlepších časov. Budeme si pamätať, ako sme dosiahli každý z vylepšených časov. Budeme evidovať z ktorej zastávky sme sa na označenú zastávku dostali a akým spôsobom. Z výsledkov vytvoríme len také cesty, ktoré končia v niektorej z konečných zastávok a začínajú v niektorej zo začiatočných zastávok. Tieto cesty budeme filtrovať podľa potrebných filtrov, aby sme získali čo najoptimálnejšie cesty. 
+Rozhodli sme sa napokon využiť základnú verziu algoritmu, kedy získavame tabuľku najlepších časov. Budeme si pamätať, ako sme dosiahli každý z vylepšených časov. Budeme evidovať, z ktorej zastávky sme sa na označenú zastávku dostali a akým spôsobom. Z výsledkov vytvoríme len také cesty, ktoré končia v niektorej z konečných zastávok a začínajú v niektorej zo začiatočných zastávok. Tieto cesty budeme filtrovať podľa potrebných filtrov, aby sme získali cesty, ktoré sú optimálne. 
 
 \subsubsection{Filtre}
 Všetky cesty, ktoré budú výsledkom dopytu, musia vyhovovať nasledujúcim filtrom. RAPTOR algoritmus operuje v kolách a v každom kole hľadá zastávky, ktorým vieme vylepšiť čas. Tieto zastávky dosahuje akciami. Každá akcia začína v niektorej z označených zastávok $p_m$ v kole $k-1$ a končí v inej dosiahnuteľnej zastávke $p_i$ v kole $k$.  Ako sme už spomínali zastávka $p_m$ je prestupné miesto. Pod akciou teda rozumieme buď peší presun zo zastávky $p_m$ do zastávky $p_i$ alebo úsek jazdy pričom platí, že $p_m$ je zastávka na nastúpenie a zastávka $p_i$ je zastávka na vystúpenie.
@@ -183,16 +183,16 @@ Cesta je vlastne postupnosťou zastávok $(p_0, p_1, …, p_n)$ a akcií $(a_0, 
 
 Ďalej nechceme povoliť, aby zastávka $p_0$ a $p_1$ patrili do rovnakej \textit{stop area}. Toto obmedzenie platí aj pre zastávky $p_{n-1}$ a $p_n$.
 
-Ďalej filtrujeme cesty ich porovnávaním medzi sebou navzájom. Majme cesty, ktoré už prešli cez všetky vyššie spomínané kritériá. Nech cesta $J_1$ začína v čase $dt_1$, končí v čase $at_1$ a obsahuje $n$ prestupov. Nech cesta $J_2$ má začiatočný čas $dt_2$, konečný čas $at_2$ a obsahuje $n$ prestupov. V sekcii \ref{sec:raptor-improved} boli okrem iného spomenuté aj podobné cesty. Problém podobných ciest sme ilustrovali na obrázku \ref{fig:similar-paths}. V prípade že platí $dt_1 = dt_2, at_1=at_2$ a $m < n$, tak cestu $J_2$ chceme odfiltrovať. V inom prípade nech platí, že $dt_1 = dt_2, at_1=at_2$ a $m=n$ a zároveň platí, že jednotlivé úseky jázd patria rovnakej linke, tak odfiltrujeme jednu z nich. Tieto cesty sa líšia len prestupným miestom. 
+Ďalej filtrujeme cesty ich porovnávaním medzi sebou navzájom. Majme cesty, ktoré už prešli cez všetky vyššie spomínané kritériá. Nech cesta $J_1$ začína v čase $dt_1$, končí v čase $at_1$ a obsahuje $m$ prestupov. Nech cesta $J_2$ má začiatočný čas $dt_2$, konečný čas $at_2$ a obsahuje $n$ prestupov. V sekcii \ref{sec:raptor-improved} boli okrem iného spomenuté aj podobné cesty. Problém podobných ciest sme ilustrovali na obrázku \ref{fig:similar-paths}. V prípade že platí $dt_1 = dt_2, at_1=at_2$ a $m < n$, tak cestu $J_2$ chceme odfiltrovať. V inom prípade nech platí, že $dt_1 = dt_2, at_1=at_2$ a $m=n$ a zároveň platí, že jednotlivé úseky jázd patria rovnakej linke, tak odfiltrujeme jednu z nich. Tieto cesty sa líšia len prestupným miestom. 
 
 Chceme filtrovať nevýhodné cesty. Nech platí $dt_1 \leq dt_2$ a $ar_1 > ar_2$, tak cestu $J_1$ odfiltrujeme. Rovnako aj keď platí $dt_1 < dt_2$ a $ar_1 \geq ar_2$ chceme cestu $J_1$ odfiltrovať. 
 
-Dostávame sa ešte k takým cestám, pre ktoré platí $dt_1 \leq dt_2, at_1<at_2$ a $m>n$. Cestujúcich môže zaujímať aj cesta $J_2$, ktorou sa síce nedostanem do konečnej zastávky najrýchlejšie, ale obsahuje menší počet prestupov ako cesta $J_1$. Otázkou je s akým omeškaním času príchodu je cesta $J_2$ ešte prijateľná. Rozhodli sme sa prestup penalizovať $x$ minútami. Nech platí že cesta $J_1$ je cesta, ktorou sa dostanem najskôr do konečnej zastávky a nech $(at_2-at_1) > (m-n) * x$, tak cestu $J_2$ odfiltrujeme.
+Dostávame sa ešte k takým cestám, pre ktoré platí $dt_1 \leq dt_2, at_1<at_2$ a $m>n$. Cestujúcich môže zaujímať aj cesta $J_2$, ktorou sa síce nedostaneme do konečnej zastávky najrýchlejšie, ale obsahuje menší počet prestupov ako cesta $J_1$. Otázkou je s akým omeškaním času príchodu je cesta $J_2$ ešte prijateľná. Rozhodli sme sa prestup penalizovať $x$ minútami. Nech platí, že cesta $J_1$ je cesta, ktorou sa dostaneme najskôr do konečnej zastávky a nech $(at_2-at_1) > (m-n) * x$, tak cestu $J_2$ odfiltrujeme.
 
 \subsubsection{Nasledujúce cesty}
-Takto vylepšený algoritmus nám nájde niekoľko optimálnych ciest najskôr od hľadaného času a dátumu. My však chceme používateľovi zobraziť určitý počet ciest na jednu podstránku a teda potrebujeme vyhľadané cesty doplniť nasledujúcimi cestami. 
+Takto vylepšený algoritmus nájde niekoľko optimálnych ciest najskôr od hľadaného času a dátumu. My však chceme používateľovi zobraziť určitý počet ciest na jednu podstránku a teda potrebujeme vyhľadané cesty doplniť nasledujúcimi cestami. 
 Riešením tohto problému by mohol byť rRAPTOR algoritmus spomínaný v 1.8.4. Takto vylepšený algoritmus však nepočíta s tým, že cesta môže začínať peším presunom. Budeme preto používať iný mechanizmus hľadania nasledujúcich ciest.
-Zvolíme si konštantu $x$, ktorá predstavuje minimálny počet ciest na podstránke. Keď vyhľadáme cesty po čase $\tau$, algoritmus nájde $k$ optimálnych ciest, pričom začiatočný čas poslednej ciest je $t$. Ďalšie vyhľadávanie spustíme s časom $t + 1$ minúta. Vyhľadané cesty pridáme k predchádzajúcim a na tieto cesty aplikujeme ešte niektoré z filtrov. Takto budeme pokračovať, kým nemáme vzhľadaných aspoň $x$ ciest.
+Zvolíme si konštantu $x$, ktorá predstavuje minimálny počet ciest na podstránke. Keď vyhľadáme cesty po čase $\tau$, algoritmus nájde $k$ optimálnych ciest, pričom začiatočný čas poslednej ciest je $t$. Ďalšie vyhľadávanie spustíme s časom $t + 1$ minúta. Vyhľadané cesty pridáme k predchádzajúcim a na tieto cesty aplikujeme ešte niektoré z filtrov. Takto budeme pokračovať, kým nemáme vyhľadaných aspoň $x$ ciest.
 
 \subsubsection{Zhrnutie}
 Výstupom z nášho algoritmu bude množina aspoň $x$ ciest začínajúcich na niektorej zastávke $p_s$ zo skupiny ciest $P_s$, po čase $\tau$ a končiacich v niektorej zastávke $p_t$ zo skupiny ciest $P_t$. Jednotlivé cesty sú optimálne, nie sú si podobné na väčšine úsekov a vyhovujú prípadným používateľským preferenciám.
@@ -215,7 +215,7 @@ V algoritme sa potrebujeme často dopytovať na všetky linky, ktoré stoja na k
 Algoritmus potrebuje často k svojim výpočtom nájsť jazdu linky \textit{t}, ktorá stojí na zastávke \textit{p} najskôr od zadaného času $\tau$ v zadanom type dňa (pracovný deň, víkend, ...). 
 Aby sme pri hľadaní jazdy linky nemuseli prechádzať všetky prvky poľa \textit{Trips}, zoskupili sme navyše jednotlivé jazdy v rámci úseku podľa typu dňa.
 
-V poli \textit{StopTimes} nebude prvok obsahovať len informáciu o čase, kedy podľa statického poriadku má stáť jazda linky na zastávke, ale aj informáciu o predpokladanom časovom meškaní danej jazdy na zastávku. K tomuto údaju bude algoritmus pristupovať len vtedy, ak používateľ vyhľadáva v aktuálny deň. 
+V poli \textit{StopTimes} nebude prvok obsahovať len informáciu o čase, kedy podľa statického poriadku má stáť jazda linky na zastávke, ale aj informáciu o prípadnom časovom meškaní danej jazdy na zastávku. K tomuto údaju bude algoritmus pristupovať len vtedy, ak používateľ vyhľadáva v aktuálny deň. 
 
 Pole \textit{Transfers} obsahuje pre každú zastávku \textit{p} pole zastávok, ktoré sa nachádzajú v blízkosti zastávky \textit{p} spolu s informáciu o časovej vzdialenosti v minútach. Maximálna vzdialenosť peších presunov je 8 minút. 
 
