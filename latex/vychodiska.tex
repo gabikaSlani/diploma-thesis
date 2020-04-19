@@ -27,7 +27,7 @@ V tejto kapitole ďalej opíšeme často skloňované algoritmy pri téme multim
 \section{Známe algoritmy hľadania najkratšej cesty}
 \label{sec:known-algorithms}
 
-Najčestejším riešením na hľadanie najkratšej alebo optimálnej cesty je použitie niektorého grafového algoritmu alebo jeho modifikácií. 
+Najčastejším riešením na hľadanie najkratšej alebo optimálnej cesty je použitie niektorého grafového algoritmu alebo jeho modifikácií. 
 
 Pod pojmom graf rozumieme dvojicu $(V, E)$, kde $V$ predstavuje množinu vrcholov a $E$ množinu hrán. 
 
@@ -66,7 +66,7 @@ Stretávame sa s problémom, kedy ohodnotenie hrán v grafe nie je konštantné,
 
 V článku \cite{trains} uvádzajú, že ak dokážeme odhadnúť hodnotu hrany konštantným číslom, potom riešenie klasického problému hľadania najkratšej cesty môže fungovať ako heuristické riešenie problému najkratšej cesty závislej od stavu.
 
-Ďalšia navrhovaná metóda je založena na stochastickom čase jazdy. V článku \cite{stochastic} používajú Bayesovu formulu na získanie pravdepodobnostného rozdelenia času cestného úseku. Na hľadanie optimálnej trasy navrhli a následne použili genetické algoritmy.
+Ďalšia navrhovaná metóda je založená na stochastickom čase jazdy. V článku \cite{stochastic} používajú Bayesovu formulu na získanie pravdepodobnostného rozdelenia času cestného úseku. Na hľadanie optimálnej trasy navrhli a následne použili genetické algoritmy.
 
 \subsection{Multimodálny algoritmus}
 \label{sec:multimodal-algorithm}
@@ -203,7 +203,7 @@ Definujeme cestovný poriadok ako $(\mathcal{S,T,R,F},\Pi)$, kde
 
 Zastávka $p$ predstavuje miesto pre nastúpenie a vystúpenie z vozidla. Jazda $t$ reprezentuje postupnosť zastávok konkrétneho vozidla. Každá zastávka $p$ z jazdy $t$ má priradený čas odchodu $\tau_{dep}(t, p) \in \Pi$ a čas príchodu $\tau_{arr}(t, p) \in \Pi$. Každá linka z $\mathcal{R}$ pozostáva z jázd, ktoré majú rovnaké postupnosti zastávok. Pešie prechody z množiny $\mathcal{F}$ reprezentujú prestupy medzi zastávkami. Každý prestup pozostáva z dvoch zastávok $p_1$ a $p_2$ a času potrebného na presun medzi nimi $l(p_1, p_2)$. 
 
-Výstupom z algoritmu je cesta $\mathcal{J}$, ktorá je definovaná postupnosťou jázd a peších prestupov. Cesta, ktorá obsahuje $k$ jázd, má presne $k-1$ prestupov. Majme začiatočnú zastávku $p_s$ a konečnú zastávku $p_t$ a čas odchodu $\tau$. Najzákladnejším kritériom, na ktoré algoritmus prihliada, je \textit{Earliest Arrival Problem}, ktorý hľadá cestu nezačínajucú skôr než $\tau$ v bode $p_s$ a do $p_t$ sa dostane čo najrýchlejšie. Ďalej chceme viacero alternatívnych ciest s tým, že žiadna z ciest nezačína skôr ako $\tau$ a cesty môžu obsahovať aj prestupy. 
+Výstupom z algoritmu je cesta $\mathcal{J}$, ktorá je definovaná postupnosťou jázd a peších prestupov. Cesta, ktorá obsahuje $k$ jázd, má presne $k-1$ prestupov. Majme začiatočnú zastávku $p_s$ a konečnú zastávku $p_t$ a čas odchodu $\tau$. Najzákladnejším kritériom, na ktoré algoritmus prihliada, je \textit{Earliest Arrival Problem}, ktorý hľadá cestu nezačínajúcu skôr než $\tau$ v bode $p_s$ a do $p_t$ sa dostane čo najrýchlejšie. Ďalej chceme viacero alternatívnych ciest s tým, že žiadna z ciest nezačína skôr ako $\tau$ a cesty môžu obsahovať aj prestupy. 
 
 \subsection{Základná verzia algoritmu}
 \label{sub:raptor-basic}
@@ -248,7 +248,7 @@ Nech $\Delta \subseteq \Pi$ je časový úsek. Najskôr vložíme do množiny $\
 
 $\tau_{dep}(\mathcal{J}_1) \geq \tau_{dep}(\mathcal{J}_2)$ a $\tau_{arr}(\mathcal{J}_1) \leq \tau_{arr}(\mathcal{J}_2)$. 
 
-Aby sme mohli použiť toto pravidlo, zoradíme časy v množine $\Psi$ od najneskoršieho po najskorší čas. Pri iterovaní nebudeme prepisovať hodnotu $\tau_k(p)$ medzi kolami, ale nastavíme vždy na začiatku kola pre všetky zastávky $p$ $\tau_k(p) = \tau_{k-1}(p)$, kde je $\tau_{k-1}(p)$ lepšie ako $\tau_k(p)$. Pri tomto rozšírení algorimu nemôžeme použiť \textit{local prunning}, keďže nechceme, aby sa hodnota $\tau^*(p)$ porovnávala s ďalším spustením algoritmu pre skoršie časy z množiny $\Psi$. 
+Aby sme mohli použiť toto pravidlo, zoradíme časy v množine $\Psi$ od najneskoršieho po najskorší čas. Pri iterovaní nebudeme prepisovať hodnotu $\tau_k(p)$ medzi kolami, ale nastavíme vždy na začiatku kola pre všetky zastávky $p$ $\tau_k(p) = \tau_{k-1}(p)$, kde je $\tau_{k-1}(p)$ lepšie ako $\tau_k(p)$. Pri tomto rozšírení algoritmu nemôžeme použiť \textit{local prunning}, keďže nechceme, aby sa hodnota $\tau^*(p)$ porovnávala s ďalším spustením algoritmu pre skoršie časy z množiny $\Psi$. 
 
 
 %\subsection{Paralelizácia}
@@ -281,7 +281,7 @@ Za výslednú cestu považoval RAPTOR algoritmus tú cestu, ktorá stojí najmen
 
 V článku \cite{improvedRaptor} bol navrhnutý vylepšený RAPTOR algoritmus, ktorý má v sebe zapracovanú penalizáciu prestupov, korekčný faktor peších prestupov a vracia $k$ alternatívnych ciest. Cesty vypočítané vylepšeným algoritmom sa oveľa viac podobajú cestám, ktoré si v realite cestujúci vyberajú.
 
-V tomto článku nám pribudlo označenie $k$-tej najkratšej cesty. Kedže písmenom $k$ sme doteraz označovali kolá, budeme hľadať $m$-tú najkratšiu cestu. Taktiež pribudli nové označenia a premenné, ktoré sú uvedené v tabuľke \ref{table:raptor-variables}.
+V tomto článku nám pribudlo označenie $k$-tej najkratšej cesty. Keďže písmenom $k$ sme doteraz označovali kolá, budeme hľadať $m$-tú najkratšiu cestu. Taktiež pribudli nové označenia a premenné, ktoré sú uvedené v tabuľke \ref{table:raptor-variables}.
 
 \begin{table}[H]
 \begin{tabular}{|l|l|}

@@ -3,7 +3,7 @@
 V tejto kapitole popíšeme technológie, ktoré sme vybrali na implementáciu aplikácie. Ďalej popíšeme základné problémy, ktoré vznikli pri spracovaní dát, pri implementácii dátovej štruktúry a navrhovaného algoritmu. Ukážkami kódov priblížime, ako sme tieto problémy riešili. 
 
 \section{Technológie}
-Serverovú časť aplikácie sme implementovali v jazyku \textit{Java}, konkrétne vo verzii \textit{Java 11} s využitím frameworku \textit{SpringBoot}. Na mapovanie \textit{Java} objektov na databázové entity sme použili ORM framework \textit{Hibernate}. Pre komunikáciu s klientskou stranou sme si vybrali REST architektúru. Webové služby sú dokumentované pomocou technológie \textit{Swagger}. Na frontendovej strane sme si zvolili progresívnu webovú aplikáciu a na jej implementáciu sme použili moderný JavaScriptový framework \textit{Vue.js}, konkrétne verziu \textit{Vue 2}. Zároveň sme použili knižnicu \textit{Vuex} na spravovanie stavu aplikácie. 
+Serverovú časť aplikácie sme implementovali v jazyku \textit{Java}, konkrétne vo verzii \textit{Java 11} s využitím frameworku \textit{SpringBoot}. Na mapovanie \textit{Java} objektov na databázové entity sme použili ORM framework \textit{Hibernate}. Pre komunikáciu s klientskou stranou sme si vybrali REST architektúru. Webové služby sú dokumentované pomocou technológie \textit{Swagger}. Na klientskej strane sme si zvolili progresívnu webovú aplikáciu a na jej implementáciu sme použili moderný JavaScriptový framework \textit{Vue.js}, konkrétne verziu \textit{Vue 2}. Zároveň sme použili knižnicu \textit{Vuex} na spravovanie stavu aplikácie. 
 
 \section{Dáta}
 \subsection{Parsovanie dát zo súboru}
@@ -55,7 +55,7 @@ public class DataStructureModel implements Serializable {
 
 Kľúčom v \textit{stopTransfers} je identifikačné číslo zastávky $p$ a hodnotou je pole peších presunov, pričom začiatočná zastávka je zastávka $p$. 
 
-Slovník \textit{stopSubroutes} má zastávku $p$ ako kľúč a hodnotou je pole indexov úsekov linky, ktoré stoja na zastávke $p$. Index úseku linky je textový reťazec, pretože má formát \{identifikačé číslo linky\}\_\{číslo úseku v rámci linky\}. Tento index sa vytvára pri vytváraní dátovej štruktúry, ako aj celý objekt \textit{Subroute}. 
+Slovník \textit{stopSubroutes} má zastávku $p$ ako kľúč a hodnotou je pole indexov úsekov linky, ktoré stoja na zastávke $p$. Index úseku linky je textový reťazec, pretože má formát \{identifikačné číslo linky\}\_\{číslo úseku v rámci linky\}. Tento index sa vytvára pri vytváraní dátovej štruktúry, ako aj celý objekt \textit{Subroute}. 
 
 Slovník \textit{subroutesByIndex} obsahuje zoznam všetkých úsekov liniek s tým, že je indexovaný podľa unikátneho reťazca.
 
@@ -106,12 +106,15 @@ private Map<StopArea, Time> stopAreaBestArrivals;
 Týmto znížime počet označených zastávok a rovnako aj výpočtový čas. Keďže my hľadáme cesty z jednej \textit{stopArea} do druhej \textit{stopArea} a nie medzi zastávkami, vieme obmedziť prehľadávanie. Ak sme sa už do niektorej zo zastávok v spoločnej \textit{stopArea} dostali skôr, čas nevylepšíme a zastávku neoznačíme ako prestupné miesto na ďalšie prehľadávanie. 
 
 \subsection{Hľadanie najbližšej vyhovujúcej jazdy}
+RAPTOR algoritmus funguje tak, že hľadáme najskoršiu vyhovujúcu jazdu linky $r$ po čase $\tau$, ktorá stojí na zastávke $p$ a jazdí v niektorý zo zadaných typov dní ($ServiceDay$). 
+
+\subsubsection{Optimalizácia hľadania vyhovujúcej jazdy}
 \label{sec:trip-finding}
-RAPTOR algoritmus funguje tak, že hľadáme najskoršiu vyhovujúcu jazdu linky $r$ po čase $\tau$, ktorá stojí na zastávke $p$ a jazdí v niektorý zo zadaných typov dní ($ServiceDay$). V algoritme nepracujeme s linkami, ale s objektami \textit{Subroute}. Tento objekt obsahuje slovník, ktorý je indexovaný objektom \textit{ServiceDay} a hodnotou je pole jázd (\textit{SubrouteTrip}). Z tohto dôvodu jazdu nehľadáme vo všetkých jazdách patriacich linke, ale len v takých, ktoré stoja na zastávke $p$ v niektorý z požadovaných typov dní. 
+Prvou optimalizáciou je, že algoritmus nepracuje s linkami, ale s objektmi \textit{Subroute}. Tento objekt obsahuje slovník, ktorý je indexovaný objektom \textit{ServiceDay} a hodnotou je pole jázd (\textit{SubrouteTrip}). Z tohto dôvodu jazdu nehľadáme vo všetkých jazdách patriacich linke, ale len v takých, ktoré stoja na zastávke $p$ v niektorý z požadovaných typov dní. 
 
-Hľadanie jazdy funguje tak, že začíname od poslednej jazdy v utriedenom poli. Spoliehame sa, že jazdy sú utriedené podľa času príchodu na prvú zastávku vzostupne. Kým nie je čas príchodu jazdy na zastávku $p$ menší ako $\tau$, iterujeme jazdy smerom na začiatok poľa a do premennej \textit{lastTrip} si ukladáme vždy aktuálnu jazdu. V momente, keď narazíme na jazdu, ktorá na zastávke $p$ stojí skôr ako je čas $\tau$, máme v premennej \textit{lastTrip} vyhovujúcu jazdu. Index tejto jazdy si uložíme do poľa \textit{foundTripsIndices} v prípade, že by sme pre túto \textit{subroute} potrebovali nájsť ešte nejakú skoršiu jazdu v ďalšom hľadaní. Túto optimalizáciu môžme vykonať, keďže jazdy, ktoré prídu na zastávku neskôr ako označená jazda, už nie sú relevantné.
+Optimalizovali sme aj hľadanie najbližšej vyhovujúcej jazdy. Hľadanie jazdy funguje tak, že začíname od poslednej jazdy v utriedenom poli. Spoliehame sa, že jazdy sú utriedené podľa času príchodu na prvú zastávku vzostupne. Kým nie je čas príchodu jazdy na zastávku $p$ menší ako $\tau$, iterujeme jazdy smerom na začiatok poľa a do premennej \textit{lastTrip} si ukladáme vždy aktuálnu jazdu. V momente, keď narazíme na jazdu, ktorá na zastávke $p$ stojí skôr ako je čas $\tau$, máme v premennej \textit{lastTrip} vyhovujúcu jazdu. Index tejto jazdy si uložíme do poľa \textit{foundTripsIndices} v prípade, že by sme pre túto \textit{subroute} potrebovali nájsť ešte nejakú skoršiu jazdu v ďalšom hľadaní. Túto optimalizáciu môžeme vykonať, keďže jazdy, ktoré prídu na zastávku neskôr ako označená jazda, už nie sú relevantné.
 
-Môže nastať prípad, že všetky jazdy stoja na zastávke $p$ skôr ako v čase $\tau$, preto sme museli pridať podmienku, ktorá overí, či príchod poslednej jazdy na zastávku $p$ je neskôr ako čas $\tau$. Ak nie je, nevrátime žiadnu cestu. 
+Môže však nastať prípad, že všetky jazdy stoja na zastávke $p$ skôr ako v čase $\tau$, preto sme museli pridať podmienku, ktorá overí, či príchod poslednej jazdy na zastávku $p$ je neskôr ako čas $\tau$. Ak nie je, nevrátime žiadnu cestu. 
 
 Časť implementácie vyhľadávania najbližšej vhodnej jazdy môžeme vidieť v ukážke kódu: 
 \begin{lstlisting}
@@ -130,10 +133,10 @@ for (int i = this.foundTripsIndices.get(subrouteServiceDay); i >= 0; i--) {
 \subsubsection{Zoradenie jázd v rámci linky}
 Už pri vytváraní dátovej štruktúry sme riešili, ako správne zotriediť jazdy v linke. Najskôr sme sa rozhodli využiť atribút \textit{sequence order}, ktorý je priradený ku každému objektu \textit{StopTime}. \textit{StopTime} okrem iného definuje, v akom čase stojí jazda linky na zastávke. Atribút \textit{sequence order} by mal určiť poradie zastávky v rámci jazdy a zároveň aj v rámci celého dňa. Prvá jazda linky na prvej zastávke má sequence order $1$ a toto číslo sa navyšuje až po poslednú zastávku poslednej jazdy linky. Vieme teda vypočítať poradie jazdy v linke. 
 
-Stále sme však narážali na problém, že linky nie sú zoradené správne. Naimplementovali sme službu, ktorá nám vyvorí \textit{csv} súbor s čitateľným cestovným poriadkom. Ukážku cestovného poriadku jednej linky môžeme vidieť na obrázku \ref{fig:weird-times}. V ľavom hornom rohu je vypísané číslo linky, v prvom stĺpci sú čísla zastávok, na ktorých linka stojí a v prvom riadku sú typy dní, v ktoré linka operuje. Jazdy sú vypísané v stĺpcoch a sú zoskupené podľa typov dní. 
+Stále sme však narážali na problém, že linky nie sú zoradené správne. Naimplementovali sme službu, ktorá nám vytvorí \textit{csv} súbor s čitateľným cestovným poriadkom. Ukážku cestovného poriadku jednej linky môžeme vidieť na obrázku \ref{fig:weird-times}. V ľavom hornom rohu je vypísané číslo linky, v prvom stĺpci sú čísla zastávok, na ktorých linka stojí a v prvom riadku sú typy dní, v ktoré linka operuje. Jazdy sú vypísané v stĺpcoch a sú zoskupené podľa typov dní. 
 
 \begin{figure}[H]
-\centerline{\includegraphics[width=1\textwidth]{images/weird-times}}
+\centerline{\includegraphics[width=1\textwidth]{images/weird-times-1}}
 \caption[Ukážka exportovaného cestovného poriadku]{Ukážka exportovaného cestovného poriadku}
 \label{fig:weird-times}
 \end{figure} 
@@ -148,7 +151,13 @@ V každom prípade potrebujeme mať zoradené jazdy linky tak, aby vyhovovali n�
 Dostávame sa k jadru našej práce a prispôsobeniu algoritmu, aby prihliadal na dáta o meškaní. Ako sme už spomínali, na pozadí beží služba, ktorá zabezpečuje, že v dátovej štruktúre je pre každý \textit{StopTimeObject} správna hodnota parametra \textit{delay} pre aktuálny deň a aktuálny čas. 
 Konkrétne dáta vkladáme do štruktúry \textit{stopSubroutes}, obsahujúcej aj objekty \textit{StopTimeObject}, ktoré si pre každú zastávku na každej jazde držia čas, kedy jazdy linky stojí na zastávke (\textit{time}) a zároveň, s akým predpokladaným omeškaním príde jazda linky na zastávku (\textit{delay}). 
 
-V dátovej štruktúre sa spoliehame na to, že jazdy sú utriedené podľa času príchodu na zastávku. Pri vyhľadávaní v aktuálny deň budeme prihliadať aj na meškania, čo znamená, že čas príchodu na zastávku predstavuje čas príchodu jazdy na zastávku podľa statických cestovných poriadkov + predpokladané meškanie jazdy na zastávku. Keďže každá jazda môže mať iné meškanie, môže nastať taká situácia, že jazda $t_1$ ma príchod na zastávku $p_1$ v čase 15:05, ale má meškanie $d_1=10$ minút. Predpokladaný príchod jazdy $t_1$ na zastávku $p_1$ je teda 15:15. Za ňou nasledujúca jazda $t_2$ má na zastávku $p_1$ prísť 15:10 a nemá zistené žiadne meškanie. V prípade, že by používateľ zadal vyhľadávanie v aktuálny deň napríklad o $\tau$ = 14:59 zo zastávky $p_1$, algoritmus by vybral jazdu $t_2$ ako najskoršiu jazdu, ktorú vie používateľ stihnúť na zastávke $p_1$. Správnym riešením by však bolo vybrať jazdu $t_0$. Ilustráciu tejto situácie môžeme vidieť na obrázku \ref{fig:shedule-delays}. 
+V dátovej štruktúre sa spoliehame na to, že jazdy sú utriedené podľa času príchodu na zastávku. Pri vyhľadávaní v aktuálny deň budeme prihliadať aj na meškania, čo znamená, že čas príchodu na zastávku predstavuje čas príchodu jazdy na zastávku podľa statických cestovných poriadkov + predpokladané meškanie jazdy na zastávku.
+
+Keďže každá jazda môže mať iné meškanie, vyhľadávanie vyhovujúcich jázd s navrhnutou optimalizáciou spomínanou v \ref{sec:trip-finding} nemusí fungovať vždy správne. 
+
+Môže nastať taká situácia, že jazda $t_0$ ma príchod na zastávku $p_1$ v čase 15:00, ale má meškanie $d_0=8$ minút. Predpokladaný príchod jazdy $t_0$ na zastávku $p_1$ je teda v čase 15:08. Za ňou nasledujúca jazda $t_1$ má na zastávku $p_1$ prísť v čase 15:05 a nemá zistené žiadne meškanie. Ďalšia jazda $t_2$ je tiež bez meškania a má príchod na zastávku $p_1$ v čase 15:10. V prípade, že by používateľ zadal vyhľadávanie v aktuálny deň a zadal by čas $\tau$ = 15:08 zo zastávky $p_1$, algoritmus by vybral jazdu $t_2$ ako najskoršiu jazdu, ktorú vie používateľ stihnúť na zastávke $p_1$.
+
+V \ref{sec:trip-finding} sme spomínali, že algoritmus prechádza pole jázd od konca po začiatok, kým nenatrafí na jazdu s časom príchodu na zastávku $p_1$ menším ako $\tau$. Preto by bola vybratá jazda $t_2$, hoci správnym riešením by bolo vybrať jazdu $t_0$. Ilustráciu tejto situácie môžeme vidieť na obrázku \ref{fig:shedule-delays}. 
 
 \begin{figure}[H]
 \centerline{\includegraphics[width=0.6\textwidth]{images/shedule-delays}}
@@ -156,20 +165,21 @@ V dátovej štruktúre sa spoliehame na to, že jazdy sú utriedené podľa čas
 \label{fig:shedule-delays}
 \end{figure} 
 
-Pri hľadaní najbližšej jazdy teda zvažujeme dve rôzne situácie. V prípade, že vyhľadávame v iný deň ako v aktuálny deň, hľadáme jazdu tak, ako sme spomínali na začiatku sekcie. 
+Pri hľadaní najbližšej jazdy teda zvažujeme dve rôzne situácie. V prípade, že vyhľadávame v iný deň ako v aktuálny deň, hľadáme jazdu tak, ako sme spomínali v \ref{sec:trip-finding}. 
 
 Ak hľadáme v aktuálny deň, prechádzame cez všetky jazdy linky. Hľadaná jazda linky $t$ musí spĺňať podmienku:
 $stopTime(t, p).time + stopTime(t, p).delay \geq \tau$ a zároveň táto jazda $t$ stojí na zastávke $p$ najskôr zo všetkých jázd spĺňajúcich túto podmienku.
 
 \subsection{Zapracovanie používateľských preferencií}
 \subsubsection{Maximálny počet prestupov}
-RAPTOR algoritmus končí vtedy, ak už neexistujú žiadne ďalšie označené zastávky, teda ak sa v predchádzajúcom kole nevylepšil žiadny z časov. RAPTOR algoritmus beží v kolách. Prvé kolo znamená 0 prestupov, druhé kolo 1 prestup, atď. Aby bol algoritmus obmedzený počtom prestupov, stačí pridať podmienku a obmedziť algoritmus navyše maximálnym počtom kôl. V kóde je táto podmienka umiestnená na začiatku vyhľadávania:
+RAPTOR algoritmus končí vtedy, ak už neexistujú žiadne ďalšie označené zastávky, teda ak sa v predchádzajúcom kole nevylepšil žiadny z časov. RAPTOR algoritmus beží v kolách. Prvé kolo znamená 0 prestupov, druhé kolo 1 prestup, atď. Používateľ pri zadávaní parametrov pre vyhľadávanie môže nastaviť hodnotu maximálneho počtu prestupov alebo je táto hodnota preddefinovaná na $3$. Aby bol algoritmus obmedzený počtom prestupov, stačí pridať podmienku a obmedziť vyhľadávanie aj maximálnym počtom kôl. V kóde je táto podmienka umiestnená na začiatku vyhľadávania:\\ \\
 \begin{lstlisting} 
 public RaptorResults search(SearchParams searchParams) {
  Set<Stop> markedStops = initializeMarkedStops(searchParams);
  RaptorResults raptorResults = initializeRaptorResults(searchParams);
  while(markedStops.size() > 0 && 
-       raptorResults.getRound() <= searchParams.getMaxNumberOfTransfers()){        
+       raptorResults.getRound() <= searchParams.getMaxNumberOfTransfers()){   
+  raptorResults.addRound();     
   ...
  }
  return raptorResults;
@@ -192,7 +202,7 @@ Takúto cestu neponúkneme používateľovi a vyfiltrujeme ju pred tvorením zoz
 \subsubsection{Minimálny čas na prestup}
 Nech nastane prípad, že na zastávke $A$ vystúpime v čase 6:00 a hodnota minimálneho času na prestup sú $2$ minúty. Nech jazda $t_1$ stojí na zastávke $A$ v čase 6:00 a jazda $t_2$ v čase 6:05. Hľadáme najskoršiu jazdu linky $r$, ktorú vieme stihnúť na zastávke $A$. Správnym riešením je jazda $t_2$, nie jazda $t_1$.
 
-V prípade, že sa jedná o prvú akciu v ceste, nechceme pripočítavať minimálny čas na prestup. Pri prvom vyberaní jazdy ešte neprestupujeme. Začiatočný čas teda nastavíme podľa kola, v ktorom sa algoritmus práve nachádza. V ukážke je zobrazené, ako získavame čas $\tau$, ktorý následne posielame do triedy \textit{TripFinder}, ktorá nám vráti najskoršiu vyhovujúcu jazdu po čase $\tau$.
+V prípade, že sa jedná o prvú akciu v ceste, nechceme pripočítavať minimálny čas na prestup. Pri prvom vyberaní jazdy ešte neprestupujeme. Začiatočný čas teda nastavíme podľa kola, v ktorom sa algoritmus práve nachádza. V ukážke je zobrazené, ako získavame čas $\tau$, ktorý následne posielame do triedy \textit{TripFinder}, ktorá nám vráti najskoršiu vyhovujúcu jazdu po čase $\tau$.\\ \\
 \begin{lstlisting}
 private Time getStartingTime(RaptorResults raptorResults, int minTimeForTransfer, Time arrivalTime) {
  return raptorResults.getRound() == 1
@@ -211,7 +221,7 @@ V kóde v sekcii \ref{sec:trip-finding} môžeme vidieť podmienku, ktorá zabez
 
 \subsection{Implementácia klientskej strany} 
 Pri navrhovaní funkcionalít aplikácie sme si načrtli obrazovky, podľa ktorých sme postupovali pri implementácii. 
-Aplikáciu z pohľadu klienta tvoria 4 podstránky: hlavné menu, zoznam liniek, vyhľadávanie spojov a výsledky vyhľadávania. Hoci existujú rôzne knižnice znovu použiteľných komponentov, nenašli sme také, ktoré by vyhovovali našim požiadavkám. Vytvorili sme si preto vlastné komponenty napríklad komponent $Card.vue, Loader.vue$ alebo $Preferences.vue$. Komponent $Preferences.vue$ sa správa ako vysúvacia lišta, ktorá zobrazí možnosť navolenia vyhľadávacích parametrov. Údaje, ktoré sú zdieľané medzi podstránkami a komponentami sú uložené vo $vuex store$. História vyhľadávania sa ukladá do lokálneho úložiska prehliadača, aby aplikácia mohla ponúknuť používateľovi posledné parametre vyhľadávania.
+Aplikáciu z pohľadu klienta tvoria 4 podstránky: hlavné menu, zoznam liniek, vyhľadávanie spojov a výsledky vyhľadávania. Hoci existujú rôzne knižnice znovu použiteľných komponentov, nenašli sme také, ktoré by vyhovovali našim požiadavkám. Vytvorili sme si preto vlastné komponenty napríklad komponent $Card.vue, Loader.vue$ alebo $Preferences.vue$. Komponent $Preferences.vue$ sa správa ako vysúvacia lišta, ktorá zobrazí možnosť navolenia vyhľadávacích parametrov. Údaje, ktoré sú zdieľané medzi podstránkami a komponentmi sú uložené vo $vuex store$. História vyhľadávania sa ukladá do lokálneho úložiska prehliadača, aby aplikácia mohla ponúknuť používateľovi posledné parametre vyhľadávania.
 
 
 \subsection{Dátum s čas}

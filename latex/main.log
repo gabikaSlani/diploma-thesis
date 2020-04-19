@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.7)  18 APR 2020 20:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.7)  19 APR 2020 15:44
 entering extended mode
 **./main.tex
 (main.tex
@@ -1173,97 +1173,117 @@ Package hyperref Warning: Composite letter `\textasciicaron+l'
 (hyperref)                removing `\textasciicaron' on input line 108.
 
 [39]
-<images/weird-times.png, id=755, 235.81679pt x 51.71614pt>
-File: images/weird-times.png Graphic file (type png)
-<use images/weird-times.png>
-Package pdftex.def Info: images/weird-times.png  used on input line 136. on inp
-ut line 136.
-Package pdftex.def Info: Requested size: 441.01773pt x 96.71892pt on input line
- 136.
- [40 <./images/weird-times.png>]
-<images/shedule-delays.png, id=774, 448.67625pt x 75.8835pt>
+<images/weird-times-1.png, id=756, 798.94817pt x 273.83037pt>
+File: images/weird-times-1.png Graphic file (type png)
+<use images/weird-times-1.png>
+Package pdftex.def Info: images/weird-times-1.png  used on input line 139. on i
+nput line 139.
+Package pdftex.def Info: Requested size: 441.01773pt x 151.15451pt on input lin
+e 139.
+ [40] [41 <./images/weird-times-1.png>]
+<images/shedule-delays.png, id=782, 394.47375pt x 68.05424pt>
 File: images/shedule-delays.png Graphic file (type png)
 <use images/shedule-delays.png>
-Package pdftex.def Info: images/shedule-delays.png  used on input line 154. on 
-input line 154.
-Package pdftex.def Info: Requested size: 264.61333pt x 44.75465pt on input line
- 154.
- [41]
+Package pdftex.def Info: images/shedule-delays.png  used on input line 163. on 
+input line 163.
+Package pdftex.def Info: Requested size: 264.61333pt x 45.65112pt on input line
+ 163.
+
 
 Package hyperref Warning: Composite letter `\textasciicaron+l'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 164.
+(hyperref)                removing `\textasciicaron' on input line 173.
 
-[42 <./images/shedule-delays.png>] [43]
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
+
+ []
+
+[42 <./images/shedule-delays.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
+
+ []
+
+[43]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 217.
+(hyperref)                removing `\textasciicaron' on input line 227.
 
-<images/date-picker.jpg, id=818, 230.0595pt x 234.8775pt>
+[44]
+<images/date-picker.jpg, id=828, 230.0595pt x 234.8775pt>
 File: images/date-picker.jpg Graphic file (type jpg)
 <use images/date-picker.jpg>
-Package pdftex.def Info: images/date-picker.jpg  used on input line 228. on inp
-ut line 228.
+Package pdftex.def Info: images/date-picker.jpg  used on input line 238. on inp
+ut line 238.
 Package pdftex.def Info: Requested size: 127.01326pt x 129.67401pt on input lin
-e 228.
-<images/time-picker.jpg, id=819, 195.129pt x 151.16475pt>
+e 238.
+<images/time-picker.jpg, id=829, 195.129pt x 151.16475pt>
 File: images/time-picker.jpg Graphic file (type jpg)
 <use images/time-picker.jpg>
-Package pdftex.def Info: images/time-picker.jpg  used on input line 234. on inp
-ut line 234.
+Package pdftex.def Info: images/time-picker.jpg  used on input line 244. on inp
+ut line 244.
 Package pdftex.def Info: Requested size: 127.01326pt x 98.3966pt on input line 
-234.
-[44 <./images/date-picker.jpg> <./images/time-picker.jpg>]
-<images/map-view.png, id=827, 172.38716pt x 109.17853pt>
+244.
+<images/map-view.png, id=832, 172.38716pt x 109.17853pt>
 File: images/map-view.png Graphic file (type png)
 <use images/map-view.png>
-Package pdftex.def Info: images/map-view.png  used on input line 255. on input 
-line 255.
+Package pdftex.def Info: images/map-view.png  used on input line 265. on input 
+line 265.
 Package pdftex.def Info: Requested size: 352.81552pt x 223.46423pt on input lin
-e 255.
-
+e 265.
+ [45 <./images/date-picker.jpg> <./images/time-picker.jpg>]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 260.
+(hyperref)                removing `\textasciicaron' on input line 270.
 
-[45 <./images/map-view.png>]
-<images/time-view1.png, id=835, 127.30128pt x 86.41458pt>
+<images/time-view1.png, id=839, 127.30128pt x 86.41458pt>
 File: images/time-view1.png Graphic file (type png)
 <use images/time-view1.png>
-Package pdftex.def Info: images/time-view1.png  used on input line 269. on inpu
-t line 269.
+Package pdftex.def Info: images/time-view1.png  used on input line 279. on inpu
+t line 279.
 Package pdftex.def Info: Requested size: 148.17998pt x 100.59038pt on input lin
-e 269.
-<images/time-view2.png, id=836, 127.30128pt x 85.97256pt>
+e 279.
+<images/time-view2.png, id=840, 127.30128pt x 85.97256pt>
 File: images/time-view2.png Graphic file (type png)
 <use images/time-view2.png>
-Package pdftex.def Info: images/time-view2.png  used on input line 275. on inpu
-t line 275.
+Package pdftex.def Info: images/time-view2.png  used on input line 285. on inpu
+t line 285.
 Package pdftex.def Info: Requested size: 148.17998pt x 100.07585pt on input lin
-e 275.
-<images/time-view3.png, id=838, 127.30128pt x 74.7011pt>
+e 285.
+[46 <./images/map-view.png> <./images/time-view1.png> <./images/time-view2.png>
+]
+<images/time-view3.png, id=849, 127.30128pt x 74.7011pt>
 File: images/time-view3.png Graphic file (type png)
 <use images/time-view3.png>
-Package pdftex.def Info: images/time-view3.png  used on input line 290. on inpu
-t line 290.
+Package pdftex.def Info: images/time-view3.png  used on input line 300. on inpu
+t line 300.
 Package pdftex.def Info: Requested size: 148.17998pt x 86.95537pt on input line
- 290.
-<images/time-view-detail.png, id=839, 83.98349pt x 135.92064pt>
+ 300.
+<images/time-view-detail.png, id=850, 83.98349pt x 135.92064pt>
 File: images/time-view-detail.png Graphic file (type png)
 <use images/time-view-detail.png>
-Package pdftex.def Info: images/time-view-detail.png  used on input line 294. o
-n input line 294.
+Package pdftex.def Info: images/time-view-detail.png  used on input line 304. o
+n input line 304.
 Package pdftex.def Info: Requested size: 143.94534pt x 233.00323pt on input lin
-e 294.
- [46 <./images/time-view1.png> <./images/time-view2.png>]) (test.tex [47 <./ima
-ges/time-view3.png> <./images/time-view-detail.png>]
+e 304.
+) (test.tex [47 <./images/time-view3.png> <./images/time-view-detail.png>]
 Kapitola 4.
 [48
 
 ]
-<images/test/delay.png, id=863, 938.57143pt x 524.66142pt>
+<images/test/delay.png, id=868, 938.57143pt x 524.66142pt>
 File: images/test/delay.png Graphic file (type png)
 <use images/test/delay.png>
 Package pdftex.def Info: images/test/delay.png  used on input line 23. on input
@@ -1271,7 +1291,7 @@ Package pdftex.def Info: images/test/delay.png  used on input line 23. on input
 Package pdftex.def Info: Requested size: 441.01773pt x 246.52684pt on input lin
 e 23.
  [49 <./images/test/delay.png>]
-<images/test/alternative.png, id=876, 964.5636pt x 620.5584pt>
+<images/test/alternative.png, id=881, 964.5636pt x 620.5584pt>
 File: images/test/alternative.png Graphic file (type png)
 <use images/test/alternative.png>
 Package pdftex.def Info: images/test/alternative.png  used on input line 39. on
@@ -1279,14 +1299,14 @@ Package pdftex.def Info: images/test/alternative.png  used on input line 39. on
 Package pdftex.def Info: Requested size: 441.01773pt x 283.73698pt on input lin
 e 39.
  [50 <./images/test/alternative.png>]
-<images/test/delay-alternative.png, id=888, 950.92105pt x 235.82841pt>
+<images/test/delay-alternative.png, id=893, 950.92105pt x 235.82841pt>
 File: images/test/delay-alternative.png Graphic file (type png)
 <use images/test/delay-alternative.png>
 Package pdftex.def Info: images/test/delay-alternative.png  used on input line 
 53. on input line 53.
 Package pdftex.def Info: Requested size: 441.01773pt x 109.3712pt on input line
  53.
-<images/test/max-transfers-act.png, id=893, 951.87198pt x 502.08632pt>
+<images/test/max-transfers-act.png, id=898, 951.87198pt x 502.08632pt>
 File: images/test/max-transfers-act.png Graphic file (type png)
 <use images/test/max-transfers-act.png>
 Package pdftex.def Info: images/test/max-transfers-act.png  used on input line 
@@ -1295,7 +1315,7 @@ Package pdftex.def Info: Requested size: 441.01773pt x 232.62498pt on input lin
 e 65.
 
 [51 <./images/test/delay-alternative.png>]
-<images/test/max-walking.png, id=904, 950.92105pt x 460.24579pt>
+<images/test/max-walking.png, id=909, 950.92105pt x 460.24579pt>
 File: images/test/max-walking.png Graphic file (type png)
 <use images/test/max-walking.png>
 Package pdftex.def Info: images/test/max-walking.png  used on input line 74. on
@@ -1308,14 +1328,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--82
  []
 
 [52 <./images/test/max-transfers-act.png> <./images/test/max-walking.png>]
-<images/test/min-transfer.png, id=915, 645.26785pt x 525.24803pt>
+<images/test/min-transfer.png, id=920, 645.26785pt x 525.24803pt>
 File: images/test/min-transfer.png Graphic file (type png)
 <use images/test/min-transfer.png>
 Package pdftex.def Info: images/test/min-transfer.png  used on input line 84. o
 n input line 84.
 Package pdftex.def Info: Requested size: 308.71106pt x 251.29068pt on input lin
 e 84.
-<images/test/low-floor.png, id=919, 645.26785pt x 572.35258pt>
+<images/test/low-floor.png, id=924, 645.26785pt x 572.35258pt>
 File: images/test/low-floor.png Graphic file (type png)
 <use images/test/low-floor.png>
 Package pdftex.def Info: images/test/low-floor.png  used on input line 92. on i
@@ -1324,9 +1344,9 @@ Package pdftex.def Info: Requested size: 308.71106pt x 273.82657pt on input lin
 e 92.
 
 [53 <./images/test/min-transfer.png>]) (zaver.tex [54 <./images/test/low-floor.
-png>]) [55
+png>] [55
 
-] (main.bbl
+]) [56] (main.bbl
 Underfull \hbox (badness 3907) in paragraph at lines 6--12
 []\T1/cmr/m/n/12 Shortest al-ter-nate path dis-co-very th-rough re-cur-sive bou
 n-ding box pru-
@@ -1362,26 +1382,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--20
 esearchgate . net / figure /
  []
 
-[56
+[57
 
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 276.
- [57]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 276.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 283.
+ [58]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 283.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 276.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 276.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 283.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 283.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8CBA5924C6A26A0138AAAAE5DBEDAF13;5038.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 276.
+(rerunfilecheck)             Checksum: 71A6B43C6742CD6D8212CA6EDFE5CF6B;5038.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 283.
  ) 
 Here is how much of TeX's memory you used:
- 13594 strings out of 493312
- 196761 string characters out of 3138899
+ 13598 strings out of 493312
+ 196817 string characters out of 3138899
  340953 words of memory out of 3000000
- 16611 multiletter control sequences out of 15000+200000
+ 16612 multiletter control sequences out of 15000+200000
  25906 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,12n,43p,1284b,1897s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1410,9 +1430,9 @@ nts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 sfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/ms
 bm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on main.pdf (68 pages, 4011822 bytes).
+Output written on main.pdf (69 pages, 5568642 bytes).
 PDF statistics:
- 1734 PDF objects out of 2073 (max. 8388607)
- 260 named destinations out of 1000 (max. 500000)
+ 1747 PDF objects out of 2073 (max. 8388607)
+ 263 named destinations out of 1000 (max. 500000)
  677 words of extra memory for PDF output out of 10000 (max. 10000000)
 

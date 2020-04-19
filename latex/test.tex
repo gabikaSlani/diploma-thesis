@@ -46,7 +46,7 @@ Pomocou nasledujúcej ukážky znázorníme, aký vplyv má meškanie na zobraze
 
 Potom sme zmenili dátum v systéme na 5.2.2018 a čas 6:00. Teraz už algoritmus prihliada na meškania, ktoré vznikli do 6:00 hodiny. Jazda linky $5$ má minútové meškanie (označené červenou farbou). Zaujímavé však je, že pribudla aj alternatívna cesta, ktorá nevyžaduje začiatočný peší presun. V predchádzajúcom hľadaní bola táto cesta odfiltrovaná. Potrebný peší presun na začiatku tiež penalizujeme ako prestup. 
  
-V prípade \ref{fig:test-delay-alternative}(b) bola priama cesta odfiltrovaná, pretože rozdiel v časoch príchodu do cieľa je väčší ako rozdiel v počte prestupov vynásobaných 5 minútami ($6$ minút $\leq 1\times5$ minút).
+V prípade \ref{fig:test-delay-alternative}(b) bola priama cesta odfiltrovaná, pretože rozdiel v časoch príchodu do cieľa je väčší ako rozdiel v počte prestupov vynásobených 5 minútami ($6$ minút $\leq 1\times5$ minút).
 V prípade \ref{fig:test-delay-alternative}(c) je už rozdiel v časoch rovných $5$ minút. Preto cesta s menším počtom prestupov nebola vyfiltrovaná.
 
 \begin{figure}[H]
@@ -57,7 +57,7 @@ V prípade \ref{fig:test-delay-alternative}(c) je už rozdiel v časoch rovných
 
 \subsubsection{Používateľské preferencie}
 
-V aplikácii môže používateľ nastaviť okrem základných vyhľadávaích parametrov aj ďalšie parametre. Nachádzajú sa vo vysúvacej lište pod povinnými vyhľadávacími parametrami. Ďalej sme upravili algoritmus, aby počas vyhľadávania ciest prihliadal na zadané prídavné parametre. Na obrázku \ref{fig:test-max-transfers}(a) môžeme vidieť zadané parametre vyhľadávania. Všimnime si najmä, že maximálny počet prednastavený na hodnotu $3$ a začiatočný bod nie je zastávka, ale aktuálna poloha používateľa. 
+V aplikácii môže používateľ nastaviť okrem základných vyhľadávacích parametrov aj ďalšie parametre. Nachádzajú sa vo vysúvacej lište pod povinnými vyhľadávacími parametrami. Ďalej sme upravili algoritmus, aby počas vyhľadávania ciest prihliadal na zadané prídavné parametre. Na obrázku \ref{fig:test-max-transfers}(a) môžeme vidieť zadané parametre vyhľadávania. Všimnime si najmä, že maximálny počet prednastavený na hodnotu $3$ a začiatočný bod nie je zastávka, ale aktuálna poloha používateľa. 
 
 Vyhľadané cesty (obrázok \ref{fig:test-max-transfers}(b)) sú dve. Jedna cesta obsahuje $1$ prestup a druhá neobsahuje žiadny. Po zmene vyhľadávacích parametrov (obrázok \ref{fig:test-max-transfers}(c)) je vyhľadaná cesta už len jedna – tá bez prestupu (obrázok \ref{fig:test-max-transfers}(d)).
 
@@ -86,7 +86,7 @@ Na obrázku \ref{fig:test-min-transfer}(a) je hodnota minimálneho času na pres
 \label{fig:test-min-transfer}
 \end{figure}
 
-V poslednej ukážke dokážeme fungovanie vyhľadávania s prihliadnutím na obmedzenie len nízkopodlažných vozidiel. Na obrázku \ref{fig:test-low-floor}(a) vidíme zobrazené parametre vyhľadávania a na obrázku (b) vidíme vyhľadanú cestu. Cesta obsahuje $2$ prestupy a je zložená z troch jázd. Len pre jednu z jázd tejto cesty platí, že má priradené nízkopodlažné vozidlo. Po zmene vyhľadávacích parametrov (obrázok \ref{fig:test-low-floor}(c)) je vyhľadaná iná cesta (obrázok \ref{fig:test-low-floor}(d)). Táto cesta obsahuje $2$ jazdy, pričom obe jazdy majú priradené nízkopodlažné vozdilo.
+V poslednej ukážke dokážeme fungovanie vyhľadávania s prihliadnutím na obmedzenie len nízkopodlažných vozidiel. Na obrázku \ref{fig:test-low-floor}(a) vidíme zobrazené parametre vyhľadávania a na obrázku (b) vidíme vyhľadanú cestu. Cesta obsahuje $2$ prestupy a je zložená z troch jázd. Len pre jednu z jázd tejto cesty platí, že má priradené nízkopodlažné vozidlo. Po zmene vyhľadávacích parametrov (obrázok \ref{fig:test-low-floor}(c)) je vyhľadaná iná cesta (obrázok \ref{fig:test-low-floor}(d)). Táto cesta obsahuje $2$ jazdy, pričom obe jazdy majú priradené nízkopodlažné vozidlo.
 
 \begin{figure}[H]
 \centerline{\includegraphics[width=0.7\textwidth]{images/test/low-floor}}

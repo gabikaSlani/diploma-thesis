@@ -72,13 +72,14 @@
 \contentsline {subsection}{\numberline {3.5.1}V\IeC {\'y}sledky RAPTOR algoritmu}{38}{subsection.3.5.1}
 \contentsline {subsubsection}{Target prunning}{39}{section*.36}
 \contentsline {subsection}{\numberline {3.5.2}H\IeC {\v l}adanie najbli\IeC {\v z}\IeC {\v s}ej vyhovuj\IeC {\'u}cej jazdy}{39}{subsection.3.5.2}
-\contentsline {subsubsection}{Zoradenie j\IeC {\'a}zd v r\IeC {\'a}mci linky}{40}{section*.37}
-\contentsline {subsubsection}{Prihliadanie na me\IeC {\v s}kanie vozidiel}{41}{section*.39}
+\contentsline {subsubsection}{Optimaliz\IeC {\'a}cia h\IeC {\v l}adania vyhovuj\IeC {\'u}cej jazdy}{39}{section*.37}
+\contentsline {subsubsection}{Zoradenie j\IeC {\'a}zd v r\IeC {\'a}mci linky}{40}{section*.38}
+\contentsline {subsubsection}{Prihliadanie na me\IeC {\v s}kanie vozidiel}{41}{section*.40}
 \contentsline {subsection}{\numberline {3.5.3}Zapracovanie pou\IeC {\v z}\IeC {\'\i }vate\IeC {\v l}sk\IeC {\'y}ch preferenci\IeC {\'\i }}{42}{subsection.3.5.3}
-\contentsline {subsubsection}{Maxim\IeC {\'a}lny po\IeC {\v c}et prestupov}{42}{section*.41}
-\contentsline {subsubsection}{Maxim\IeC {\'a}lny \IeC {\v c}as pe\IeC {\v s}ieho presunu}{42}{section*.42}
-\contentsline {subsubsection}{Minim\IeC {\'a}lny \IeC {\v c}as na prestup}{43}{section*.43}
-\contentsline {subsubsection}{Vyfiltrovanie len n\IeC {\'\i }zkopodla\IeC {\v z}n\IeC {\'y}ch vozidiel}{43}{section*.44}
+\contentsline {subsubsection}{Maxim\IeC {\'a}lny po\IeC {\v c}et prestupov}{42}{section*.42}
+\contentsline {subsubsection}{Maxim\IeC {\'a}lny \IeC {\v c}as pe\IeC {\v s}ieho presunu}{43}{section*.43}
+\contentsline {subsubsection}{Minim\IeC {\'a}lny \IeC {\v c}as na prestup}{43}{section*.44}
+\contentsline {subsubsection}{Vyfiltrovanie len n\IeC {\'\i }zkopodla\IeC {\v z}n\IeC {\'y}ch vozidiel}{44}{section*.45}
 \contentsline {section}{\numberline {3.6}Klientsk\IeC {\'a} strana}{44}{section.3.6}
 \contentsline {subsection}{\numberline {3.6.1}Implement\IeC {\'a}cia klientskej strany}{44}{subsection.3.6.1}
 \contentsline {subsection}{\numberline {3.6.2}D\IeC {\'a}tum s \IeC {\v c}as}{44}{subsection.3.6.2}
@@ -86,8 +87,8 @@
 \contentsline {subsection}{\numberline {3.6.4}Zobrazovanie \IeC {\v c}asov ciest}{46}{subsection.3.6.4}
 \contentsline {subsection}{\numberline {3.6.5}Nasleduj\IeC {\'u}ce cesty}{47}{subsection.3.6.5}
 \contentsline {chapter}{\numberline {4}Testovanie a evalu\IeC {\'a}cia}{48}{chapter.4}
-\contentsline {subsubsection}{Me\IeC {\v s}kanie}{48}{section*.49}
-\contentsline {subsubsection}{Alternat\IeC {\'\i }vne cesty}{49}{section*.51}
-\contentsline {subsubsection}{Me\IeC {\v s}kanie a alternat\IeC {\'\i }vne cesty}{50}{section*.53}
-\contentsline {subsubsection}{Pou\IeC {\v z}\IeC {\'\i }vate\IeC {\v l}sk\IeC {\'e} preferencie}{51}{section*.55}
-\contentsline {chapter}{Z\IeC {\'a}ver}{55}{chapter*.60}
+\contentsline {subsubsection}{Me\IeC {\v s}kanie}{48}{section*.50}
+\contentsline {subsubsection}{Alternat\IeC {\'\i }vne cesty}{49}{section*.52}
+\contentsline {subsubsection}{Me\IeC {\v s}kanie a alternat\IeC {\'\i }vne cesty}{50}{section*.54}
+\contentsline {subsubsection}{Pou\IeC {\v z}\IeC {\'\i }vate\IeC {\v l}sk\IeC {\'e} preferencie}{51}{section*.56}
+\contentsline {chapter}{Z\IeC {\'a}ver}{55}{chapter*.61}
