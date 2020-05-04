@@ -95,9 +95,9 @@
 \contentsline {subsection}{\numberline {4.2.4}Pou\IeC {\v z}\IeC {\'\i }vate\IeC {\v l}sk\IeC {\'e} preferencie}{53}{subsection.4.2.4}
 \contentsline {subsubsection}{Maxim\IeC {\'a}lny po\IeC {\v c}et prestupov}{53}{section*.55}
 \contentsline {subsubsection}{Maxim\IeC {\'a}lny \IeC {\v c}as pe\IeC {\v s}ieho presunu}{54}{section*.57}
-\contentsline {subsubsection}{Minim\IeC {\'a}lny \IeC {\v c}as na prestup}{54}{section*.59}
+\contentsline {subsubsection}{Minim\IeC {\'a}lny \IeC {\v c}as na prestup}{55}{section*.59}
 \contentsline {subsubsection}{Vyfiltrovanie len n\IeC {\'\i }zkopodla\IeC {\v z}n\IeC {\'y}ch vozidiel}{55}{section*.61}
 \contentsline {subsection}{\numberline {4.2.5}Nasleduj\IeC {\'u}ce cesty}{56}{subsection.4.2.5}
-\contentsline {subsection}{\numberline {4.2.6}V\IeC {\'y}po\IeC {\v c}tov\IeC {\'e} \IeC {\v c}asy}{56}{subsection.4.2.6}
-\contentsline {section}{\numberline {4.3}Zhrnutie}{57}{section.4.3}
-\contentsline {chapter}{Z\IeC {\'a}ver}{58}{chapter*.66}
+\contentsline {subsection}{\numberline {4.2.6}V\IeC {\'y}po\IeC {\v c}tov\IeC {\'e} \IeC {\v c}asy}{57}{subsection.4.2.6}
+\contentsline {section}{\numberline {4.3}Zhrnutie}{58}{section.4.3}
+\contentsline {chapter}{Z\IeC {\'a}ver}{59}{chapter*.66}

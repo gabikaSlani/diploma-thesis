@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.7)  26 APR 2020 21:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.7)  4 MAY 2020 22:07
 entering extended mode
 **./main.tex
 (main.tex
@@ -999,12 +999,12 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 135.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [2]
-<images/zada.jpg, id=323, 2230.3325pt x 3519.1475pt>
-File: images/zada.jpg Graphic file (type jpg)
-<use images/zada.jpg>
-Package pdftex.def Info: images/zada.jpg  used on input line 163. on input line
- 163.
-Package pdftex.def Info: Requested size: 485.1222pt x 765.40842pt on input line
+<images/zadanie.jpg, id=323, 1101.36469pt x 1760.07562pt>
+File: images/zadanie.jpg Graphic file (type jpg)
+<use images/zadanie.jpg>
+Package pdftex.def Info: images/zadanie.jpg  used on input line 163. on input l
+ine 163.
+Package pdftex.def Info: Requested size: 485.1222pt x 775.26823pt on input line
  163.
 
 Overfull \hbox (41.81244pt too wide) in paragraph at lines 163--164
@@ -1012,10 +1012,10 @@ Overfull \hbox (41.81244pt too wide) in paragraph at lines 163--164
  []
 
 
-Overfull \vbox (62.62534pt too high) has occurred while \output is active []
+Overfull \vbox (72.48515pt too high) has occurred while \output is active []
 
 
-[3 <./images/zada.jpg>]
+[3 <./images/zadanie.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 177--181
 
  []
@@ -1356,112 +1356,113 @@ Package pdftex.def Info: Requested size: 143.94534pt x 233.00323pt on input lin
 e 304.
 ) (test.tex [48 <./images/time-view3.png> <./images/time-view-detail.png>]
 Kapitola 4.
-<images/test-schema.png, id=919, 963.6pt x 398.9304pt>
-File: images/test-schema.png Graphic file (type png)
-<use images/test-schema.png>
-Package pdftex.def Info: images/test-schema.png  used on input line 15. on inpu
-t line 15.
-Package pdftex.def Info: Requested size: 396.91325pt x 164.31732pt on input lin
-e 15.
 [49
 
 ]
+<images/test-schema.png, id=923, 963.6pt x 398.9304pt>
+File: images/test-schema.png Graphic file (type png)
+<use images/test-schema.png>
+Package pdftex.def Info: images/test-schema.png  used on input line 18. on inpu
+t line 18.
+Package pdftex.def Info: Requested size: 396.91325pt x 164.31732pt on input lin
+e 18.
+
 
 Package hyperref Warning: Composite letter `\textasciicaron+l'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 20.
+(hyperref)                removing `\textasciicaron' on input line 23.
 
 <images/delay-row.png, id=925, 626.34pt x 42.87578pt>
 File: images/delay-row.png Graphic file (type png)
 <use images/delay-row.png>
-Package pdftex.def Info: images/delay-row.png  used on input line 27. on input 
-line 27.
+Package pdftex.def Info: images/delay-row.png  used on input line 30. on input 
+line 30.
 Package pdftex.def Info: Requested size: 441.01773pt x 30.19077pt on input line
- 27.
+ 30.
 [50 <./images/test-schema.png> <./images/delay-row.png>]
 <images/test/delay.png, id=937, 938.57143pt x 524.66142pt>
 File: images/test/delay.png Graphic file (type png)
 <use images/test/delay.png>
-Package pdftex.def Info: images/test/delay.png  used on input line 40. on input
- line 40.
+Package pdftex.def Info: images/test/delay.png  used on input line 43. on input
+ line 43.
 Package pdftex.def Info: Requested size: 441.01773pt x 246.52684pt on input lin
-e 40.
+e 43.
  [51 <./images/test/delay.png>]
 <images/test/alternative.png, id=949, 964.5636pt x 620.5584pt>
 File: images/test/alternative.png Graphic file (type png)
 <use images/test/alternative.png>
-Package pdftex.def Info: images/test/alternative.png  used on input line 56. on
- input line 56.
+Package pdftex.def Info: images/test/alternative.png  used on input line 59. on
+ input line 59.
 Package pdftex.def Info: Requested size: 441.01773pt x 283.73698pt on input lin
-e 56.
+e 59.
 <images/test/delay-alternative.png, id=954, 950.92105pt x 235.82841pt>
 File: images/test/delay-alternative.png Graphic file (type png)
 <use images/test/delay-alternative.png>
 Package pdftex.def Info: images/test/delay-alternative.png  used on input line 
-70. on input line 70.
+73. on input line 73.
 Package pdftex.def Info: Requested size: 441.01773pt x 109.3712pt on input line
- 70.
+ 73.
  [52 <./images/test/alternative.png>]
 
 Package hyperref Warning: Composite letter `\textasciicaron+l'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 75.
+(hyperref)                removing `\textasciicaron' on input line 78.
 
 <images/test/max-transfers-act.png, id=964, 951.87198pt x 502.08632pt>
 File: images/test/max-transfers-act.png Graphic file (type png)
 <use images/test/max-transfers-act.png>
 Package pdftex.def Info: images/test/max-transfers-act.png  used on input line 
-85. on input line 85.
+88. on input line 88.
 Package pdftex.def Info: Requested size: 441.01773pt x 232.62498pt on input lin
-e 85.
-[53 <./images/test/delay-alternative.png> <./images/test/max-transfers-act.png>
-]
-<images/test/max-walking.png, id=976, 950.92105pt x 460.24579pt>
+e 88.
+[53 <./images/test/delay-alternative.png>]
+<images/test/max-walking.png, id=975, 950.92105pt x 460.24579pt>
 File: images/test/max-walking.png Graphic file (type png)
 <use images/test/max-walking.png>
-Package pdftex.def Info: images/test/max-walking.png  used on input line 95. on
- input line 95.
+Package pdftex.def Info: images/test/max-walking.png  used on input line 98. on
+ input line 98.
 Package pdftex.def Info: Requested size: 441.01773pt x 213.45026pt on input lin
-e 95.
-<images/test/min-transfer.png, id=981, 645.26785pt x 525.24803pt>
+e 98.
+ [54 <./images/test/max-transfers-act.png> <./images/test/max-walking.png>]
+<images/test/min-transfer.png, id=987, 645.26785pt x 525.24803pt>
 File: images/test/min-transfer.png Graphic file (type png)
 <use images/test/min-transfer.png>
-Package pdftex.def Info: images/test/min-transfer.png  used on input line 106. 
-on input line 106.
+Package pdftex.def Info: images/test/min-transfer.png  used on input line 109. 
+on input line 109.
 Package pdftex.def Info: Requested size: 282.25107pt x 229.75537pt on input lin
-e 106.
- [54 <./images/test/max-walking.png>]
-<images/test/low-floor.png, id=993, 645.26785pt x 572.35258pt>
+e 109.
+<images/test/low-floor.png, id=992, 645.26785pt x 572.35258pt>
 File: images/test/low-floor.png Graphic file (type png)
 <use images/test/low-floor.png>
-Package pdftex.def Info: images/test/low-floor.png  used on input line 116. on 
-input line 116.
+Package pdftex.def Info: images/test/low-floor.png  used on input line 119. on 
+input line 119.
 Package pdftex.def Info: Requested size: 282.25107pt x 250.35997pt on input lin
-e 116.
- [55 <./images/test/min-transfer.png> <./images/test/low-floor.png>]
-<images/test/next-paths-1.png, id=1003, 623.01724pt x 833.59708pt>
+e 119.
+ [55 <./images/test/min-transfer.png>]
+<images/test/next-paths-1.png, id=1002, 623.01724pt x 833.59708pt>
 File: images/test/next-paths-1.png Graphic file (type png)
 <use images/test/next-paths-1.png>
-Package pdftex.def Info: images/test/next-paths-1.png  used on input line 125. 
-on input line 125.
+Package pdftex.def Info: images/test/next-paths-1.png  used on input line 128. 
+on input line 128.
 Package pdftex.def Info: Requested size: 282.25107pt x 377.65915pt on input lin
-e 125.
+e 128.
+
+[56 <./images/test/low-floor.png>]
+
+Package hyperref Warning: Composite letter `\textasciicaron+c'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 140.
 
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 137.
-
-
-Package hyperref Warning: Composite letter `\textasciicaron+c'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 137.
+(hyperref)                removing `\textasciicaron' on input line 140.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 142.
-[56 <./images/test/next-paths-1.png>]) (zaver.tex [57] [58
+(Font)              <10.95> on input line 145.
+[57 <./images/test/next-paths-1.png>]) (zaver.tex [58] [59
 
-]) [59] (main.bbl
+]) [60] (main.bbl
 Underfull \hbox (badness 3884) in paragraph at lines 6--12
 []\T1/lmr/m/n/12 Shortest al-ter-nate path dis-co-very th-rough re-cur-sive bou
 n-ding box pru-
@@ -1497,13 +1498,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--20
 esearchgate . net / figure /
  []
 
-[60
+[61
 
 
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 285.
- [61]
+ [62]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 285.
  (main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 285.
@@ -1513,10 +1514,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 285.
  ) 
 Here is how much of TeX's memory you used:
- 13880 strings out of 493312
- 202012 string characters out of 3138899
+ 13879 strings out of 493312
+ 202006 string characters out of 3138899
  341287 words of memory out of 3000000
- 16779 multiletter control sequences out of 15000+200000
+ 16777 multiletter control sequences out of 15000+200000
  97636 words of font info for 81 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,12n,43p,1284b,1897s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1540,9 +1541,9 @@ s/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts
 /type1/public/lm/lmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/
 lmtt12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msb
 m10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on main.pdf (72 pages, 6272271 bytes).
+Output written on main.pdf (73 pages, 6248922 bytes).
 PDF statistics:
- 1173 PDF objects out of 1200 (max. 8388607)
- 280 named destinations out of 1000 (max. 500000)
+ 1179 PDF objects out of 1200 (max. 8388607)
+ 281 named destinations out of 1000 (max. 500000)
  784 words of extra memory for PDF output out of 10000 (max. 10000000)
 
