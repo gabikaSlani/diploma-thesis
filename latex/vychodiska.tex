@@ -3,7 +3,7 @@
 
 \section{Úvod do problematiky}
 \label{sec:intro}
-Problém hľadania optimálnej cesty je veľmi rozšíreným problémom nie len v doprave. Doteraz bolo navrhnutých množstvo algoritmov, metód a techník na vyriešenie tohto problému. Pri hľadaní optimálnej trasy vo verejnej doprave je dobré si najskôr ujasniť, čo  výraz optimálna cesta znamená.
+Problém hľadania optimálnej cesty je veľmi rozšíreným problémom nie len v doprave. Doteraz bolo navrhnutých množstvo algoritmov, metód a techník na vyriešenie tohto problému. 
 
 Najlepšie zhrnutie podproblémov, ktoré môžu nastať sme postrehli v článku \cite{circular}. 
 Autori analyzujú ich návrh v najzložitejšom systéme verejnej dopravy - v Hongkongu. Pre verejnú dopravu je praktickejšie navrhnúť viac alternatívnych ciest. Najbežnejšie používateľské preferencie sú:
@@ -127,15 +127,15 @@ Na začiatku potrebujeme vymodelovať graf mesta, kde sú vrcholy popísané zem
 
 \begin{figure}[H]
 \centering
-	\begin{subfigure}[b]{0.48\textwidth}
+	\begin{subfigure}[b]{0.45\textwidth}
 		\centering
- 		\includegraphics[width=0.7\linewidth]{images/bounding-box}
+ 		\includegraphics[width=0.67\linewidth]{images/bounding-box}
 		\caption{Bounding box}
 		\label{fig:boundingBoxReal}
 	\end{subfigure}
-	\begin{subfigure}[b]{0.48\textwidth}
+	\begin{subfigure}[b]{0.45\textwidth}
 		\centering
-		\includegraphics[width=0.7\linewidth]{images/bounding-box-rect}
+		\includegraphics[width=0.67\linewidth]{images/bounding-box-rect}
 			\caption{Naklonený bounding box}
 		\label{fig:boundingBoxRect}
 	\end{subfigure}
@@ -309,7 +309,7 @@ Autori článku definujú dva druhy prestupov: horizontálny a vertikálny. Napr
 Čo sa týka času potrebného na peší presun medzi jednotlivými zastávkami, priemerná rýchlosť kráčania dospelého človeka bola určená na $1.2 m/s$. Väčšinou sa predpokladá, že dĺžka prestupu je Euklidovská vzdialenosť od počiatočnej zastávky po cieľovú. Tento odhad ale nie je vyhovujúci, pretože vo väčšine prípadov je trasa prestupu dlhšia ako vzdušná čiara medzi zastávkami. Navrhli preto použiť Manhattanovskú vzdialenosť. Keď je vzdialenosť vzdušnou čiarou rovná 1, Manhattanovská vzdialenosť má hodnotu $\sqrt{2}$.
 
 \subsubsection{Hľadanie viacerých ciest}
-Vylepšený algoritmus hľadá $M$ najkratších ciest. Je potrebné zabrániť tomu, aby v rámci $m$-nájdených ciest boli podobné cesty. Autori navrhli 2 pravidlá, použitím ktorých zabránia výskytu podobných ciest vo výsledných $M$ cestách.
+Vylepšený algoritmus hľadá $M$ najkratších ciest. Je potrebné zabrániť tomu, aby v rámci $M$ nájdených ciest boli podobné cesty. Autori navrhli 2 pravidlá, použitím ktorých zabránia výskytu podobných ciest vo výsledných $M$ cestách.
 
 Prvým pravidlom je, že jazda $t$ linky $r$ by sa už znova nemala vyhľadať zo zastávky, na ktorej cestujúci vystúpi. Príklad je na obrázku \ref{fig:similar-paths}(a). Červená cesta vedie priamo zo začiatočnej zastávky $S$ do konečnej zastávky $T$ a modrá cesta obsahuje navyše prestup na zastávke $A$. Časy príchodu týchto dvoch ciest sa líšia a preto by sa cesty vyhodnotili ako rôzne. Týmto zabránime tomu, aby červená a modrá cesta boli vybrané súčasne.
 

@@ -4,7 +4,7 @@
 
 Podarilo sa nám navrhnúť a naimplementovať aplikáciu na vyhľadávanie optimálnych ciest v mestskej hromadnej doprave Bratislava. Dominantnou funkciou aplikácie je, že prihliada na aktuálnu dopravnú situáciu a pri vyhľadávaní ciest zohľadňuje aj meškanie vozidiel. Vyhľadávací algoritmus beží na serverovej strane, pričom operuje na stále aktuálnej dátovej štruktúre. Na vyhľadávanie sme použili negrafový RAPTOR algoritmus, ktorý ľahko zvláda dynamickosť dát, je prispôsobivý a nepotrebuje vytvárať model pred každým spustením algoritmu. 
 
-Keďže cestujúci majú rôzne preferencie a optimálna cesta môže byť pre každého iná, aplikácia neponúka používateľovi len jednu najrýchlejšiu cestu, ale viacero alternatívnych optimálnych ciest. 
+Optimálna cesta môže byť pre každého cestujúceho iná. Najrýchlejšia cesta nemusí byť vždy tá, ktorá cestujúcim vyhovuje najviac. Naša aplikácia ponúka viacero optimálnych ciest, pričom cesty sa líšia v počte prestupov a obsahujú vždy aj najrýchlejšiu cestu.
 
 Pri vyhľadávaní ciest používateľ zadáva požadovaný začiatočný, konečný bod cesty a dátum a čas začiatku vyhľadávania, pričom predvolený je aktuálny dátum a čas. Aplikácia ponúka aj rozšírené vyhľadávacie parametre. Používateľ má teda možnosť nastavenia maximálneho počtu prestupov, minimálneho času na prestup medzi jazdami, maximálneho času pešieho presunu, ako aj vyhľadanie len nízkopodlažných spojov. V prípade, že používateľ upraví rozšírené vyhľadávacie parametre, algoritmus prispôsobí vyhľadávanie zadaným parametrom. Zmenené hodnoty preferencií sa ukladajú do zariadenia a sú použité aj pri nasledujúcich vyhľadávaniach. Používateľ môže vidieť v histórii vyhľadávania 5 posledných záznamov (začiatočná a konečná zastávka). 
 
@@ -22,7 +22,7 @@ Aplikácia má niekoľko častí, ktoré by bolo možné v budúcnosti vylepši�
 
 Počas implementácie sme objavili dáta, ktoré sa nám nepodarilo zanalyzovať. Išlo o dáta, ktoré predstavujú časy odchodu zo zastávok po 23:59 hodine. Tieto dáta sme odignorovali a z toho dôvodu nemusí správne fungovať vyhľadávanie na prelome dní. 
 
-Ďalšou možnosťou vylepšenia by bolo zvážiť, v akej fáze vyhľadávania ciest je najvhodnejšie filtrovať vyhovujúce cesty na optimálne. Aby sme používateľovi ponúkli alternatívne optimálne cesty, algoritmus hľadá všetky cesty zo začiatočnej zastávky do konečnej zastávky. Následne na tieto cesty aplikujeme filtre a získavame množinu optimálnych ciest. Stálo by za zváženie a overenie, či nie je efektívnejšie ich filtrovať už počas behu algoritmu.
+Ďalšou možnosťou vylepšenia by bolo zvážiť, v akej fáze vyhľadávania ciest je najvhodnejšie filtrovať vyhovujúce cesty na optimálne. Aby sme používateľovi ponúkli alternatívne cesty, algoritmus hľadá všetky cesty zo začiatočnej zastávky do konečnej zastávky. Následne na tieto cesty aplikujeme filtre a získavame množinu optimálnych ciest. Stálo by za zváženie a overenie, či nie je efektívnejšie ich filtrovať už počas behu algoritmu.
 
 V neposlednom rade by mohlo byť vyhľadávanie paralelizované na viacerých CPU jadrách. Linky v dátovej štruktúre sú zapísané nezávisle a pri vyhľadávaní môže každé jadro spracovávať inú podmnožinu liniek zvlášť.
 

@@ -15,89 +15,89 @@
 \contentsline {subsection}{\numberline {1.5.2}Minimaliz\IeC {\'a}cia preh\IeC {\v l}ad\IeC {\'a}van\IeC {\'e}ho priestoru bounding boxom}{8}{subsection.1.5.2}
 \contentsline {subsubsection}{Bounding box}{8}{section*.10}
 \contentsline {section}{\numberline {1.6}Zoh\IeC {\v l}adnenie zadania polohy mimo zast\IeC {\'a}vky}{9}{section.1.6}
-\contentsline {section}{\numberline {1.7}Alternat\IeC {\'\i }vne cesty}{10}{section.1.7}
+\contentsline {section}{\numberline {1.7}Alternat\IeC {\'\i }vne cesty}{9}{section.1.7}
 \contentsline {section}{\numberline {1.8}RAPTOR algoritmus}{10}{section.1.8}
-\contentsline {subsection}{\numberline {1.8.1}Defin\IeC {\'\i }cie pojmov a premenn\IeC {\'y}ch}{11}{subsection.1.8.1}
+\contentsline {subsection}{\numberline {1.8.1}Defin\IeC {\'\i }cie pojmov a premenn\IeC {\'y}ch}{10}{subsection.1.8.1}
 \contentsline {subsection}{\numberline {1.8.2}Z\IeC {\'a}kladn\IeC {\'a} verzia algoritmu}{11}{subsection.1.8.2}
 \contentsline {subsection}{\numberline {1.8.3}Optimaliz\IeC {\'a}cie algoritmu}{12}{subsection.1.8.3}
 \contentsline {subsection}{\numberline {1.8.4}rRAPTOR}{13}{subsection.1.8.4}
-\contentsline {subsection}{\numberline {1.8.5}D\IeC {\'a}tov\IeC {\'a} \IeC {\v s}trukt\IeC {\'u}ra}{14}{subsection.1.8.5}
-\contentsline {subsection}{\numberline {1.8.6}Vylep\IeC {\v s}en\IeC {\'y} RAPTOR algoritmus}{15}{subsection.1.8.6}
+\contentsline {subsection}{\numberline {1.8.5}D\IeC {\'a}tov\IeC {\'a} \IeC {\v s}trukt\IeC {\'u}ra}{13}{subsection.1.8.5}
+\contentsline {subsection}{\numberline {1.8.6}Vylep\IeC {\v s}en\IeC {\'y} RAPTOR algoritmus}{14}{subsection.1.8.6}
 \contentsline {subsubsection}{Penaliz\IeC {\'a}cia prestupov}{15}{section*.17}
 \contentsline {subsubsection}{H\IeC {\v l}adanie viacer\IeC {\'y}ch ciest}{16}{section*.18}
 \contentsline {section}{\numberline {1.9}Podobn\IeC {\'e} existuj\IeC {\'u}ce syst\IeC {\'e}my}{17}{section.1.9}
 \contentsline {subsection}{\numberline {1.9.1}Imhd.sk}{17}{subsection.1.9.1}
-\contentsline {subsection}{\numberline {1.9.2}IDS BK}{18}{subsection.1.9.2}
+\contentsline {subsection}{\numberline {1.9.2}IDS BK}{17}{subsection.1.9.2}
 \contentsline {subsection}{\numberline {1.9.3}CP}{18}{subsection.1.9.3}
 \contentsline {subsection}{\numberline {1.9.4}CG Transit}{18}{subsection.1.9.4}
 \contentsline {subsection}{\numberline {1.9.5}Ubian}{18}{subsection.1.9.5}
-\contentsline {chapter}{\numberline {2}N\IeC {\'a}vrh}{20}{chapter.2}
-\contentsline {section}{\numberline {2.1}Funkcie aplik\IeC {\'a}cie}{20}{section.2.1}
-\contentsline {section}{\numberline {2.2}D\IeC {\'a}ta}{21}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}D\IeC {\'a}ta statick\IeC {\'y}ch cestovn\IeC {\'y}ch poriadkov}{21}{subsection.2.2.1}
-\contentsline {subsubsection}{GTFS}{22}{section*.21}
-\contentsline {subsection}{\numberline {2.2.2}D\IeC {\'a}ta o me\IeC {\v s}kan\IeC {\'\i }}{23}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Pe\IeC {\v s}ie presuny}{24}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Datab\IeC {\'a}za}{24}{section.2.3}
-\contentsline {section}{\numberline {2.4}Parametre pre algoritmus}{26}{section.2.4}
-\contentsline {subsubsection}{Vyh\IeC {\v l}ad\IeC {\'a}vanie z aktu\IeC {\'a}lnej polohy}{26}{section*.23}
-\contentsline {section}{\numberline {2.5}Algoritmus}{27}{section.2.5}
+\contentsline {chapter}{\numberline {2}N\IeC {\'a}vrh}{19}{chapter.2}
+\contentsline {section}{\numberline {2.1}Funkcie aplik\IeC {\'a}cie}{19}{section.2.1}
+\contentsline {section}{\numberline {2.2}D\IeC {\'a}ta}{20}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}D\IeC {\'a}ta statick\IeC {\'y}ch cestovn\IeC {\'y}ch poriadkov}{20}{subsection.2.2.1}
+\contentsline {subsubsection}{GTFS}{21}{section*.21}
+\contentsline {subsection}{\numberline {2.2.2}D\IeC {\'a}ta o me\IeC {\v s}kan\IeC {\'\i }}{22}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Pe\IeC {\v s}ie presuny}{23}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Datab\IeC {\'a}za}{23}{section.2.3}
+\contentsline {section}{\numberline {2.4}Parametre pre algoritmus}{25}{section.2.4}
+\contentsline {subsubsection}{Vyh\IeC {\v l}ad\IeC {\'a}vanie z aktu\IeC {\'a}lnej polohy}{25}{section*.23}
+\contentsline {section}{\numberline {2.5}Algoritmus}{26}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}Pou\IeC {\v z}itie a prisp\IeC {\^o}sobenie RAPTOR algoritmu}{27}{subsection.2.5.1}
-\contentsline {subsubsection}{Optimaliz\IeC {\'a}cia}{28}{section*.25}
-\contentsline {subsubsection}{Zapracovanie d\IeC {\'a}t o me\IeC {\v s}kan\IeC {\'\i }}{28}{section*.26}
-\contentsline {subsubsection}{Preferencie}{28}{section*.27}
-\contentsline {subsubsection}{Alternat\IeC {\'\i }vne cesty}{28}{section*.28}
-\contentsline {subsubsection}{Filtre}{29}{section*.29}
-\contentsline {subsubsection}{Nasleduj\IeC {\'u}ce cesty}{30}{section*.30}
-\contentsline {subsubsection}{Zhrnutie}{30}{section*.31}
-\contentsline {section}{\numberline {2.6}D\IeC {\'a}tov\IeC {\'a} \IeC {\v s}trukt\IeC {\'u}ra}{30}{section.2.6}
-\contentsline {section}{\numberline {2.7}Architekt\IeC {\'u}ra syst\IeC {\'e}mu}{32}{section.2.7}
-\contentsline {subsection}{\numberline {2.7.1}Serverov\IeC {\'a} strana}{32}{subsection.2.7.1}
-\contentsline {subsection}{\numberline {2.7.2}Klientsk\IeC {\'a} strana}{32}{subsection.2.7.2}
-\contentsline {subsection}{\numberline {2.7.3}Spracovanie d\IeC {\'a}t}{32}{subsection.2.7.3}
-\contentsline {chapter}{\numberline {3}Implement\IeC {\'a}cia}{34}{chapter.3}
-\contentsline {section}{\numberline {3.1}Technol\IeC {\'o}gie}{34}{section.3.1}
-\contentsline {section}{\numberline {3.2}D\IeC {\'a}ta}{34}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Parsovanie d\IeC {\'a}t zo s\IeC {\'u}boru}{34}{subsection.3.2.1}
-\contentsline {subsubsection}{D\IeC {\'a}ta statick\IeC {\'y}ch cestovn\IeC {\'y}ch poriadkov}{34}{section*.34}
-\contentsline {subsubsection}{D\IeC {\'a}ta o me\IeC {\v s}kan\IeC {\'\i } vozidiel}{35}{section*.35}
-\contentsline {subsection}{\numberline {3.2.2}Pou\IeC {\v z}itie datab\IeC {\'a}zy}{35}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Testovacie d\IeC {\'a}ta}{36}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}D\IeC {\'a}tov\IeC {\'a} \IeC {\v s}trukt\IeC {\'u}ra}{36}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Implement\IeC {\'a}cia d\IeC {\'a}tovej \IeC {\v s}trukt\IeC {\'u}ry}{37}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Naplnenie d\IeC {\'a}tovej \IeC {\v s}trukt\IeC {\'u}ry}{38}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}\IeC {\v C}asov\IeC {\'y} simul\IeC {\'a}tor}{38}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Vlastn\IeC {\'a} trieda \textit {Time}}{38}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}RAPTOR Algoritmus}{39}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}V\IeC {\'y}sledky RAPTOR algoritmu}{39}{subsection.3.5.1}
-\contentsline {subsubsection}{Target prunning}{40}{section*.36}
-\contentsline {subsection}{\numberline {3.5.2}H\IeC {\v l}adanie najbli\IeC {\v z}\IeC {\v s}ej vyhovuj\IeC {\'u}cej jazdy}{40}{subsection.3.5.2}
-\contentsline {subsubsection}{Optimaliz\IeC {\'a}cia h\IeC {\v l}adania vyhovuj\IeC {\'u}cej jazdy}{40}{section*.37}
-\contentsline {subsubsection}{Zoradenie j\IeC {\'a}zd v r\IeC {\'a}mci linky}{41}{section*.38}
-\contentsline {subsubsection}{Prihliadanie na me\IeC {\v s}kanie vozidiel}{42}{section*.40}
-\contentsline {subsection}{\numberline {3.5.3}Zapracovanie pou\IeC {\v z}\IeC {\'\i }vate\IeC {\v l}sk\IeC {\'y}ch preferenci\IeC {\'\i }}{43}{subsection.3.5.3}
-\contentsline {subsubsection}{Maxim\IeC {\'a}lny po\IeC {\v c}et prestupov}{43}{section*.42}
-\contentsline {subsubsection}{Maxim\IeC {\'a}lny \IeC {\v c}as pe\IeC {\v s}ieho presunu}{44}{section*.43}
-\contentsline {subsubsection}{Minim\IeC {\'a}lny \IeC {\v c}as na prestup}{44}{section*.44}
-\contentsline {subsubsection}{Vyfiltrovanie len n\IeC {\'\i }zkopodla\IeC {\v z}n\IeC {\'y}ch vozidiel}{45}{section*.45}
-\contentsline {section}{\numberline {3.6}Klientsk\IeC {\'a} strana}{45}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Implement\IeC {\'a}cia klientskej strany}{45}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}D\IeC {\'a}tum s \IeC {\v c}as}{45}{subsection.3.6.2}
-\contentsline {subsection}{\numberline {3.6.3}Zobrazenie zast\IeC {\'a}vok na mape}{46}{subsection.3.6.3}
-\contentsline {subsection}{\numberline {3.6.4}Zobrazovanie \IeC {\v c}asov ciest}{47}{subsection.3.6.4}
-\contentsline {subsection}{\numberline {3.6.5}Nasleduj\IeC {\'u}ce cesty}{48}{subsection.3.6.5}
-\contentsline {chapter}{\numberline {4}Testovanie a evalu\IeC {\'a}cia}{49}{chapter.4}
-\contentsline {section}{\numberline {4.1}Testovacie d\IeC {\'a}ta}{49}{section.4.1}
-\contentsline {section}{\numberline {4.2}Uk\IeC {\'a}\IeC {\v z}ky vyh\IeC {\v l}ad\IeC {\'a}vania ciest}{50}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Me\IeC {\v s}kanie}{50}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Alternat\IeC {\'\i }vne cesty}{51}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Me\IeC {\v s}kanie a alternat\IeC {\'\i }vne cesty}{52}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Pou\IeC {\v z}\IeC {\'\i }vate\IeC {\v l}sk\IeC {\'e} preferencie}{53}{subsection.4.2.4}
-\contentsline {subsubsection}{Maxim\IeC {\'a}lny po\IeC {\v c}et prestupov}{53}{section*.55}
-\contentsline {subsubsection}{Maxim\IeC {\'a}lny \IeC {\v c}as pe\IeC {\v s}ieho presunu}{54}{section*.57}
-\contentsline {subsubsection}{Minim\IeC {\'a}lny \IeC {\v c}as na prestup}{55}{section*.59}
-\contentsline {subsubsection}{Vyfiltrovanie len n\IeC {\'\i }zkopodla\IeC {\v z}n\IeC {\'y}ch vozidiel}{55}{section*.61}
-\contentsline {subsection}{\numberline {4.2.5}Nasleduj\IeC {\'u}ce cesty}{56}{subsection.4.2.5}
-\contentsline {subsection}{\numberline {4.2.6}V\IeC {\'y}po\IeC {\v c}tov\IeC {\'e} \IeC {\v c}asy}{57}{subsection.4.2.6}
-\contentsline {section}{\numberline {4.3}Zhrnutie}{58}{section.4.3}
-\contentsline {chapter}{Z\IeC {\'a}ver}{59}{chapter*.66}
+\contentsline {subsubsection}{Optimaliz\IeC {\'a}cia}{27}{section*.25}
+\contentsline {subsubsection}{Zapracovanie d\IeC {\'a}t o me\IeC {\v s}kan\IeC {\'\i }}{27}{section*.26}
+\contentsline {subsubsection}{Preferencie}{27}{section*.27}
+\contentsline {subsubsection}{Alternat\IeC {\'\i }vne cesty}{27}{section*.28}
+\contentsline {subsubsection}{Filtre}{28}{section*.29}
+\contentsline {subsubsection}{Nasleduj\IeC {\'u}ce cesty}{29}{section*.30}
+\contentsline {subsubsection}{Zhrnutie}{29}{section*.31}
+\contentsline {section}{\numberline {2.6}D\IeC {\'a}tov\IeC {\'a} \IeC {\v s}trukt\IeC {\'u}ra}{29}{section.2.6}
+\contentsline {section}{\numberline {2.7}Architekt\IeC {\'u}ra syst\IeC {\'e}mu}{31}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Serverov\IeC {\'a} strana}{31}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2}Klientsk\IeC {\'a} strana}{31}{subsection.2.7.2}
+\contentsline {subsection}{\numberline {2.7.3}Spracovanie d\IeC {\'a}t}{31}{subsection.2.7.3}
+\contentsline {chapter}{\numberline {3}Implement\IeC {\'a}cia}{33}{chapter.3}
+\contentsline {section}{\numberline {3.1}Technol\IeC {\'o}gie}{33}{section.3.1}
+\contentsline {section}{\numberline {3.2}D\IeC {\'a}ta}{33}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Parsovanie d\IeC {\'a}t zo s\IeC {\'u}boru}{33}{subsection.3.2.1}
+\contentsline {subsubsection}{D\IeC {\'a}ta statick\IeC {\'y}ch cestovn\IeC {\'y}ch poriadkov}{33}{section*.34}
+\contentsline {subsubsection}{D\IeC {\'a}ta o me\IeC {\v s}kan\IeC {\'\i } vozidiel}{34}{section*.35}
+\contentsline {subsection}{\numberline {3.2.2}Pou\IeC {\v z}itie datab\IeC {\'a}zy}{34}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Testovacie d\IeC {\'a}ta}{35}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}D\IeC {\'a}tov\IeC {\'a} \IeC {\v s}trukt\IeC {\'u}ra}{35}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Implement\IeC {\'a}cia d\IeC {\'a}tovej \IeC {\v s}trukt\IeC {\'u}ry}{36}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Naplnenie d\IeC {\'a}tovej \IeC {\v s}trukt\IeC {\'u}ry}{37}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}\IeC {\v C}asov\IeC {\'y} simul\IeC {\'a}tor}{37}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Vlastn\IeC {\'a} trieda \textit {Time}}{37}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}RAPTOR Algoritmus}{38}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}V\IeC {\'y}sledky RAPTOR algoritmu}{38}{subsection.3.5.1}
+\contentsline {subsubsection}{Target prunning}{39}{section*.36}
+\contentsline {subsection}{\numberline {3.5.2}H\IeC {\v l}adanie najbli\IeC {\v z}\IeC {\v s}ej vyhovuj\IeC {\'u}cej jazdy}{39}{subsection.3.5.2}
+\contentsline {subsubsection}{Optimaliz\IeC {\'a}cia h\IeC {\v l}adania vyhovuj\IeC {\'u}cej jazdy}{39}{section*.37}
+\contentsline {subsubsection}{Zoradenie j\IeC {\'a}zd v r\IeC {\'a}mci linky}{40}{section*.38}
+\contentsline {subsubsection}{Prihliadanie na me\IeC {\v s}kanie vozidiel}{41}{section*.40}
+\contentsline {subsection}{\numberline {3.5.3}Zapracovanie pou\IeC {\v z}\IeC {\'\i }vate\IeC {\v l}sk\IeC {\'y}ch preferenci\IeC {\'\i }}{42}{subsection.3.5.3}
+\contentsline {subsubsection}{Maxim\IeC {\'a}lny po\IeC {\v c}et prestupov}{42}{section*.42}
+\contentsline {subsubsection}{Maxim\IeC {\'a}lny \IeC {\v c}as pe\IeC {\v s}ieho presunu}{43}{section*.43}
+\contentsline {subsubsection}{Minim\IeC {\'a}lny \IeC {\v c}as na prestup}{43}{section*.44}
+\contentsline {subsubsection}{Vyfiltrovanie len n\IeC {\'\i }zkopodla\IeC {\v z}n\IeC {\'y}ch vozidiel}{44}{section*.45}
+\contentsline {section}{\numberline {3.6}Klientsk\IeC {\'a} strana}{44}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Implement\IeC {\'a}cia klientskej strany}{44}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}D\IeC {\'a}tum s \IeC {\v c}as}{44}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}Zobrazenie zast\IeC {\'a}vok na mape}{45}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.4}Zobrazovanie \IeC {\v c}asov ciest}{46}{subsection.3.6.4}
+\contentsline {subsection}{\numberline {3.6.5}Nasleduj\IeC {\'u}ce cesty}{47}{subsection.3.6.5}
+\contentsline {chapter}{\numberline {4}Testovanie a evalu\IeC {\'a}cia}{48}{chapter.4}
+\contentsline {section}{\numberline {4.1}Testovacie d\IeC {\'a}ta}{48}{section.4.1}
+\contentsline {section}{\numberline {4.2}Uk\IeC {\'a}\IeC {\v z}ky vyh\IeC {\v l}ad\IeC {\'a}vania ciest}{49}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Me\IeC {\v s}kanie}{49}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Alternat\IeC {\'\i }vne cesty}{50}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Me\IeC {\v s}kanie a alternat\IeC {\'\i }vne cesty}{51}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Pou\IeC {\v z}\IeC {\'\i }vate\IeC {\v l}sk\IeC {\'e} preferencie}{52}{subsection.4.2.4}
+\contentsline {subsubsection}{Maxim\IeC {\'a}lny po\IeC {\v c}et prestupov}{52}{section*.55}
+\contentsline {subsubsection}{Maxim\IeC {\'a}lny \IeC {\v c}as pe\IeC {\v s}ieho presunu}{53}{section*.57}
+\contentsline {subsubsection}{Minim\IeC {\'a}lny \IeC {\v c}as na prestup}{53}{section*.59}
+\contentsline {subsubsection}{Vyfiltrovanie len n\IeC {\'\i }zkopodla\IeC {\v z}n\IeC {\'y}ch vozidiel}{54}{section*.61}
+\contentsline {subsection}{\numberline {4.2.5}Nasleduj\IeC {\'u}ce cesty}{55}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.6}V\IeC {\'y}po\IeC {\v c}tov\IeC {\'e} \IeC {\v c}asy}{55}{subsection.4.2.6}
+\contentsline {section}{\numberline {4.3}Zhrnutie}{56}{section.4.3}
+\contentsline {chapter}{Z\IeC {\'a}ver}{58}{chapter*.66}

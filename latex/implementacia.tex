@@ -28,7 +28,7 @@ Počas implementácie sme však zistili, že voľba ORM frameworku \textit{Hiber
 
 \subsection{Testovacie dáta}
 \label{sec:test-data}
-Dátová sada vo formáte GTFS obsahuje veľa záznamov. Už pri implementácii bolo potrebné myslieť na to, ako budeme overovať správnosť mapovania dát do databázy, korektnosť vytvorenej dátovej štruktúry a v neposlednom rade vedieť ohodnotiť a upraviť algoritmus tak, aby počítal čo najoptimálnejšie cesty. Pri veľkej dátovej sade sa ťažko testuje správnosť implementácie a preto sme pred samotnou implementáciou navrhli zmenšenú testovaciu sadu dát. 
+Dátová sada vo formáte GTFS obsahuje veľa záznamov. Už pri implementácii bolo potrebné myslieť na to, ako budeme overovať správnosť mapovania dát do databázy, korektnosť vytvorenej dátovej štruktúry a v neposlednom rade vedieť ohodnotiť a upraviť algoritmus tak, aby vyhľadával optimálne cesty. Pri veľkej dátovej sade sa ťažko testuje správnosť implementácie a preto sme pred samotnou implementáciou navrhli zmenšenú testovaciu sadu dát. 
 Táto sada obsahuje 7 skupín zastávok (\textit{stopArea}), 16 zastávok, 3 linky, 70 jázd a 185 záznamov \textit{stopTimes}. Pre porovnanie reálna sada obsahuje viac ako 700 000 záznamov \textit{stopTimes}. Okrem GTFS dát sme vytvorili aj pár testovacích záznamov o meškaní. 
 
 Pre jednoduché prepínanie medzi dvomi dátovými sadami aplikácie sme použili profily z frameworku \textit{Spring}. Každý profil má definované premenné prostredia, ktoré pre náš projekt definujú napríklad údaje pre dátové pripojenie ako názov databázy, používateľa a heslo do databázy. Ďalej sú to cesty k GTFS súborom a dátam o meškaniach. 
@@ -308,7 +308,7 @@ Po kliknutí na cestu sa zobrazí detail cesty, kde je pri každej zastávke zob
 \end{figure}
 
 \subsection{Nasledujúce cesty}
-Pre vyhľadanie optimálnych ciest používateľ zadáva povinné vstupné parametre: začiatočnú a konečnú zastávku, dátum a čas $\tau$. Ostatné parametre sú dobrovoľné a sú predvolené. Klient si vždy uloží posledné vyhľadávané parametre do stavu a pošle dopyt na server. Ako odpoveď  dostane aspoň $x$ ciest, ktoré nezačínajú skôr ako čas $\tau$. Server sa teda stará o to, aby bol dostatočný počet ciest na jednu stránku. V prípade, že používateľ chce nasledujúce cesty, pod poslednou vyhľadanou cestou sa nachádza tlačidlo "Nasledujúce". Kliknutím na toto tlačidlo klient pripočíta k času odchodu poslednej cesty jednu minútu. Následne pošle dopyt so zapamätanými vyhľadávacími parametrami na server s tým, že zmení čas prípadne aj dátum. 
+Pre vyhľadanie ciest používateľ zadáva povinné vstupné parametre: začiatočnú a konečnú zastávku, dátum a čas $\tau$. Ostatné parametre sú dobrovoľné a sú predvolené. Klient si vždy uloží posledné vyhľadávané parametre do stavu a pošle dopyt na server. Ako odpoveď  dostane aspoň $x$ ciest, ktoré nezačínajú skôr ako čas $\tau$. Server sa teda stará o to, aby bol dostatočný počet ciest na jednu stránku. V prípade, že používateľ chce nasledujúce cesty, pod poslednou vyhľadanou cestou sa nachádza tlačidlo "Nasledujúce". Kliknutím na toto tlačidlo klient pripočíta k času odchodu poslednej cesty jednu minútu. Následne pošle dopyt so zapamätanými vyhľadávacími parametrami na server s tým, že zmení čas prípadne aj dátum. 
 
 
 
