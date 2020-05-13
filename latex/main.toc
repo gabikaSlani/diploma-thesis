@@ -50,7 +50,7 @@
 \contentsline {subsubsection}{Filtre}{28}{section*.29}
 \contentsline {subsubsection}{Nasleduj\IeC {\'u}ce cesty}{29}{section*.30}
 \contentsline {subsubsection}{Zhrnutie}{29}{section*.31}
-\contentsline {section}{\numberline {2.6}D\IeC {\'a}tov\IeC {\'a} \IeC {\v s}trukt\IeC {\'u}ra}{29}{section.2.6}
+\contentsline {section}{\numberline {2.6}D\IeC {\'a}tov\IeC {\'a} \IeC {\v s}trukt\IeC {\'u}ra}{30}{section.2.6}
 \contentsline {section}{\numberline {2.7}Architekt\IeC {\'u}ra syst\IeC {\'e}mu}{31}{section.2.7}
 \contentsline {subsection}{\numberline {2.7.1}Serverov\IeC {\'a} strana}{31}{subsection.2.7.1}
 \contentsline {subsection}{\numberline {2.7.2}Klientsk\IeC {\'a} strana}{31}{subsection.2.7.2}
@@ -67,7 +67,7 @@
 \contentsline {subsection}{\numberline {3.3.1}Implement\IeC {\'a}cia d\IeC {\'a}tovej \IeC {\v s}trukt\IeC {\'u}ry}{36}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Naplnenie d\IeC {\'a}tovej \IeC {\v s}trukt\IeC {\'u}ry}{37}{subsection.3.3.2}
 \contentsline {section}{\numberline {3.4}\IeC {\v C}asov\IeC {\'y} simul\IeC {\'a}tor}{37}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Vlastn\IeC {\'a} trieda \textit {Time}}{37}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.1}Vlastn\IeC {\'a} trieda \textit {Time}}{38}{subsection.3.4.1}
 \contentsline {section}{\numberline {3.5}RAPTOR Algoritmus}{38}{section.3.5}
 \contentsline {subsection}{\numberline {3.5.1}V\IeC {\'y}sledky RAPTOR algoritmu}{38}{subsection.3.5.1}
 \contentsline {subsubsection}{Target prunning}{39}{section*.36}

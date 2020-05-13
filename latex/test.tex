@@ -3,11 +3,11 @@
 
 V kapitole Testovanie predvedieme funkciu aplikácie vyhľadávania optimálnych ciest s prihliadnutím na meškanie a zvolené používateľské preferencie. Taktiež ukážeme, že aplikácia nevyhľadáva len jednu najkratšiu cestu, ale viacero alternatívnych ciest. Aplikácia používateľovi ponúka aj nasledujúce cesty tak, aby na stránke bolo aspoň 5 vyhľadaných ciest zoradených od času príchodu na začiatočnú zastávku vzostupne. 
 
-Správnosť vyhľadaných ciest sa dokazuje ťažko, keďže nemáme k dispozícii porovnateľné dáta. Existujúce aplikácie, ktoré ponúkajú vyhľadávanie ciest v MHD v Bratislave vyhľadávajú cesty bez prihliadnutia na meškanie. My máme k dispozícii dáta s platnosťou cestovných poriadkov v minulosti a spomínané aplikácie neumožňujú vyhľadávanie v ďalekej minulosti. Preto nevieme porovnať ani vyhľadané cesty bez prihliadnutia na meškanie.
+Správnosť vyhľadaných ciest sa dokazuje ťažko, keďže nemáme k dispozícii porovnateľné dáta. Existujúce aplikácie, ktoré ponúkajú vyhľadávanie ciest v MHD v~Bratislave vyhľadávajú cesty bez prihliadnutia na meškanie. My máme k dispozícii dáta s platnosťou cestovných poriadkov v minulosti a spomínané aplikácie neumožňujú vyhľadávanie v ďalekej minulosti. Preto nevieme porovnať ani vyhľadané cesty bez prihliadnutia na meškanie.
 
 \section{Testovacie dáta}
 
-Dáta získané od Dopravného podniku Bratislava sú príliš rozsiahle a kontrola algoritmu človekom nad týmito dátami bola nemožná. Vytvorili sme preto aj testovaciu sadu dát, nad ktorými sme spúšťali vyhľadávanie. Testovacia sada je tvorená zmenšeným počtom zastávok, liniek a jázd. Pre lepší prehľad v testovacích dátach sme nakreslili schému liniek a vygenerovali cestovný poriadok. Schému môžeme vidieť na obrázku \ref{fig:test-schema}. Algoritmus, ktorý vyhľadával nad testovacími dátami, kontrolovali traja cestujúci. Podľa ich názorov a skúseností sme vytvárali a upravovali filtre ciest. Filtre slúžia na minimalizovanie množiny všetkých ciest vedúcich zo začiatočnej do konečnej zastávky na množinu optimálnych ciest, ktoré budú zobrazené použítaveľovi. 
+Dáta získané od Dopravného podniku Bratislava sú príliš rozsiahle a kontrola algoritmu človekom nad týmito dátami bola nemožná. Vytvorili sme preto aj testovaciu sadu dát, nad ktorými sme spúšťali vyhľadávanie. Testovacia sada je tvorená zmenšeným počtom zastávok, liniek a jázd (časť \ref{sec:test-data}). Pre lepší prehľad v testovacích dátach sme nakreslili schému liniek a vygenerovali cestovný poriadok. Schému môžeme vidieť na obrázku \ref{fig:test-schema}. Algoritmus, ktorý vyhľadával nad testovacími dátami, kontrolovali traja cestujúci. Podľa ich názorov a skúseností sme vytvárali a upravovali filtre ciest. Filtre slúžia na minimalizovanie množiny všetkých ciest vedúcich zo začiatočnej do konečnej zastávky na množinu optimálnych ciest pri zadanom maximálnom počte prestupov, ktoré budú zobrazené používateľovi. 
 
 Všetky cesty vyhľadané aplikáciou nad testovacou sadou dát boli správne.
 
@@ -18,7 +18,7 @@ Všetky cesty vyhľadané aplikáciou nad testovacou sadou dát boli správne.
 \end{figure}
 
 \section{Ukážky vyhľadávania ciest}
-Ďalej sme testovali na plnej sade dát. V nasledujúcich ukážkach znázorníme, ako funguje vyhľadávanie ciest v aplikácii. Vybrali sme také parametre vyhľadnávania, aby ponúknuté cesty jednoznačne predviedli funkcie vyhľadávaiceho algoritmu. 
+Ďalej sme testovali na plnej sade dát. V nasledujúcich ukážkach znázorníme, ako funguje vyhľadávanie ciest v aplikácii. Vybrali sme také parametre vyhľadávania, aby ponúknuté cesty jednoznačne predviedli funkcie vyhľadávacieho algoritmu. 
 
 \subsection{Meškanie}
 V tejto ukážke môžeme pozorovať, ako sa mení zoznam vyhľadaných ciest v závislosti od meškania. Na obrázku \ref{fig:delay-row} môžeme vidieť riadok z dát o meškaní vozidiel, ktorý poukazuje na to, že v deň 5.2.2018 v čase 9:59 nadobudla linka $5$ na zastávke \textit{Karlova Ves} meškanie $1$ minútu. 
@@ -29,24 +29,24 @@ V tejto ukážke môžeme pozorovať, ako sa mení zoznam vyhľadaných ciest v 
 \label{fig:delay-row}
 \end{figure}
 
-Vyhľadávanie sme spustili 5.2.2018 v čase 10:00. V konfigurácii aplikácie sme nastavili aktuálny dátum na 4.2.2018, aby algoritmus pri vyhľadávaní neprihliadal na meškanie. Vstupné parametre pre algoritmus sú na obrázku \ref{fig:test-delay}(a) a vyhľadaná cesta je na obrázku \ref{fig:test-delay}(b)). 
+Vyhľadávanie sme spustili 5.2.2018 v čase 10:00. V konfigurácii aplikácie sme nastavili aktuálny dátum na 4.2.2018, aby algoritmus pri vyhľadávaní neprihliadal na meškanie. Vstupné parametre pre algoritmus sú na obrázku \ref{fig:test-delay}(a) a vyhľadaná cesta je na obrázku \ref{fig:test-delay}(b). 
 
 Následne sme nastavili aktuálny dátum na 5.2.2018, aby sme ukázali ako algoritmus pri vyhľadávaní prihliada na meškanie. Po spustení vyhľadávania s rovnakými parametrami sa zmenil aj výsledok vyhľadávania (obrázok \ref{fig:test-delay}(c)). 
 
-Jazda linky $5$ príde na zastávku Botanická záhrada s meškaním a z toho dôvodu sa mení aj prestupná zastávka medzi jazdami. Predvolený minimálny čas na prestup medzi linkami je $1$ minúta. Keďže jazda linky $5$ má meškanie, cestujúci by nemal žiadny čas na prestup na zastávke Vysoká, Tchibo Outlet. Prestupnou zastávkou sa preto stala zastávka Poštová - Martinus.
+Jazda linky $5$ príde na zastávku Botanická záhrada s meškaním a z toho dôvodu sa mení aj prestupná zastávka medzi jazdami. Predvolený minimálny čas na prestup medzi linkami je $1$ minúta. Keďže jazda linky $5$ má meškanie, cestujúci by nemal žiadny čas na prestup na zastávke \textit{Vysoká, Tchibo Outlet}. Prestupnou zastávkou sa preto stala zastávka \textit{Poštová - Martinus}.
 
 Všimnime si ešte označenie meškania. Meškajúca jazda má zafarbené časy červenou farbou. Po kliknutí na detail (obrázok \ref{fig:test-delay}(d)) vidíme aj hodnotu meškania jazdy. Časy z druhej jazdy sú čiernou farbou, pretože táto jazda ešte nevyrazila zo začiatočnej zastávky v čase vyhľadávania. 
 
 \begin{figure}[H]
-\centerline{\includegraphics[width=1.0\textwidth]{images/test/delay}}
+\centerline{\includegraphics[width=0.97\textwidth]{images/test/delay}}
 \caption[Testovanie meškania]{Testovanie meškania}
 \label{fig:test-delay}
 \end{figure}
 
 \subsection{Alternatívne cesty}
-Aplikácia ponúka cestujúcemu alternatívne cesty, ak platí, že pre dané vyhľadávacie parametre existuje viacero optimálnych z hľadiska času a počtu prestupov. Spustili sme vyhľadávanie s parametrami na obrázku \ref{fig:test-alternative}(a). 
+Aplikácia ponúka cestujúcemu alternatívne cesty, ak platí, že pre dané vyhľadávacie parametre existuje viacero optimálnych ciest z hľadiska času a počtu prestupov. Spustili sme vyhľadávanie s parametrami na obrázku \ref{fig:test-alternative}(a). 
 
-Aplikácia nám ponúkla množinu ciest, ktoré sú na obrázku \ref{fig:test-alternative}(b). Vidíme prvú najrýchlejšiu cestu s dvomi prestupmi, druhú pomalšiu s jedným prestupom a tretiu s najhorším časom príchodu do cieľa bez nutnosti prestupu. 
+Aplikácia nám ponúkla množinu ciest, ktoré sú na obrázku \ref{fig:test-alternative}(b). Vidíme prvú najrýchlejšiu cestu s~dvomi prestupmi, druhú pomalšiu s jedným prestupom a tretiu s~najhorším časom príchodu do cieľa bez nutnosti prestupu. Pri tom rozhodujúci je čas, kedy prídeme do cieľa, nie celkový čas trvania jazdy a prestupov. 
 
 Vo filtrovacom mechanizme ciest je podmienka, že najrýchlejšiu cestu zobrazujeme vždy. Cesty z neskoršími príchodmi do cieľa zobrazujeme len vtedy, ak majú menej prestupov. Avšak nemôžu prísť do cieľa s veľkým oneskorením po najrýchlejšej ceste. Rozdiel v časoch musí byť menší alebo rovný, ako rozdiel počtu prestupov vynásobený $m$ minútami. V projekte sme si určili $m = 5$ minút. Najrýchlejšou cestou je prvá cesta na obrázku \ref{fig:test-alternative}(b). Rozdiel v prestupoch prvej a druhej cesty je $1$ a rozdiel v časoch príchodu do cieľa sú $3$ minúty ($3$ minúty $\leq 1\times5$ minút).
 Rozdiel v prestupoch medzi prvou a treťou cestou sú $2$ prestupy a rozdiel v časoch príchodu do cieľa je $8$ ($8$ minút $\leq 2\times5$ minút).
@@ -54,20 +54,20 @@ Rozdiel v prestupoch medzi prvou a treťou cestou sú $2$ prestupy a rozdiel v �
 Na obrázku \ref{fig:test-alternative}(b) si môžeme všimnúť zafarbené časy zelenou farbou. Čo znamená, že jazda linky už vyrazila z prvej zastávky a nemá žiadne meškanie. V detaile prvej cesty (obrázok \ref{fig:test-alternative}(c)) môžeme vidieť označenie `včas' pri nemeškajúcej jazde.
 
 \begin{figure}[H]
-\centerline{\includegraphics[width=1.0\textwidth]{images/test/alternative}}
+\centerline{\includegraphics[width=0.97\textwidth]{images/test/alternative}}
 \caption[Testovanie alternatívnych ciest]{Testovanie alternatívnych ciest}
 \label{fig:test-alternative}
 \end{figure}
 
 \subsection{Meškanie a alternatívne cesty}
-Pomocou nasledujúcej ukážky znázorníme, aký vplyv má meškanie na množinu vyhľadaných ciest. Na obrázku \ref{fig:test-delay-alternative}(a) vidíme vyhľadávacie parametre. Najskôr sme definovali v systéme aktuálny deň 4.2.2018, aby získané meškania pri vyhľadávaní 5.2.2018 nemali vplyv na vyhľadávanie. Aplikácia ponúkla jednu vyhovujúci cestu a žiadne alternatívne cesty (obrázok \ref{fig:test-delay-alternative} (b)). 
+Pomocou nasledujúcej ukážky znázorníme, aký vplyv má meškanie na množinu vyhľadaných ciest. Na obrázku \ref{fig:test-delay-alternative}(a) vidíme vyhľadávacie parametre. Najskôr sme definovali v systéme aktuálny deň 4.2.2018, aby získané meškania pri vyhľadávaní 5.2.2018 nemali vplyv na vyhľadávanie. Aplikácia ponúkla jednu vyhovujúcu cestu a žiadne alternatívne cesty (obrázok \ref{fig:test-delay-alternative} (b)). 
 
 Potom sme zmenili dátum a čas v systéme na 5.2.2018 6:00. Teraz už algoritmus prihliada na meškania, ktoré vznikli do 6:00 hodiny. Jazda linky $5$ má minútové meškanie (označené červenou farbou). Zaujímavé však je, že pribudla aj alternatívna cesta, ktorá nevyžaduje začiatočný peší presun. V predchádzajúcom hľadaní bola táto cesta odfiltrovaná. Potrebný peší presun na začiatku tiež penalizujeme ako prestup. 
  
-V prípade \ref{fig:test-delay-alternative}(b) bola priama cesta odfiltrovaná, pretože rozdiel v časoch príchodu do cieľa je väčší ako rozdiel v počte prestupov vynásobených 5 minútami ($6$ minút $\leq 1\times5$ minút). V prípade \ref{fig:test-delay-alternative}(c) je už rozdiel v časoch rovných $5$ minút. Preto cesta s menším počtom prestupov nebola vyfiltrovaná.
+V prípade \ref{fig:test-delay-alternative}(b) bola priama cesta odfiltrovaná, pretože rozdiel v časoch príchodu do cieľa je väčší ako rozdiel v počte prestupov vynásobených 5 minútami ($6$ minút $\nleq 1\times5$ minút). V prípade \ref{fig:test-delay-alternative}(c) je už rozdiel v časoch rovných $5$ minút. Preto cesta s~menším počtom prestupov nebola vyfiltrovaná.
 
 \begin{figure}[H]
-\centerline{\includegraphics[width=1.0\textwidth]{images/test/delay-alternative}}
+\centerline{\includegraphics[width=0.97\textwidth]{images/test/delay-alternative}}
 \caption[Testovanie meškania a alternatívnych ciest]{Testovanie meškania a alternatívnych ciest}
 \label{fig:test-delay-alternative}
 \end{figure}
@@ -82,7 +82,7 @@ Na obrázku \ref{fig:test-max-transfers}(a) môžeme vidieť zadané parametre v
 Vyhľadané cesty (obrázok \ref{fig:test-max-transfers}(b)) sú dve. Jedna cesta obsahuje $1$ prestup a druhá neobsahuje žiadny. Po zmene vyhľadávacích parametrov (obrázok \ref{fig:test-max-transfers}(c)) je vyhľadaná cesta už len jedna – tá bez prestupu (obrázok \ref{fig:test-max-transfers}(d)).
 
 \begin{figure}[H]
-\centerline{\includegraphics[width=1.0\textwidth]{images/test/max-transfers-act}}
+\centerline{\includegraphics[width=0.97\textwidth]{images/test/max-transfers-act}}
 \caption[Testovanie obmedzenia počtu prestupov]{Testovanie obmedzenia počtu prestupov}
 \label{fig:test-max-transfers}
 \end{figure}
@@ -99,7 +99,7 @@ Následne sme zmenili vo vyhľadávacích parametroch hodnotu maximálnej dĺžk
 
 
 \subsubsection{Minimálny čas na prestup}
-V ďalšej ukážke znázorníme fungovanie nastavenia minimálneho času na prestup. Na obrázku \ref{fig:test-min-transfer}(a) je hodnota minimálneho času na prestup nastavená na hodnotu $1$. Vyhľadaná cesta (obrázok \ref{fig:test-min-transfer}(b)) vyžaduje $1$ prestup a čas na prestup medzi linkami je $1$ minúta. Po tom, ako sme zmenili hodnotu minimálneho času na prestup na hodnotu $3$ vo vyhľadávacích parametroch (obrázok \ref{fig:test-min-transfer}(c)), dostávame inú vyhľadanú cestu s jedným prestupom (obrázok \ref{fig:test-min-transfer}(d)). Na prestup medzi zastávkami má cestujúci $4$ minúty.
+V ďalšej ukážke znázorníme fungovanie nastavenia minimálneho času na prestup. Na obrázku \ref{fig:test-min-transfer}(a) je hodnota minimálneho času na prestup nastavená na hodnotu $1$. Vyhľadaná cesta (obrázok \ref{fig:test-min-transfer}(b)) vyžaduje $1$ prestup a čas na prestup medzi linkami je $1$ minúta. Po tom, ako sme zmenili hodnotu minimálneho času na prestup na hodnotu $3$ vo vyhľadávacích parametroch (obrázok \ref{fig:test-min-transfer}(c)), dostávame inú vyhľadanú cestu s~jedným prestupom (obrázok \ref{fig:test-min-transfer}(d)). Na prestup medzi zastávkami má cestujúci $4$ minúty.
 
 \begin{figure}[H]
 \centerline{\includegraphics[width=0.64\textwidth]{images/test/min-transfer}}
@@ -118,7 +118,7 @@ V poslednej ukážke dokážeme fungovanie vyhľadávania s prihliadnutím na ob
 \end{figure}
 
 \subsection{Nasledujúce cesty}
-Používateľovi poskytujeme nielen také cesty, ktoré začínajú najbližšie od zadaného času a dátumu vyhľadávanie, ale aj tie nasledujúce vo vyhľadávaní. Na jednu stránku aplikácia zobrazí aspoň 5 ciest. Pre všetky tieto cesty platí, že sú optimálne. Vyhľadávací algoritmus sa pre jedno vyhľadanie spustí najmenej jeden krát. Na obrázku \ref{fig:test-next-paths}(a) môžeme vidieť vyhľadávacie parametre a na obrázku \ref{fig:test-next-paths}(b) je zoznam vyhľadaných ciest. Vyhľadávací algoritmus bol v tomto prípade na pozadí spustený trikrát. Po prvom zbehnutí algoritmu bola vyhľadaná prvá cesta v zozname, po druhom spustení boli vyhľadané ďalšie tri cesty a na posledné spustenie bola vyhľadaná posledná cesta v zozname.
+Používateľovi poskytujeme nielen také cesty, ktoré začínajú najbližšie od zadaného času a dátumu vyhľadávanie, ale aj tie nasledujúce vo vyhľadávaní. Na jednu stránku aplikácia zobrazí aspoň 5 ciest. Pre všetky tieto cesty platí, že sú optimálne. Vyhľadávací algoritmus sa pre jedno vyhľadanie spustí najmenej jeden krát. Na obrázku \ref{fig:test-next-paths}(a) môžeme vidieť vyhľadávacie parametre a na obrázku \ref{fig:test-next-paths}(b) je zoznam vyhľadaných ciest. Vyhľadávací algoritmus bol v tomto prípade na pozadí spustený trikrát. Po prvom zbehnutí algoritmu bola vyhľadaná prvá cesta v zozname, po druhom spustení boli vyhľadané ďalšie tri cesty a na posledné spustenie bola vyhľadaná posledná cesta v~zozname.
 
 \begin{figure}[H]
 \centerline{\includegraphics[width=0.64\textwidth]{images/test/next-paths-1}}
@@ -168,7 +168,7 @@ Používateľské preferencie sú po nainštalovaní aplikácie prednastavené n
 \hline
 \rowcolor[HTML]{C0C0C0} 
 \textbf{Názov preferencie} & \textbf{Preddefinovaná hodnota} \\ \hline
-Maximálny počet prestupov  & $2$         \\ \hline
+Maximálny počet prestupov  & $3$         \\ \hline
 Maximálny čas pešieho presunu & $8$  minút  \\ \hline
 Minimálny čas na prestup & $1$ minúta  \\ \hline
 Len nízkopodlažné vozidlá & nie  \\ \hline
@@ -178,10 +178,10 @@ Len nízkopodlažné vozidlá & nie  \\ \hline
 \label{table:default-preferencies}
 \end{table}
 
-\textbf{V prípade, že neexistuje cesta medzi dvomi zastávkami pri prihliadnutí na používateľom zadané preferencie, aplikácia upozorní, že cesta pre zadané vyhľadávacie parametre neexistuje a je potrebné upraviť tieto preferencie. Preddefinované hodnoty sme určili tak, aby aplikácia našla aspoň jednu cestu pre väčšinu vyhľadávaní.}
+V prípade, že neexistuje cesta medzi dvomi zastávkami pri prihliadnutí na používateľom zadané preferencie, aplikácia upozorní, že cesta pre zadané vyhľadávacie parametre neexistuje a je potrebné upraviť tieto preferencie. Preddefinované hodnoty sme určili tak, aby aplikácia našla aspoň jednu cestu pre väčšinu vyhľadávaní.
 
-Maximálny počet prestupov sme preddefinovali na hodnotu 2, keďže medzi dvomi zastávkami existuje často najrýchlejšia cesta, ktorá obsahuje 1 až 2 prestupy. Hodnotu maximálneho času pešieho presunu sme preddefinovali na 8 minút, čo je v prepočte približne 500 až 600 metrov. Minimálny čas na prestup sme preddefinovali na 1 minútu. Pod prestupom v tomto prípade rozumieme prestup medzi jazdami na jednej zastávke, nie medzi zástavkami v rámci skupiny zastávok s rovnakým pomenovaním. Pri prestupe v rámci skupiny zastávok neprihliadame na hodnotu tejto preferencie, ale čas potrebný na peší presun je získaný z \textit{Google Maps Distance API}.
+Maximálny počet prestupov sme preddefinovali na hodnotu 3, keďže medzi dvomi zastávkami existuje často najrýchlejšia cesta, ktorá obsahuje viac prestupov. Hodnotu maximálneho času pešieho presunu sme preddefinovali na 8 minút, čo je v prepočte približne 500 až 600 metrov. Minimálny čas na prestup sme preddefinovali na 1 minútu. Pod prestupom v tomto prípade rozumieme prestup medzi jazdami na jednej zastávke, nie medzi zastávkami v rámci skupiny zastávok s rovnakým pomenovaním. Pri prestupe v rámci skupiny zastávok neprihliadame na hodnotu tejto preferencie, ale čas potrebný na peší presun je získaný z \textit{Google Maps Distance API}.
 
-Aplikácia má aj iné funkcionality, ktoré sme testovali z hľadiska používateľského rozhrania: výber zastávok z mapy, zobrazenie zoznamu vyhľadaných ciest a detailu cesty, ako aj zobrazenie liniek a ich trás. Testujúcimi osobami boli traja cestujúci, ktorí pravidelne využívajú verejnú dopravu a podobné aplikácie. Na základne ich návrhov sme pridali ešte históriu vyhľadávania, v ktorej sa udržuje 5 posledných záznamov začiatočnej a konečnej zastávky. 
+Aplikácia má aj iné funkcionality, ktoré sme testovali z hľadiska používateľského rozhrania: výber zastávok z mapy, zobrazenie zoznamu vyhľadaných ciest a detailu cesty, ako aj zobrazenie liniek a ich trás. Testujúcimi osobami boli traja cestujúci, ktorí pravidelne využívajú verejnú dopravu a podobné aplikácie.
 
 
