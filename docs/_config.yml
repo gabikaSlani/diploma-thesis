@@ -42,7 +42,7 @@ author:
       percentage: 100%
     - skill7:
       name: Kapitola 2 - Návrh
-      percentage: 60%
+      percentage: 100%
     - skill8:
       name: Návrh architektúry systému
       percentage: 100%
@@ -57,7 +57,7 @@ author:
       percentage: 100%
     - skill12:
       name: Implementácia frontendovej časti
-      percentage: 80%
+      percentage: 100%
     - skill13:
       name: Návrh a implementácia dátovej štruktúry
       percentage: 100%
@@ -69,16 +69,40 @@ author:
       percentage: 100%
     - skill16:
       name: Parsovanie statických dát od DPB
-      percentage: 10%
+      percentage: 100%
     - skill17:
-      name: Implementácia vylepšenej verzie RAPTOR (k-optimálnych ciest)
-      percentage: 0%
-    - skill18:
-      name: Rozšírenie o rRAPTOR
-      percentage: 0%
-    - skill19:
       name: Parsovanie meškaní zo súboru
-      percentage: 0%
+      percentage: 100%
+    - skill18:
+      name: Časový simulátor (frontend+backend)
+      percentage: 100%
+    - skill19:
+      name: Optimalizácia RAPTOR
+      percentage: 100%
     - skill20:
-      name: Zohľadniť meškanie spojov pri vyhľadávaní
-      percentage: 0%
+      name: Zohľadnenie meškania pri vyhľadávaní
+      percentage: 100%
+    - skill21:
+      name: Zohľadnenie používateľských preferencií
+      percentage: 100%
+    - skill22:
+      name: Alternatívne cesty
+      percentage: 100%
+    - skill23:
+      name: Nasledujúce cesty
+      percentage: 100%
+    - skill24:
+      name: Kapitola 3 - Implementácia
+      percentage: 100%
+    - skill25:
+      name: Kapitola 4 - Testovanie
+      percentage: 100%
+    - skill26:
+      name: Úvod, Abstrakty, Záver
+      percentage: 100%
+    - skill27:
+      name: Úprava kódu
+      percentage: 100% 
+    - skill27:
+      name: Prezentácia na obhajobu
+      percentage: 10%
