@@ -29,12 +29,12 @@ layout: default
                                 <h4 class="timeline-title"><strong>Diplomová práca</strong></h4>
                             </div>
                             <div class="timeline-body">
-                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/main.pdf" class="link">
-                                  PDF Dokument
-                                </a></p>
-                                <p><a href="https://github.com/gabikaSlani/diploma-thesis/blob/master/latex/literatura.bib" class="link">
-                                  BibTex súbor
-                                </a></p>
+                              <p><a href="assets/slaninkovaDP.pdf" download class="link">
+                                PDF Dokument
+                              </a></p>
+                              <p><a href="assets/literatura.bib" download class="link">
+                                BibTex súbor
+                              </a></p>
                             </div>
                         </div>
                     </li>
@@ -91,29 +91,44 @@ layout: default
                                 <h4 class="timeline-title"><strong>Progresívna webová aplikácia MHD BA</strong></h4>
                             </div>
                             <div class="timeline-body">
-                                <p>Aplikácia, ktorá umožní používateľovi vyhľadávať optimálne cesty v MHD Bratislava z reálnych dát.</p>
-                                <h5><strong style="font-size: 17px;">Aktuálna verzia riešenia</strong></h5>
+                                <p>Aplikácia MHD-BA slúži na plánovanie ciest v MHD Bratislava. Pri hľadaní ciest prihliada na meškanie vozidiel a používateľské preferencie a ponúka používateľom alternatívne cesty.</p>
+                                <p><a href="https://github.com/gabikaSlani/MHD-BA" target="_blank" class="link">
+                                  GITHUB
+                                </a></p>
+                                <h5><strong style="font-size: 17px;">Finálna verzia riešenia</strong></h5>
+                                <p><strong>Vyhľadanie spojenia</strong></p>
+                                <p>
+                                  Používateľ musí pre vyhľadanie ciest zadať základne parametre pre vyhľadávanie spojenia (odkiaľ, kam a čas).
+                                  Vo vysúvacom paneli sú ďalšie parametre, ktoré môže používateľ upraviť podľa svojich preferencií.
+                                  Začiatočú a konečnú zastávku môže používateľ vybrať fulltextovým vyhľadávaním zo zoznamu alebo priamo z mapy.
+                                  Začiatočný bod môže byť aj aktuálna poloha používateľa.
+                                  Pod vyhľadávaním je zobrazená história hľadaných spojení, kde je zobrazených posledných 5 vyhľadávaní.
+                                  História je uložená priamo v pamäti klientskeho zariadenia.
+                                </p>
+                                <p>
+                                  Dátum a čas je preddefinovaný na simulovaný aktuálny čas.
+                                  Dáta od Dopravného podniku Bratislava, ktoré sme použili pri vývoji aplikácie sú z roku 2018.
+                                  Aplikácia prihliada na meškanie vozidiel, ak používateľ zadal vo vyhľadávacích parametroch aktuálny dátum.
+                                  V aplikácii je simulovaný aktuálny čas, aby vyhľadávací algoritmus prihliadal na meškanie.</p>
+                                <p>
+                                  Cesta je tvorená postupnosťou akcií, pričom akcia môže byť peší presun alebo úsek jazdy.
+                                  Ak má jazda v rámci cesty označený časy príchodu na zastávky oznečené čiernou farbou, znamená to, že jazda ešte nevyrazila zo začiatočnej zastávky.
+                                  Ak je čas zelený, jazda vyrazila a nemá žiadne meškanie.
+                                  Červené časy označujú, že jazda má meškanie.
+                                  V detaile jazdy môžeme vidieť hodnotu meškania.
+                                </p>
+
                                 <p><strong>Linky</strong></p>
                                 <p>
                                   Aplikácia dokáže zobraziť zoznam všetkých liniek. Po kliknutí na linku sa zobrazí detail linky (typ, názov linky a zoznam zastávok).
                                   Linku vieme zobraziť na mape, kde sú všetky jej zastávky spojené vzdušnou čiarou.
                                 </p>
-                                <p><strong>Vyhľadanie spojenia</strong></p>
-                                <p>
-                                  Používateľ zatiaľ vie zadať základne parametre pre vyhľadávanie spojenia (odkiaľ, kam a čas). Zastávku môže používateľ vyhľadať fulltextovým vyhľadávaním alebo priamo z mapy.
-                                  Pod vyhľadávaním je zobrazená história hľadaných spojení, kde je zobrazených posledných 5 vyhľadávaní.
-                                  História je uložená priamo v pamäti klientskeho zariadenia. Dátum a čas je preddefinovaný na aktuálny.
-                                </p>
-                                <p>
-                                 Po vyhľadaní aplikácia zobrazí zatiaľ jednu najkratšiu cestu. Cesta je tvorená postupnosťou akcií, pričom akcia môže byť peší presun alebo spoj.
-                                </p>
+
                                 <video width="320" height="240" controls style="width: 100%; height: 500px; margin: 15px 0;">
                                   <source src="assets/screen-video.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                                 </video>
-                                <p><a href="https://github.com/gabikaSlani/MHD-BA" target="_blank" class="link">
-                                  GITHUB
-                                </a></p>
+
                             </div>
                         </div>
                     </li>
