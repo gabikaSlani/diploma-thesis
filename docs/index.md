@@ -68,7 +68,7 @@ layout: default
                         </div>
                     </li>
                 </ul>
-                <h3 class="title with-icon"><span class="fa fa-mobile fa-lg cat-title"></span>Demo a popis</h3>
+                <h3 class="title with-icon"><span class="fa fa-mobile fa-lg cat-title"></span>Demo a popis aplikácie</h3>
                 <ul class="timeline">
                     <li class="timeline-inverted">
                         <div class="timeline-badge info"></div>
@@ -194,9 +194,6 @@ layout: default
                                 <h4 class="timeline-title"><strong>Použité knižnice</strong></h4>
                             </div>
                             <div class="timeline-body">
-                                <p class="border"><a href="https://github.com/alexiscolin/vue-timeselector">
-                                  Vue komponent na zvolenie času: <strong>vue-timeselector</strong>
-                                </a></p>
                                 <p class="border"><a href="https://www.npmjs.com/package/vuejs-datepicker">
                                   Vue komponent na zvolenie dátumu: <strong>vuejs-datepicker</strong>
                                 </a></p>
