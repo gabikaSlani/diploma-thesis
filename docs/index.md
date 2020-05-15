@@ -68,7 +68,7 @@ layout: default
                         </div>
                     </li>
                 </ul>
-                <h3 class="title with-icon"><span class="fa fa-mobile fa-lg cat-title"></span>Prototyp</h3>
+                <h3 class="title with-icon"><span class="fa fa-mobile fa-lg cat-title"></span>Demo a popis</h3>
                 <ul class="timeline">
                     <li class="timeline-inverted">
                         <div class="timeline-badge info"></div>
@@ -91,7 +91,12 @@ layout: default
                                 <h4 class="timeline-title"><strong>Progresívna webová aplikácia MHD BA</strong></h4>
                             </div>
                             <div class="timeline-body">
-                                <p>Aplikácia MHD-BA slúži na plánovanie ciest v MHD Bratislava. Pri hľadaní ciest prihliada na meškanie vozidiel a používateľské preferencie a ponúka používateľom alternatívne cesty.</p>
+                                <p>Aplikácia MHD-BA slúži na plánovanie ciest v MHD Bratislava. Pri hľadaní ciest prihliada na meškanie vozidiel a používateľské preferencie a ponúka používateľom alternatívne cesty.
+                                    Na vyhľadávanie ciest používa negrafový RAPTOR algoritmus.
+                                    Serverová aplikácia na vyhľadávanie je implementovaná v jazyku Java (Spring Boot framework).
+                                    Dáta sú uložené na serverovej strane v PostgreSQL databáze.
+                                    Klientská strana je implementovaná v jazyku JavaScript (Vue.js framework).
+                                </p>
                                 <p><a href="https://github.com/gabikaSlani/MHD-BA" target="_blank" class="link">
                                   GITHUB
                                 </a></p>
