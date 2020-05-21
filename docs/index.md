@@ -115,6 +115,11 @@ layout: default
                                   Dáta od Dopravného podniku Bratislava, ktoré sme použili pri vývoji aplikácie sú z roku 2018.
                                   Aplikácia prihliada na meškanie vozidiel, ak používateľ zadal vo vyhľadávacích parametroch aktuálny dátum.
                                   V aplikácii je simulovaný aktuálny čas, aby vyhľadávací algoritmus prihliadal na meškanie.</p>
+                                  <video width="320" height="240" controls style="width: 100%; height: 500px; margin: 15px 0;">
+                                    <source src="assets/params.mp4" type="video/mp4">
+                                  Your browser does not support the video tag.
+                                  </video>
+
                                 <p>
                                   Cesta je tvorená postupnosťou akcií, pričom akcia môže byť peší presun alebo úsek jazdy.
                                   Ak má jazda v rámci cesty označený časy príchodu na zastávky oznečené čiernou farbou, znamená to, že jazda ešte nevyrazila zo začiatočnej zastávky.
@@ -122,6 +127,10 @@ layout: default
                                   Červené časy označujú, že jazda má meškanie.
                                   V detaile jazdy môžeme vidieť hodnotu meškania.
                                 </p>
+                                <video width="320" height="240" controls style="width: 100%; height: 500px; margin: 15px 0;">
+                                  <source src="assets/search.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                                </video>
 
                                 <p><strong>Linky</strong></p>
                                 <p>
